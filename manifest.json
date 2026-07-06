@@ -1,15 +1,19 @@
 {
   "name": "PROGRA ALA",
   "short_name": "ALA",
+  "description": "Aplicación del Ministerio de Alabanza",
   "start_url": "/PROGRA.ALA/",
+  "scope": "/PROGRA.ALA/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#081C3A",
+  "theme_color": "#081C3A",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "icono.jpeg",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/jpeg",
+      "purpose": "any"
     }
   ]
 }

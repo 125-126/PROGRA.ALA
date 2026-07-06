@@ -24,8 +24,7 @@ body{
     font-family:'Poppins',sans-serif;
     background:linear-gradient(135deg,#0B1F3A,#0f2f5c,#eef2f7);
     min-height:100vh;
-    padding:18px;
-    color:#0f172a;
+    padding:10px;
 }
 
 /* =========================
@@ -33,12 +32,12 @@ body{
 ========================= */
 
 .contenedor{
+    width:100%;
     max-width:100%;
-    margin:auto;
     background:white;
-    border-radius:18px;
+    border-radius:14px;
     overflow:hidden;
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    box-shadow:0 10px 40px rgba(0,0,0,.2);
 }
 
 /* =========================
@@ -49,20 +48,15 @@ body{
     background:linear-gradient(90deg,#0B1F3A,#1565C0);
     color:white;
     text-align:center;
-    padding:20px;
+    padding:18px;
 }
 
 .encabezado h1{
-    font-size:26px;
-}
-
-.encabezado p{
-    font-size:14px;
-    opacity:.8;
+    font-size:20px;
 }
 
 /* =========================
-   SCROLL HORIZONTAL GANTT
+   SCROLL REAL HORIZONTAL
 ========================= */
 
 .tabla-scroll{
@@ -72,59 +66,45 @@ body{
     -webkit-overflow-scrolling:touch;
 }
 
-/* IMPORTANTE: fuerza horizontal real */
+/* 🔥 CLAVE: esto evita que se comprima */
 table{
     border-collapse:collapse;
-    min-width:1400px; /* clave Gantt */
+    min-width:1600px;   /* MUY IMPORTANTE */
     width:max-content;
-}
-
-/* =========================
-   HEADERS
-========================= */
-
-th{
-    background:#0B1F3A;
-    color:white;
-    padding:12px;
-    border:1px solid rgba(255,255,255,.1);
-    text-align:center;
-    font-size:14px;
-    position:sticky;
-    top:0;
-    z-index:2;
 }
 
 /* =========================
    CELDAS
 ========================= */
 
-td{
+th, td{
     border:1px solid #e5e7eb;
-    text-align:center;
     padding:10px;
-    min-width:70px; /* clave para Gantt */
-    transition:.2s;
+    text-align:center;
+    white-space:nowrap; /* 🔥 evita salto raro */
+}
+
+/* encabezados */
+th{
+    background:#0B1F3A;
+    color:white;
+    position:sticky;
+    top:0;
 }
 
 /* =========================
-   NOMBRE FIJO IZQUIERDA
+   NOMBRE FIJO
 ========================= */
 
 .nombre{
     position:sticky;
     left:0;
-    z-index:5;
     background:#f8fafc;
-    min-width:220px;
-    text-align:left;
-    padding-left:15px;
     font-weight:600;
-}
-
-/* header nombre encima */
-th.nombre{
-    z-index:10;
+    min-width:200px;
+    text-align:left;
+    padding-left:12px;
+    z-index:5;
 }
 
 /* =========================
@@ -133,14 +113,7 @@ th.nombre{
 
 .mes{
     background:#1565C0;
-}
-
-/* =========================
-   EFECTO
-========================= */
-
-tr:hover td{
-    background:#f1f5ff;
+    color:white;
 }
 
 /* =========================
@@ -151,54 +124,33 @@ tr:hover td{
     background:#2563EB;
     color:white;
     font-weight:bold;
-    border-radius:6px;
 }
 
 /* =========================
-   IMPORTANTE: NO CAMBIAR TABLA EN MÓVIL
+   IMPORTANTE MOBILE
 ========================= */
 
 @media(max-width:768px){
 
-body{
-    padding:10px;
-}
-
-/* SOLO MÁS PEQUEÑO, NO REORDENA */
-.encabezado h1{
-    font-size:18px;
-}
-
-td,th{
-    font-size:12px;
-    padding:8px;
-    min-width:65px;
-}
-
-/* sigue siendo horizontal */
-table{
-    min-width:1200px;
-}
-
-/* scroll más cómodo */
-.tabla-scroll{
-    overflow-x:scroll;
-}
-
-}
-
-/* =========================
-   PRINT
-========================= */
-
-@media print{
     body{
+        padding:0;
         background:white;
     }
 
-    .contenedor{
-        box-shadow:none;
+    .encabezado h1{
+        font-size:18px;
     }
+
+    /* 🔥 NO reducir tabla, solo permitir scroll */
+    table{
+        min-width:1600px;
+    }
+
+    .tabla-scroll{
+        overflow-x:auto;
+        display:block;
+    }
+
 }
 
 </style>

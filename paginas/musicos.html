@@ -10,11 +10,25 @@
 
 <style>
 
-body{
+:root{
+    --azul:#0B1F3A;
+    --azul2:#1e3a8a;
+    --celeste:#3b82f6;
+    --fondo:#eef2f7;
+}
+
+/* RESET */
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#0B1F3A,#1e3a8a,#eef2f7);
+    background:linear-gradient(135deg,var(--azul),var(--azul2),var(--fondo));
     padding:15px;
+    min-height:100vh;
 }
 
 /* CONTENEDOR */
@@ -23,122 +37,62 @@ body{
     margin:auto;
 }
 
-/* TÍTULO */
+/* TITULO */
 h1{
     text-align:center;
     color:white;
     font-size:22px;
     margin:10px 0 20px 0;
+    letter-spacing:1px;
 }
 
 /* CARD */
 .card{
     background:white;
-    border-radius:16px;
+    border-radius:18px;
     margin-bottom:16px;
     overflow:hidden;
-    box-shadow:0 12px 25px rgba(0,0,0,.18);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
     transition:.25s;
 }
 
 .card:hover{
     transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
 }
 
 /* FECHA */
 .fecha{
-    background:linear-gradient(90deg,#0B1F3A,#2563eb);
+    background:linear-gradient(90deg,var(--azul),var(--celeste));
     color:white;
     padding:12px 15px;
-    font-weight:600;
+    font-weight:700;
     font-size:15px;
 }
 
-/* CUERPO */
-.cuerpo{
-    padding:12px 15px;
-}
-
-/* ITEM */
-.item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 0;
-    border-bottom:1px solid #f1f1f1;
-}
-
-.item:last-child{
-    border-bottom:none;
-}
-
-/* LABEL */
-.label{
-    font-weight:600;
-    color:#111827;
-    display:flex;
-    align-items:center;
-    gap:6px;
-}
-
-/* VALOR */
-.valor{
-    font-weight:600;
-    color:#2563eb;
-    text-align:right;
-}
-
-/* ICONOS */
-.icon{
-    width:22px;
-}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-
-    body{
-        padding:10px;
-    }
-
-    h1{
-        font-size:18px;
-    }
-
-    .item{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:4px;
-    }
-
-    .valor{
-        text-align:left;
-    }
-}
-
-
-    /* TABLA MODERNA */
+/* TABLA */
 .tabla{
-    margin-top:10px;
+    width:100%;
 }
 
-/* ENCABEZADO */
+/* HEADER TABLA */
 .tabla-header{
-    display:flex;
-    justify-content:space-between;
-    background:#0B1F3A;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background:var(--azul);
     color:white;
     padding:10px 12px;
     font-weight:700;
     font-size:13px;
-    border-radius:10px;
+    letter-spacing:1px;
 }
 
 /* FILAS */
 .fila{
-    display:flex;
-    justify-content:space-between;
-    padding:10px 12px;
-    border-bottom:1px solid #eee;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding:12px;
+    border-bottom:1px solid #f1f1f1;
     transition:.2s;
 }
 
@@ -154,11 +108,44 @@ h1{
 
 .funcion{
     font-weight:600;
-    color:#2563eb;
+    color:var(--celeste);
+    text-align:right;
 }
 
+/* RESPONSIVE CELULAR */
+@media(max-width:600px){
 
-    
+    body{
+        padding:10px;
+    }
+
+    h1{
+        font-size:18px;
+    }
+
+    .card{
+        border-radius:14px;
+    }
+
+    .tabla-header,
+    .fila{
+        grid-template-columns: 1fr 1fr;
+        font-size:13px;
+    }
+
+    .fila{
+        padding:10px;
+    }
+
+    .nombre{
+        font-size:13px;
+    }
+
+    .funcion{
+        font-size:13px;
+    }
+}
+
 </style>
 
 </head>

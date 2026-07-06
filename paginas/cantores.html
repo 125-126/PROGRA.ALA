@@ -11,7 +11,7 @@
 <style>
 
 /* =========================
-   BASE
+   BASE RESET MODERNO
 ========================= */
 
 *{
@@ -24,11 +24,12 @@ body{
     font-family:'Poppins',sans-serif;
     background:linear-gradient(135deg,#0B1F3A,#0f2f5c,#eef2f7);
     min-height:100vh;
-    padding:20px;
+    padding:18px;
+    color:#0f172a;
 }
 
 /* =========================
-   CONTENEDOR
+   CONTENEDOR APP
 ========================= */
 
 .contenedor{
@@ -37,42 +38,43 @@ body{
     background:white;
     border-radius:18px;
     overflow:hidden;
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
 }
 
 /* =========================
-   HEADER
+   HEADER APP STYLE
 ========================= */
 
 .encabezado{
     background:linear-gradient(90deg,#0B1F3A,#1565C0);
     color:white;
     text-align:center;
-    padding:25px;
+    padding:22px;
 }
 
 .encabezado h1{
-    font-size:32px;
+    font-size:28px;
     letter-spacing:1px;
 }
 
 .encabezado p{
-    margin-top:6px;
-    opacity:.9;
+    margin-top:5px;
+    opacity:.85;
+    font-size:14px;
 }
 
 /* =========================
-   SCROLL GANTT
+   SCROLL TABLE
 ========================= */
 
 .tabla-scroll{
     overflow-x:auto;
-    overflow-y:auto;
     -webkit-overflow-scrolling:touch;
+    padding:10px;
 }
 
 /* =========================
-   TABLA
+   TABLA BASE
 ========================= */
 
 table{
@@ -89,6 +91,9 @@ th{
     border:1px solid rgba(255,255,255,.1);
     text-align:center;
     font-size:14px;
+    position:sticky;
+    top:0;
+    z-index:2;
 }
 
 /* celdas */
@@ -100,7 +105,10 @@ td{
     transition:.2s;
 }
 
-/* nombre fijo */
+/* =========================
+   NOMBRE FIJO (STICKY)
+========================= */
+
 .nombre{
     position:sticky;
     left:0;
@@ -113,26 +121,27 @@ td{
     color:#0f172a;
 }
 
-/* fix header nombre */
+/* header nombre */
 th.nombre{
-    position:sticky;
-    left:0;
     z-index:20;
 }
 
-/* meses */
+/* =========================
+   MESES HEADER
+========================= */
+
 .mes{
     background:#1565C0;
-    font-size:16px;
+    font-size:15px;
 }
 
-/* hover fila */
+/* hover suave */
 tr:hover td{
     background:#f1f5ff;
 }
 
 /* =========================
-   ESTADOS
+   ESTADO ACTIVO
 ========================= */
 
 .activo{
@@ -140,64 +149,95 @@ tr:hover td{
     color:white;
     font-weight:bold;
     cursor:pointer;
-    border-radius:6px;
+    border-radius:8px;
+    transition:.2s;
 }
 
 .activo:hover{
     background:#1d4ed8;
+    transform:scale(1.05);
 }
 
 /* =========================
-   BOTONES
+   BOTONES (STYLE APP)
 ========================= */
 
 .botonera{
     display:flex;
     justify-content:center;
     gap:12px;
-    padding:20px;
+    padding:18px;
     background:#f8fafc;
     flex-wrap:wrap;
+    border-top:1px solid #e5e7eb;
 }
 
 button{
-    padding:10px 18px;
+    padding:10px 16px;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
     background:#1565C0;
     color:white;
     font-size:14px;
     cursor:pointer;
-    transition:.3s;
+    transition:.25s;
+    flex:1;
+    min-width:120px;
 }
 
 button:hover{
     background:#0B1F3A;
-    transform:scale(1.05);
+    transform:translateY(-2px);
 }
 
 /* =========================
-   MOBILE
+   📱 MOBILE (MODO APP REAL)
 ========================= */
 
 @media(max-width:768px){
 
 body{
-    padding:10px;
+    padding:0;
+    background:white;
+}
+
+/* header más tipo app */
+.encabezado{
+    padding:16px;
 }
 
 .encabezado h1{
-    font-size:22px;
+    font-size:20px;
 }
 
+/* tabla se vuelve más compacta */
+.tabla-scroll{
+    padding:5px;
+}
+
+/* texto más pequeño */
 td,th{
     font-size:12px;
     min-width:55px;
-    padding:8px;
+    padding:7px;
 }
 
+/* nombre más compacto */
 .nombre{
-    min-width:180px;
+    min-width:170px;
+}
+
+/* botón estilo app inferior fijo */
+.botonera{
+    position:sticky;
+    bottom:0;
+    background:white;
+    box-shadow:0 -5px 15px rgba(0,0,0,.1);
+}
+
+button{
+    font-size:13px;
+    padding:10px;
 }
 
 }

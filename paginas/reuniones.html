@@ -29,45 +29,79 @@ h1{
     margin-bottom:20px;
 }
 
-/* CARD */
+/* =========================
+   CARD MODERNA WORSHIP
+========================= */
+
 .card{
-    background:white;
-    border-radius:16px;
-    margin-bottom:15px;
+    background: linear-gradient(145deg,#ffffff,#f8fafc);
+    border-radius:18px;
+    margin-bottom:18px;
     overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+    border:1px solid rgba(37,99,235,.08);
+    transition:.25s ease;
 }
 
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 45px rgba(0,0,0,.22);
+}
+
+/* FECHA */
 .fecha{
     background:linear-gradient(90deg,#0B1F3A,#2563eb);
     color:white;
-    padding:12px 15px;
-    font-weight:600;
+    padding:14px 16px;
+    font-weight:700;
+    letter-spacing:.5px;
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
+/* CUERPO */
 .cuerpo{
-    padding:15px;
+    padding:18px;
 }
 
+/* TITULO */
 .label{
-    font-weight:600;
+    font-weight:700;
+    font-size:14px;
+    color:#0B1F3A;
+    margin-bottom:10px;
+    display:flex;
+    align-items:center;
+    gap:6px;
 }
 
-.valor{
-    color:#2563eb;
-}
-
-/* CANCIONES */
+/* LISTA DE CANCIONES */
 .cancion{
     cursor:pointer;
-    color:#2563eb;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 12px;
+    margin:8px 0;
+    border-radius:10px;
+    background:#f1f5f9;
+    color:#1d4ed8;
     font-weight:600;
-    display:block;
-    margin:6px 0;
+    transition:.2s ease;
+    border-left:4px solid transparent;
 }
 
 .cancion:hover{
-    text-decoration:underline;
+    background:#e0ecff;
+    border-left:4px solid #2563eb;
+    transform:scale(1.01);
+}
+
+/* ICONO ANTES DEL TEXTO */
+.cancion::before{
+    content:"🎵";
+    margin-right:10px;
 }
 
 /* MODAL */

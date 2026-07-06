@@ -11,7 +11,7 @@
 <style>
 
 /* =========================
-   RESET BASE
+   BASE
 ========================= */
 
 *{
@@ -29,11 +29,11 @@ body{
 }
 
 /* =========================
-   CONTENEDOR APP
+   CONTENEDOR
 ========================= */
 
 .contenedor{
-    max-width:1400px;
+    max-width:100%;
     margin:auto;
     background:white;
     border-radius:18px;
@@ -42,41 +42,40 @@ body{
 }
 
 /* =========================
-   HEADER APP
+   HEADER
 ========================= */
 
 .encabezado{
     background:linear-gradient(90deg,#0B1F3A,#1565C0);
     color:white;
     text-align:center;
-    padding:22px;
+    padding:20px;
 }
 
 .encabezado h1{
-    font-size:28px;
-    letter-spacing:1px;
+    font-size:26px;
 }
 
 .encabezado p{
-    margin-top:5px;
-    opacity:.85;
     font-size:14px;
+    opacity:.8;
 }
 
 /* =========================
-   SCROLL HORIZONTAL PRO
+   SCROLL HORIZONTAL GANTT
 ========================= */
 
 .tabla-scroll{
+    width:100%;
     overflow-x:auto;
+    overflow-y:hidden;
     -webkit-overflow-scrolling:touch;
-    padding:10px;
 }
 
-/* FORZAR VISTA HORIZONTAL TIPO GANTT */
+/* IMPORTANTE: fuerza horizontal real */
 table{
     border-collapse:collapse;
-    min-width:1400px;
+    min-width:1400px; /* clave Gantt */
     width:max-content;
 }
 
@@ -104,29 +103,28 @@ td{
     border:1px solid #e5e7eb;
     text-align:center;
     padding:10px;
-    min-width:70px;
+    min-width:70px; /* clave para Gantt */
     transition:.2s;
 }
 
 /* =========================
-   NOMBRE FIJO (IZQUIERDA)
+   NOMBRE FIJO IZQUIERDA
 ========================= */
 
 .nombre{
     position:sticky;
     left:0;
-    z-index:10;
+    z-index:5;
     background:#f8fafc;
-    min-width:240px;
+    min-width:220px;
     text-align:left;
     padding-left:15px;
     font-weight:600;
-    color:#0f172a;
 }
 
-/* header nombre fijo */
+/* header nombre encima */
 th.nombre{
-    z-index:20;
+    z-index:10;
 }
 
 /* =========================
@@ -135,11 +133,10 @@ th.nombre{
 
 .mes{
     background:#1565C0;
-    font-size:15px;
 }
 
 /* =========================
-   HOVER SUAVE
+   EFECTO
 ========================= */
 
 tr:hover td{
@@ -147,108 +144,45 @@ tr:hover td{
 }
 
 /* =========================
-   ACTIVO (CHECK)
+   ACTIVO (BARRA GANTT)
 ========================= */
 
 .activo{
     background:#2563EB;
     color:white;
     font-weight:bold;
-    cursor:pointer;
     border-radius:6px;
-    transition:.2s;
-}
-
-.activo:hover{
-    background:#1d4ed8;
-    transform:scale(1.05);
 }
 
 /* =========================
-   BOTONES
-========================= */
-
-.botonera{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    padding:18px;
-    background:#f8fafc;
-    flex-wrap:wrap;
-    border-top:1px solid #e5e7eb;
-}
-
-button{
-    padding:10px 16px;
-    border:none;
-    border-radius:10px;
-    background:#1565C0;
-    color:white;
-    font-size:14px;
-    cursor:pointer;
-    transition:.25s;
-    flex:1;
-    min-width:120px;
-}
-
-button:hover{
-    background:#0B1F3A;
-    transform:translateY(-2px);
-}
-
-/* =========================
-   📱 MOBILE PRO (CRONOGRAMA HORIZONTAL REAL)
+   IMPORTANTE: NO CAMBIAR TABLA EN MÓVIL
 ========================= */
 
 @media(max-width:768px){
 
 body{
-    padding:0;
-    background:white;
+    padding:10px;
 }
 
-/* header más compacto */
-.encabezado{
-    padding:14px;
-}
-
+/* SOLO MÁS PEQUEÑO, NO REORDENA */
 .encabezado h1{
     font-size:18px;
 }
 
-/* scroll más limpio */
-.tabla-scroll{
-    padding:5px;
-}
-
-/* más compacto pero legible */
 td,th{
     font-size:12px;
-    min-width:55px;
-    padding:7px;
+    padding:8px;
+    min-width:65px;
 }
 
-/* nombre fijo más pequeño */
-.nombre{
-    min-width:160px;
-}
-
-/* fuerza vista tipo Gantt horizontal */
+/* sigue siendo horizontal */
 table{
     min-width:1200px;
 }
 
-/* botones tipo app */
-.botonera{
-    position:sticky;
-    bottom:0;
-    background:white;
-    box-shadow:0 -5px 15px rgba(0,0,0,.1);
-}
-
-button{
-    font-size:13px;
-    padding:10px;
+/* scroll más cómodo */
+.tabla-scroll{
+    overflow-x:scroll;
 }
 
 }
@@ -258,20 +192,13 @@ button{
 ========================= */
 
 @media print{
+    body{
+        background:white;
+    }
 
-button{
-    display:none;
-}
-
-body{
-    background:white;
-    padding:0;
-}
-
-.contenedor{
-    box-shadow:none;
-}
-
+    .contenedor{
+        box-shadow:none;
+    }
 }
 
 </style>

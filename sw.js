@@ -4,6 +4,6 @@ const urlsToCache = [
   "./",
   "./index.html",
   "./manifest.json",
-  "./icono-192.jpg",
-  "./icono-512.jpg"
+  "./icono-192.png",
+  "./icono-512.png"
 ];

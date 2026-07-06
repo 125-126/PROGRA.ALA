@@ -339,20 +339,16 @@ body{
 <!-- JS -->
 <script>
 
-document.querySelectorAll("td").forEach(td=>{
+document.querySelectorAll("td").forEach(td => {
 
     if(td.classList.contains("nombre")) return;
 
-    td.addEventListener("click",function(){
+    td.addEventListener("click", function(){
 
-        if(this.classList.contains("activo")){
-            this.classList.remove("activo");
-            this.innerHTML="";
-        }else{
-            this.classList.add("activo");
-            this.innerHTML="✔";
-        }
+        // solo toggle de clase
+        this.classList.toggle("activo");
 
+        // no tocar innerHTML → EVITA ERRORES
     });
 
 });

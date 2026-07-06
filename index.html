@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Alabanza</title>
+<h1>MINISTERIO DE ALABANZA</h1>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,173 +29,123 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 }
 
 *{
-
 margin:0;
 padding:0;
 box-sizing:border-box;
-
 }
 
 body{
-
 font-family:Poppins,sans-serif;
-
 background:linear-gradient(135deg,#081C3A,#102D5A,#1F4E79);
-
 min-height:100vh;
-
 color:white;
-
 }
 
+/* HEADER */
 header{
-
 padding:40px;
-
 text-align:center;
-
 }
 
 header img{
-
 width:120px;
-
 margin-bottom:20px;
-
 }
 
 header h1{
-
 font-size:42px;
-
 font-weight:700;
-
 letter-spacing:2px;
-
 }
 
 header p{
-
 margin-top:10px;
-
 font-size:18px;
-
 color:#d9d9d9;
-
 }
 
 .linea{
-
 width:120px;
-
 height:4px;
-
 background:var(--dorado);
-
 margin:20px auto;
-
 border-radius:10px;
-
 }
 
+/* CONTENEDOR */
 .contenedor{
-
 max-width:1200px;
-
 margin:auto;
-
 padding:20px;
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
 gap:30px;
-
 }
 
+/* CARD */
 .card{
-
 background:rgba(255,255,255,.08);
-
 border:1px solid rgba(255,255,255,.15);
-
 backdrop-filter:blur(12px);
-
 border-radius:20px;
-
 padding:35px;
-
 text-align:center;
-
 transition:.35s;
-
 cursor:pointer;
-
 }
 
 .card:hover{
-
 transform:translateY(-10px);
-
 background:rgba(255,255,255,.15);
-
 box-shadow:0 20px 40px rgba(0,0,0,.35);
-
 }
 
 .card i{
-
 font-size:55px;
-
 color:var(--dorado);
-
 margin-bottom:20px;
-
 }
 
 .card h2{
-
 font-size:22px;
-
 margin-bottom:10px;
-
 }
 
 .card p{
-
 font-size:15px;
-
 color:#ddd;
-
 line-height:24px;
-
 }
 
+/* FOOTER */
 footer{
-
 margin-top:50px;
-
 padding:25px;
-
 text-align:center;
-
 font-size:15px;
-
 color:#d9d9d9;
-
 }
 
 footer span{
-
 color:var(--dorado);
-
 font-weight:600;
-
 }
 
-
+/* 📱 MOBILE */
 @media (max-width: 600px){
+
+    header{
+        padding:25px 15px;
+    }
+
+    header h1{
+        font-size:24px;
+        letter-spacing:1px;
+    }
+
+    header p{
+        font-size:14px;
+    }
 
     .contenedor{
         grid-template-columns: repeat(2, 1fr);
@@ -204,7 +154,8 @@ font-weight:600;
     }
 
     .card{
-        padding:18px;
+        padding:15px;
+        border-radius:15px;
     }
 
     .card i{
@@ -213,16 +164,16 @@ font-weight:600;
     }
 
     .card h2{
-        font-size:14px;
+        font-size:13px;
         margin-bottom:6px;
     }
 
     .card p{
-        font-size:11px;
-        line-height:16px;
+        font-size:10px;
+        line-height:14px;
     }
-}  
-  
+}
+
 </style>
 
 </head>

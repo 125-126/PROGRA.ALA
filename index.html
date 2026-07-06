@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ministerio de Alabanza</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+:root{
+
+--azul:#0B1F3A;
+--azul2:#1E3A8A;
+--celeste:#3B82F6;
+--dorado:#D4AF37;
+--gris:#F5F7FA;
+--blanco:#ffffff;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:Poppins,sans-serif;
+
+background:linear-gradient(135deg,#081C3A,#102D5A,#1F4E79);
+
+min-height:100vh;
+
+color:white;
+
+}
+
+header{
+
+padding:40px;
+
+text-align:center;
+
+}
+
+header img{
+
+width:120px;
+
+margin-bottom:20px;
+
+}
+
+header h1{
+
+font-size:42px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+}
+
+header p{
+
+margin-top:10px;
+
+font-size:18px;
+
+color:#d9d9d9;
+
+}
+
+.linea{
+
+width:120px;
+
+height:4px;
+
+background:var(--dorado);
+
+margin:20px auto;
+
+border-radius:10px;
+
+}
+
+.contenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:20px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(12px);
+
+border-radius:20px;
+
+padding:35px;
+
+text-align:center;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+background:rgba(255,255,255,.15);
+
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.card i{
+
+font-size:55px;
+
+color:var(--dorado);
+
+margin-bottom:20px;
+
+}
+
+.card h2{
+
+font-size:22px;
+
+margin-bottom:10px;
+
+}
+
+.card p{
+
+font-size:15px;
+
+color:#ddd;
+
+line-height:24px;
+
+}
+
+footer{
+
+margin-top:50px;
+
+padding:25px;
+
+text-align:center;
+
+font-size:15px;
+
+color:#d9d9d9;
+
+}
+
+footer span{
+
+color:var(--dorado);
+
+font-weight:600;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<!-- Cambia esta imagen por el logo de tu iglesia -->
+<img src="img/logo.png" alt="Logo">
+
+<h1>MINISTERIO DE ALABANZA</h1>
+
+<p>Sistema de Administración</p>
+
+<div class="linea"></div>
+
+</header>
+
+<div class="contenedor">
+
+<div class="card" onclick="location.href='paginas/cantores.html'">
+
+<i class="fa-solid fa-microphone"></i>
+
+<h2>Programa de Cantores</h2>
+
+<p>Administra la programación de los cantores para cada culto.</p>
+
+</div>
+
+<div class="card" onclick="location.href='paginas/musicos.html'">
+
+<i class="fa-solid fa-guitar"></i>
+
+<h2>Programa de Músicos</h2>
+
+<p>Organiza a los músicos por instrumento y fecha.</p>
+
+</div>
+
+<div class="card" onclick="location.href='paginas/himnario.html'">
+
+<i class="fa-solid fa-book-bible"></i>
+
+<h2>Himnario</h2>
+
+<p>Consulta el repertorio de alabanzas del ministerio.</p>
+
+</div>
+
+<div class="card" onclick="location.href='paginas/reuniones.html'">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h2>Reuniones Mensuales</h2>
+
+<p>Calendario de reuniones, ensayos y actividades.</p>
+
+</div>
+
+<div class="card" onclick="location.href='paginas/actividades.html'">
+
+<i class="fa-solid fa-church"></i>
+
+<h2>Actividades</h2>
+
+<p>Campañas, vigilias, congresos y eventos especiales.</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-gear"></i>
+
+<h2>Configuración</h2>
+
+<p>Próximamente.</p>
+
+</div>
+
+</div>
+
+<footer>
+
+<span>Ministerio de Alabanza</span><br>
+
+Versión 1.0
+
+</footer>
+
+</body>
+</html>

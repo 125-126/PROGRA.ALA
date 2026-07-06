@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Programa de Cantores</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0B1F3A,#0f2f5c,#eef2f7);
+    min-height:100vh;
+    padding:20px;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.contenedor{
+    max-width:1400px;
+    margin:auto;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.encabezado{
+    background:linear-gradient(90deg,#0B1F3A,#1565C0);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.encabezado h1{
+    font-size:32px;
+    letter-spacing:1px;
+}
+
+.encabezado p{
+    margin-top:6px;
+    opacity:.9;
+}
+
+/* =========================
+   SCROLL GANTT
+========================= */
+
+.tabla-scroll{
+    overflow-x:auto;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+/* =========================
+   TABLA
+========================= */
+
+table{
+    border-collapse:collapse;
+    min-width:1200px;
+    width:max-content;
+}
+
+/* encabezados */
+th{
+    background:#0B1F3A;
+    color:white;
+    padding:12px;
+    border:1px solid rgba(255,255,255,.1);
+    text-align:center;
+    font-size:14px;
+}
+
+/* celdas */
+td{
+    border:1px solid #e5e7eb;
+    text-align:center;
+    padding:10px;
+    min-width:70px;
+    transition:.2s;
+}
+
+/* nombre fijo */
+.nombre{
+    position:sticky;
+    left:0;
+    z-index:10;
+    background:#f8fafc;
+    min-width:240px;
+    text-align:left;
+    padding-left:15px;
+    font-weight:600;
+    color:#0f172a;
+}
+
+/* fix header nombre */
+th.nombre{
+    position:sticky;
+    left:0;
+    z-index:20;
+}
+
+/* meses */
+.mes{
+    background:#1565C0;
+    font-size:16px;
+}
+
+/* hover fila */
+tr:hover td{
+    background:#f1f5ff;
+}
+
+/* =========================
+   ESTADOS
+========================= */
+
+.activo{
+    background:#2563EB;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+.activo:hover{
+    background:#1d4ed8;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.botonera{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    padding:20px;
+    background:#f8fafc;
+    flex-wrap:wrap;
+}
+
+button{
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    background:#1565C0;
+    color:white;
+    font-size:14px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#0B1F3A;
+    transform:scale(1.05);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+body{
+    padding:10px;
+}
+
+.encabezado h1{
+    font-size:22px;
+}
+
+td,th{
+    font-size:12px;
+    min-width:55px;
+    padding:8px;
+}
+
+.nombre{
+    min-width:180px;
+}
+
+}
+
+/* =========================
+   PRINT
+========================= */
+
+@media print{
+
+button{
+    display:none;
+}
+
+body{
+    background:white;
+    padding:0;
+}
+
+.contenedor{
+    box-shadow:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<!-- HEADER -->
+<div class="encabezado">
+    <h1>🎤 PROGRAMA DE CANTORES</h1>
+    <p>Ministerio de Alabanza</p>
+</div>
+
+<!-- TABLA -->
+<div class="tabla-scroll">
+
+<table>
+
+<!-- MESES -->
+<tr>
+<th class="nombre" rowspan="2">Cantor</th>
+<th class="mes" colspan="3">JULIO</th>
+<th class="mes" colspan="5">AGOSTO</th>
+<th class="mes" colspan="4">SEPTIEMBRE</th>
+</tr>
+
+<!-- FECHAS -->
+<tr>
+<th>12</th><th>19</th><th>26</th>
+<th>02</th><th>09</th><th>16</th><th>23</th><th>30</th>
+<th>06</th><th>13</th><th>20</th><th>27</th>
+</tr>
+
+<!-- CARLOS -->
+<tr>
+<td class="nombre">H. Carlos García</td>
+<td class="activo">✔</td><td></td><td></td>
+<td></td><td class="activo">✔</td><td></td><td></td><td></td>
+<td class="activo">✔</td><td></td><td></td><td></td>
+</tr>
+
+<!-- JUAN -->
+<tr>
+<td class="nombre">H. Juan Monterrosa</td>
+<td></td><td class="activo">✔</td><td></td>
+<td></td><td></td><td class="activo">✔</td><td></td><td></td>
+<td></td><td class="activo">✔</td><td></td><td></td>
+</tr>
+
+<!-- GABRIEL -->
+<tr>
+<td class="nombre">H. Gabriel Olivares</td>
+<td></td><td></td><td class="activo">✔</td>
+<td></td><td></td><td></td><td class="activo">✔</td><td></td>
+<td></td><td></td><td class="activo">✔</td><td></td>
+</tr>
+
+<!-- ENRIQUE -->
+<tr>
+<td class="nombre">H. Enrique Ramírez</td>
+<td></td><td></td><td></td>
+<td class="activo">✔</td><td></td><td></td><td></td><td class="activo">✔</td>
+<td></td><td></td><td></td><td class="activo">✔</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- BOTONES -->
+<div class="botonera">
+<button>💾 Guardar</button>
+<button onclick="window.print()">🖨 Imprimir</button>
+<button>📄 Exportar PDF</button>
+</div>
+
+</div>
+
+<!-- JS -->
+<script>
+
+document.querySelectorAll("td").forEach(td=>{
+
+    if(td.classList.contains("nombre")) return;
+
+    td.addEventListener("click",function(){
+
+        if(this.classList.contains("activo")){
+            this.classList.remove("activo");
+            this.innerHTML="";
+        }else{
+            this.classList.add("activo");
+            this.innerHTML="✔";
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

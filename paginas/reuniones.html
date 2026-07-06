@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reuniones de Ensayo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0B1F3A,#1565C0,#eef2f7);
+    padding:15px;
+}
+
+.contenedor{
+    max-width:900px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:16px;
+    margin-bottom:15px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.fecha{
+    background:linear-gradient(90deg,#0B1F3A,#2563eb);
+    color:white;
+    padding:12px 15px;
+    font-weight:600;
+}
+
+.cuerpo{
+    padding:15px;
+}
+
+.label{
+    font-weight:600;
+}
+
+.valor{
+    color:#2563eb;
+}
+
+/* CANCIONES */
+.cancion{
+    cursor:pointer;
+    color:#2563eb;
+    font-weight:600;
+    display:block;
+    margin:6px 0;
+}
+
+.cancion:hover{
+    text-decoration:underline;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.7);
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+}
+
+.modal-contenido{
+    background:white;
+    width:100%;
+    max-width:650px;
+    border-radius:15px;
+    padding:20px;
+    position:relative;
+}
+
+.modal-contenido h2{
+    margin:0 0 10px 0;
+    color:#0B1F3A;
+}
+
+pre{
+    white-space:pre-wrap;
+    background:#f4f6f9;
+    padding:12px;
+    border-radius:10px;
+    font-family:monospace;
+}
+
+.cerrar{
+    position:absolute;
+    right:15px;
+    top:10px;
+    cursor:pointer;
+    font-size:22px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h1>🎤 REUNIONES DE ENSAYO</h1>
+
+<!-- JULIO 12 -->
+<div class="card">
+    <div class="fecha">📅 Domingo 12 de Julio</div>
+    <div class="cuerpo">
+
+        <div class="label">🎶 Alabanzas a Ensayar</div>
+
+        <span class="cancion" onclick="abrirCancion('poderoso')">- PODEROSO DIOS</span>
+        <span class="cancion" onclick="abrirCancion('mirada')">- TU MIRADA</span>
+        <span class="cancion" onclick="abrirCancion('hermoso')">- HERMOSO ERES</span>
+
+    </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+
+    <div class="modal-contenido">
+
+        <span class="cerrar" onclick="cerrarModal()">✖</span>
+
+        <h2 id="titulo"></h2>
+
+        <pre id="letra"></pre>
+
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+const canciones = {
+
+poderoso: {
+    titulo: "PODEROSO DIOS",
+    letra: `
+C                             Am
+Al que está sentado en el trono
+        F               G
+y al cordero, sea el honor
+
+C                     Am
+sea la gloria, sea la honra
+        F                       G
+sea el dominio por los siglos de los siglos...
+
+C
+Poderoso Dios
+Am
+Poderoso Dios
+F
+Poderoso Dios
+G
+Mi alma clama por ti...
+`
+},
+
+mirada: {
+    titulo: "TU MIRADA",
+    letra: `
+G                       Em
+Tus ojos revelan que yo nada puedo esconder
+                C Am            D
+que no soy nada sin ti   Oh fiel Señor.
+
+G                                  Em      
+Todo lo sabes de mí cuando miras el corazón,
+       C        Am              D
+todo lo puedes ver muy dentro de mí.
+
+G        C    G               C   G
+Lleva mi vida a una sola verdad
+              C    G                D
+Que cuando me miras nada puedo ocultar
+
+G         D/F#         Em           G        C
+Sé que es tu fidelidad que lleva mi vida más allá
+          Am          D
+de lo que puedo imaginar.
+
+G      D/F#       Em            G              C
+Sé que no puedo negar que tu mirada puesta en mí
+    D          G
+me llena de tu paz.
+`
+},
+
+hermoso: {
+    titulo: "HERMOSO ERES",
+    letra: `
+A           D              E
+En mi corazón hay una canción
+A      D             E
+Que demuestra mi pasión
+F#m      E          D   A/C#
+Para mi Rey y mi Señor
+Bm       A           E
+Para Aquel que me amó
+
+A        C#m  D     E
+Hermoso eres, mi Señor
+A       C#m      D      E
+Hermoso eres Tú, Amado mío
+Bm                        E
+Tú eres la fuente de mi vida
+Bm      A/C# D    E     A
+Y el anhelo de mi corazón
+
+A           D              E
+En mi corazón hay una canción
+A      D             E
+Que demuestra mi pasión
+F#m      E          D   A/C#
+Para mi Rey y mi Señor
+Bm       A           E
+Para Aquel que me amó
+
+A        C#m  D     E
+Hermoso eres, mi Señor
+A       C#m      D      E
+Hermoso eres Tú, Amado mío
+Bm                        E
+Tú eres la fuente de mi vida
+Bm      A/C# D    E     A
+Y el anhelo de mi corazón
+`
+}
+
+};
+
+function abrirCancion(nombre){
+    document.getElementById("titulo").innerText = canciones[nombre].titulo;
+    document.getElementById("letra").innerText = canciones[nombre].letra;
+    document.getElementById("modal").style.display = "flex";
+}
+
+function cerrarModal(){
+    document.getElementById("modal").style.display = "none";
+}
+
+window.onclick = function(e){
+    let modal = document.getElementById("modal");
+    if(e.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>

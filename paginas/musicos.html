@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Programa de Músicos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0B1F3A,#1e3a8a,#eef2f7);
+    padding:15px;
+}
+
+/* CONTENEDOR */
+.contenedor{
+    max-width:900px;
+    margin:auto;
+}
+
+/* TÍTULO */
+h1{
+    text-align:center;
+    color:white;
+    font-size:22px;
+    margin:10px 0 20px 0;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:16px;
+    margin-bottom:16px;
+    overflow:hidden;
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+/* FECHA */
+.fecha{
+    background:linear-gradient(90deg,#0B1F3A,#2563eb);
+    color:white;
+    padding:12px 15px;
+    font-weight:600;
+    font-size:15px;
+}
+
+/* CUERPO */
+.cuerpo{
+    padding:12px 15px;
+}
+
+/* ITEM */
+.item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid #f1f1f1;
+}
+
+.item:last-child{
+    border-bottom:none;
+}
+
+/* LABEL */
+.label{
+    font-weight:600;
+    color:#111827;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+/* VALOR */
+.valor{
+    font-weight:600;
+    color:#2563eb;
+    text-align:right;
+}
+
+/* ICONOS */
+.icon{
+    width:22px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+
+    body{
+        padding:10px;
+    }
+
+    h1{
+        font-size:18px;
+    }
+
+    .item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:4px;
+    }
+
+    .valor{
+        text-align:left;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h1>🎼 PROGRAMA DE MÚSICOS</h1>
+
+<!-- 12 JULIO -->
+<div class="card">
+
+    <div class="fecha">📅 Domingo 12 de Julio</div>
+
+    <div class="cuerpo">
+
+        <div class="item">
+            <div class="label">🎤 Cantor</div>
+            <div class="valor">H. Carlos García</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎹 Teclado</div>
+            <div class="valor">H. Hugo Sorto</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🥁 Batería</div>
+            <div class="valor">H. Fernando Fuentes</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎸 Bajo</div>
+            <div class="valor">H. Danilo Cornejo</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎶 Coro</div>
+            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 19 JULIO -->
+<div class="card">
+
+    <div class="fecha">📅 Domingo 19 de Julio</div>
+
+    <div class="cuerpo">
+
+        <div class="item">
+            <div class="label">🎤 Cantor</div>
+            <div class="valor">H. Juan Monterrosa</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎹 Teclado</div>
+            <div class="valor">H. Carlos García</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🥁 Batería</div>
+            <div class="valor">H. Carlos Olivares</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎸 Guitarra</div>
+            <div class="valor">H. Danilo Cornejo</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎶 Coro</div>
+            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 26 JULIO -->
+<div class="card">
+
+    <div class="fecha">📅 Domingo 26 de Julio</div>
+
+    <div class="cuerpo">
+
+        <div class="item">
+            <div class="label">🎤 Cantor</div>
+            <div class="valor">H. Gabriel Olivares</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎹 Teclado</div>
+            <div class="valor">H. Hugo Sorto</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🥁 Batería</div>
+            <div class="valor">H. Fernando Fuentes</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎸 Guitarra</div>
+            <div class="valor">H. Danilo Cornejo</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎶 Coro</div>
+            <div class="valor">H. Lesly Cruz</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 02 AGOSTO -->
+<div class="card">
+
+    <div class="fecha">📅 Domingo 02 de Agosto</div>
+
+    <div class="cuerpo">
+
+        <div class="item">
+            <div class="label">🎤 Cantor</div>
+            <div class="valor">H. Enrique Ramírez</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎹 Teclado</div>
+            <div class="valor">H. Carlos García</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🥁 Batería</div>
+            <div class="valor">H. Carlos Olivares</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎸 Guitarra</div>
+            <div class="valor">H. Danilo Cornejo</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎶 Coro</div>
+            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="fecha">📅 Domingo 09 de Agosto</div>
+
+    <div class="cuerpo">
+
+        <div class="item">
+            <div class="label">🎤 Cantor</div>
+            <div class="valor">H. Carlos García</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎹 Teclado</div>
+            <div class="valor">H. Carlos García</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🥁 Batería</div>
+            <div class="valor">H. Carlos Olivares</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎸 Guitarra</div>
+            <div class="valor">H. Danilo Cornejo</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎶 Coros</div>
+            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="fecha">📅 Domingo 16 de Agosto</div>
+
+    <div class="cuerpo">
+
+        <div class="item">
+            <div class="label">🎤 Cantor</div>
+            <div class="valor">H. Juan Monterrosa</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎹 Teclado</div>
+            <div class="valor">H. Hugo Sorto</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🥁 Batería</div>
+            <div class="valor">H. Fernando Fuentes</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎸 Guitarra</div>
+            <div class="valor">H. Danilo Cornejo</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎶 Coros</div>
+            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="fecha">📅 Domingo 23 de Agosto</div>
+
+    <div class="cuerpo">
+
+        <div class="item">
+            <div class="label">🎤 Cantor</div>
+            <div class="valor">H. Gabriel Olivares</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎹 Teclado</div>
+            <div class="valor">H. Carlos García</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🥁 Batería</div>
+            <div class="valor">H. Carlos Olivares</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎸 Guitarra</div>
+            <div class="valor">H. Danilo Cornejo</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎶 Coros</div>
+            <div class="valor">H. Lesly Cruz</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="fecha">📅 Domingo 30 de Agosto</div>
+
+    <div class="cuerpo">
+
+        <div class="item">
+            <div class="label">🎤 Cantor</div>
+            <div class="valor">H. Enrique Ramírez</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎹 Teclado</div>
+            <div class="valor">H. Hugo Sorto</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🥁 Batería</div>
+            <div class="valor">H. Fernando Fuentes</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎸 Guitarra</div>
+            <div class="valor">H. Danilo Cornejo</div>
+        </div>
+
+        <div class="item">
+            <div class="label">🎶 Coros</div>
+            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>

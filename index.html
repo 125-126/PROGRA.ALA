@@ -265,5 +265,16 @@ Versión 1.0
 
 </footer>
 
+
+
+    <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/PROGRA.ALA/sw.js')
+    .then(() => console.log("SW registrado"))
+    .catch(err => console.log("Error SW", err));
+}
+</script>
+
+    
 </body>
 </html>

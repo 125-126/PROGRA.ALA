@@ -11,7 +11,7 @@
 <style>
 
 /* =========================
-   BASE RESET MODERNO
+   RESET BASE
 ========================= */
 
 *{
@@ -42,7 +42,7 @@ body{
 }
 
 /* =========================
-   HEADER APP STYLE
+   HEADER APP
 ========================= */
 
 .encabezado{
@@ -64,7 +64,7 @@ body{
 }
 
 /* =========================
-   SCROLL TABLE
+   SCROLL HORIZONTAL PRO
 ========================= */
 
 .tabla-scroll{
@@ -73,17 +73,17 @@ body{
     padding:10px;
 }
 
-/* =========================
-   TABLA BASE
-========================= */
-
+/* FORZAR VISTA HORIZONTAL TIPO GANTT */
 table{
     border-collapse:collapse;
-    min-width:1200px;
+    min-width:1400px;
     width:max-content;
 }
 
-/* encabezados */
+/* =========================
+   HEADERS
+========================= */
+
 th{
     background:#0B1F3A;
     color:white;
@@ -96,7 +96,10 @@ th{
     z-index:2;
 }
 
-/* celdas */
+/* =========================
+   CELDAS
+========================= */
+
 td{
     border:1px solid #e5e7eb;
     text-align:center;
@@ -106,7 +109,7 @@ td{
 }
 
 /* =========================
-   NOMBRE FIJO (STICKY)
+   NOMBRE FIJO (IZQUIERDA)
 ========================= */
 
 .nombre{
@@ -121,13 +124,13 @@ td{
     color:#0f172a;
 }
 
-/* header nombre */
+/* header nombre fijo */
 th.nombre{
     z-index:20;
 }
 
 /* =========================
-   MESES HEADER
+   MESES
 ========================= */
 
 .mes{
@@ -135,13 +138,16 @@ th.nombre{
     font-size:15px;
 }
 
-/* hover suave */
+/* =========================
+   HOVER SUAVE
+========================= */
+
 tr:hover td{
     background:#f1f5ff;
 }
 
 /* =========================
-   ESTADO ACTIVO
+   ACTIVO (CHECK)
 ========================= */
 
 .activo{
@@ -149,7 +155,7 @@ tr:hover td{
     color:white;
     font-weight:bold;
     cursor:pointer;
-    border-radius:8px;
+    border-radius:6px;
     transition:.2s;
 }
 
@@ -159,7 +165,7 @@ tr:hover td{
 }
 
 /* =========================
-   BOTONES (STYLE APP)
+   BOTONES
 ========================= */
 
 .botonera{
@@ -191,7 +197,7 @@ button:hover{
 }
 
 /* =========================
-   📱 MOBILE (MODO APP REAL)
+   📱 MOBILE PRO (CRONOGRAMA HORIZONTAL REAL)
 ========================= */
 
 @media(max-width:768px){
@@ -201,33 +207,38 @@ body{
     background:white;
 }
 
-/* header más tipo app */
+/* header más compacto */
 .encabezado{
-    padding:16px;
+    padding:14px;
 }
 
 .encabezado h1{
-    font-size:20px;
+    font-size:18px;
 }
 
-/* tabla se vuelve más compacta */
+/* scroll más limpio */
 .tabla-scroll{
     padding:5px;
 }
 
-/* texto más pequeño */
+/* más compacto pero legible */
 td,th{
     font-size:12px;
     min-width:55px;
     padding:7px;
 }
 
-/* nombre más compacto */
+/* nombre fijo más pequeño */
 .nombre{
-    min-width:170px;
+    min-width:160px;
 }
 
-/* botón estilo app inferior fijo */
+/* fuerza vista tipo Gantt horizontal */
+table{
+    min-width:1200px;
+}
+
+/* botones tipo app */
 .botonera{
     position:sticky;
     bottom:0;

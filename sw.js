@@ -1,10 +1,10 @@
 const CACHE_NAME = "ala-cache-v1";
 
 const urlsToCache = [
-  "/PROGRA.ALA/",
-  "/PROGRA.ALA/index.html",
-  "/PROGRA.ALA/manifest.json",
-  "/PROGRA.ALA/icono.png"
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./icono.jpeg"
 ];
 
 // INSTALAR SERVICE WORKER
@@ -31,7 +31,7 @@ self.addEventListener("activate", event => {
   );
 });
 
-// FETCH (cuando no hay internet usa cache)
+// FETCH (modo offline)
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(response => {

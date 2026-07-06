@@ -115,6 +115,50 @@ h1{
     }
 }
 
+
+    /* TABLA MODERNA */
+.tabla{
+    margin-top:10px;
+}
+
+/* ENCABEZADO */
+.tabla-header{
+    display:flex;
+    justify-content:space-between;
+    background:#0B1F3A;
+    color:white;
+    padding:10px 12px;
+    font-weight:700;
+    font-size:13px;
+    border-radius:10px;
+}
+
+/* FILAS */
+.fila{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 12px;
+    border-bottom:1px solid #eee;
+    transition:.2s;
+}
+
+.fila:hover{
+    background:#f5f9ff;
+}
+
+/* COLUMNAS */
+.nombre{
+    font-weight:600;
+    color:#111827;
+}
+
+.funcion{
+    font-weight:600;
+    color:#2563eb;
+}
+
+
+    
 </style>
 
 </head>
@@ -130,35 +174,39 @@ h1{
 
     <div class="fecha">📅 Domingo 12 de Julio</div>
 
-    <div class="cuerpo">
+    <div class="tabla">
 
-        <div class="item">
-            <div class="label">🎤 Cantor</div>
-            <div class="valor">H. Carlos García</div>
+        <div class="tabla-header">
+            <div>NOMBRE</div>
+            <div>FUNCIÓN</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎹 Teclado</div>
-            <div class="valor">H. Hugo Sorto</div>
+        <div class="fila">
+            <div class="nombre">H. Carlos García</div>
+            <div class="funcion">Cantor</div>
         </div>
 
-        <div class="item">
-            <div class="label">🥁 Batería</div>
-            <div class="valor">H. Fernando Fuentes</div>
+        <div class="fila">
+            <div class="nombre">H. Hugo Sorto</div>
+            <div class="funcion">Teclado</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎸 Bajo</div>
-            <div class="valor">H. Danilo Cornejo</div>
+        <div class="fila">
+            <div class="nombre">H. Fernando Fuentes</div>
+            <div class="funcion">Batería</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎶 Coro</div>
-            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        <div class="fila">
+            <div class="nombre">H. Danilo Cornejo</div>
+            <div class="funcion">Bajo</div>
+        </div>
+
+        <div class="fila">
+            <div class="nombre">H. Lesly Cruz / H. Gabriel Olivares</div>
+            <div class="funcion">Coro</div>
         </div>
 
     </div>
-
 </div>
 
 <!-- 19 JULIO -->
@@ -166,35 +214,39 @@ h1{
 
     <div class="fecha">📅 Domingo 19 de Julio</div>
 
-    <div class="cuerpo">
+    <div class="tabla">
 
-        <div class="item">
-            <div class="label">🎤 Cantor</div>
-            <div class="valor">H. Juan Monterrosa</div>
+        <div class="tabla-header">
+            <div>NOMBRE</div>
+            <div>FUNCIÓN</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎹 Teclado</div>
-            <div class="valor">H. Carlos García</div>
+        <div class="fila">
+            <div class="nombre">H. Juan Monterrosa</div>
+            <div class="funcion">Cantor</div>
         </div>
 
-        <div class="item">
-            <div class="label">🥁 Batería</div>
-            <div class="valor">H. Carlos Olivares</div>
+        <div class="fila">
+            <div class="nombre">H. Carlos García</div>
+            <div class="funcion">Teclado</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎸 Guitarra</div>
-            <div class="valor">H. Danilo Cornejo</div>
+        <div class="fila">
+            <div class="nombre">H. Carlos Olivares</div>
+            <div class="funcion">Batería</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎶 Coro</div>
-            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        <div class="fila">
+            <div class="nombre">H. Danilo Cornejo</div>
+            <div class="funcion">Guitarra</div>
+        </div>
+
+        <div class="fila">
+            <div class="nombre">H. Lesly Cruz / H. Gabriel Olivares</div>
+            <div class="funcion">Coro</div>
         </div>
 
     </div>
-
 </div>
 
 <!-- 26 JULIO -->
@@ -202,35 +254,39 @@ h1{
 
     <div class="fecha">📅 Domingo 26 de Julio</div>
 
-    <div class="cuerpo">
+    <div class="tabla">
 
-        <div class="item">
-            <div class="label">🎤 Cantor</div>
-            <div class="valor">H. Gabriel Olivares</div>
+        <div class="tabla-header">
+            <div>NOMBRE</div>
+            <div>FUNCIÓN</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎹 Teclado</div>
-            <div class="valor">H. Hugo Sorto</div>
+        <div class="fila">
+            <div class="nombre">H. Gabriel Olivares</div>
+            <div class="funcion">Cantor</div>
         </div>
 
-        <div class="item">
-            <div class="label">🥁 Batería</div>
-            <div class="valor">H. Fernando Fuentes</div>
+        <div class="fila">
+            <div class="nombre">H. Hugo Sorto</div>
+            <div class="funcion">Teclado</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎸 Guitarra</div>
-            <div class="valor">H. Danilo Cornejo</div>
+        <div class="fila">
+            <div class="nombre">H. Fernando Fuentes</div>
+            <div class="funcion">Batería</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎶 Coro</div>
-            <div class="valor">H. Lesly Cruz</div>
+        <div class="fila">
+            <div class="nombre">H. Danilo Cornejo</div>
+            <div class="funcion">Guitarra</div>
+        </div>
+
+        <div class="fila">
+            <div class="nombre">H. Lesly Cruz</div>
+            <div class="funcion">Coro</div>
         </div>
 
     </div>
-
 </div>
 
 <!-- 02 AGOSTO -->
@@ -238,176 +294,201 @@ h1{
 
     <div class="fecha">📅 Domingo 02 de Agosto</div>
 
-    <div class="cuerpo">
+    <div class="tabla">
 
-        <div class="item">
-            <div class="label">🎤 Cantor</div>
-            <div class="valor">H. Enrique Ramírez</div>
+        <div class="tabla-header">
+            <div>NOMBRE</div>
+            <div>FUNCIÓN</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎹 Teclado</div>
-            <div class="valor">H. Carlos García</div>
+        <div class="fila">
+            <div class="nombre">H. Enrique Ramírez</div>
+            <div class="funcion">Cantor</div>
         </div>
 
-        <div class="item">
-            <div class="label">🥁 Batería</div>
-            <div class="valor">H. Carlos Olivares</div>
+        <div class="fila">
+            <div class="nombre">H. Carlos García</div>
+            <div class="funcion">Teclado</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎸 Guitarra</div>
-            <div class="valor">H. Danilo Cornejo</div>
+        <div class="fila">
+            <div class="nombre">H. Carlos Olivares</div>
+            <div class="funcion">Batería</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎶 Coro</div>
-            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        <div class="fila">
+            <div class="nombre">H. Danilo Cornejo</div>
+            <div class="funcion">Guitarra</div>
+        </div>
+
+        <div class="fila">
+            <div class="nombre">H. Lesly Cruz / H. Gabriel Olivares</div>
+            <div class="funcion">Coro</div>
         </div>
 
     </div>
-
 </div>
 
+<!-- 09 AGOSTO -->
 <div class="card">
 
     <div class="fecha">📅 Domingo 09 de Agosto</div>
 
-    <div class="cuerpo">
+    <div class="tabla">
 
-        <div class="item">
-            <div class="label">🎤 Cantor</div>
-            <div class="valor">H. Carlos García</div>
+        <div class="tabla-header">
+            <div>NOMBRE</div>
+            <div>FUNCIÓN</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎹 Teclado</div>
-            <div class="valor">H. Carlos García</div>
+        <div class="fila">
+            <div class="nombre">H. Carlos García</div>
+            <div class="funcion">Cantor</div>
         </div>
 
-        <div class="item">
-            <div class="label">🥁 Batería</div>
-            <div class="valor">H. Carlos Olivares</div>
+        <div class="fila">
+            <div class="nombre">H. Carlos García</div>
+            <div class="funcion">Teclado</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎸 Guitarra</div>
-            <div class="valor">H. Danilo Cornejo</div>
+        <div class="fila">
+            <div class="nombre">H. Carlos Olivares</div>
+            <div class="funcion">Batería</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎶 Coros</div>
-            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        <div class="fila">
+            <div class="nombre">H. Danilo Cornejo</div>
+            <div class="funcion">Guitarra</div>
+        </div>
+
+        <div class="fila">
+            <div class="nombre">H. Lesly Cruz / H. Gabriel Olivares</div>
+            <div class="funcion">Coros</div>
         </div>
 
     </div>
-
 </div>
 
+<!-- 16 AGOSTO -->
 <div class="card">
 
     <div class="fecha">📅 Domingo 16 de Agosto</div>
 
-    <div class="cuerpo">
+    <div class="tabla">
 
-        <div class="item">
-            <div class="label">🎤 Cantor</div>
-            <div class="valor">H. Juan Monterrosa</div>
+        <div class="tabla-header">
+            <div>NOMBRE</div>
+            <div>FUNCIÓN</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎹 Teclado</div>
-            <div class="valor">H. Hugo Sorto</div>
+        <div class="fila">
+            <div class="nombre">H. Juan Monterrosa</div>
+            <div class="funcion">Cantor</div>
         </div>
 
-        <div class="item">
-            <div class="label">🥁 Batería</div>
-            <div class="valor">H. Fernando Fuentes</div>
+        <div class="fila">
+            <div class="nombre">H. Hugo Sorto</div>
+            <div class="funcion">Teclado</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎸 Guitarra</div>
-            <div class="valor">H. Danilo Cornejo</div>
+        <div class="fila">
+            <div class="nombre">H. Fernando Fuentes</div>
+            <div class="funcion">Batería</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎶 Coros</div>
-            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        <div class="fila">
+            <div class="nombre">H. Danilo Cornejo</div>
+            <div class="funcion">Guitarra</div>
+        </div>
+
+        <div class="fila">
+            <div class="nombre">H. Lesly Cruz / H. Gabriel Olivares</div>
+            <div class="funcion">Coros</div>
         </div>
 
     </div>
-
 </div>
 
+<!-- 23 AGOSTO -->
 <div class="card">
 
     <div class="fecha">📅 Domingo 23 de Agosto</div>
 
-    <div class="cuerpo">
+    <div class="tabla">
 
-        <div class="item">
-            <div class="label">🎤 Cantor</div>
-            <div class="valor">H. Gabriel Olivares</div>
+        <div class="tabla-header">
+            <div>NOMBRE</div>
+            <div>FUNCIÓN</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎹 Teclado</div>
-            <div class="valor">H. Carlos García</div>
+        <div class="fila">
+            <div class="nombre">H. Gabriel Olivares</div>
+            <div class="funcion">Cantor</div>
         </div>
 
-        <div class="item">
-            <div class="label">🥁 Batería</div>
-            <div class="valor">H. Carlos Olivares</div>
+        <div class="fila">
+            <div class="nombre">H. Carlos García</div>
+            <div class="funcion">Teclado</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎸 Guitarra</div>
-            <div class="valor">H. Danilo Cornejo</div>
+        <div class="fila">
+            <div class="nombre">H. Carlos Olivares</div>
+            <div class="funcion">Batería</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎶 Coros</div>
-            <div class="valor">H. Lesly Cruz</div>
+        <div class="fila">
+            <div class="nombre">H. Danilo Cornejo</div>
+            <div class="funcion">Guitarra</div>
+        </div>
+
+        <div class="fila">
+            <div class="nombre">H. Lesly Cruz</div>
+            <div class="funcion">Coro</div>
         </div>
 
     </div>
-
 </div>
 
+<!-- 30 AGOSTO -->
 <div class="card">
 
     <div class="fecha">📅 Domingo 30 de Agosto</div>
 
-    <div class="cuerpo">
+    <div class="tabla">
 
-        <div class="item">
-            <div class="label">🎤 Cantor</div>
-            <div class="valor">H. Enrique Ramírez</div>
+        <div class="tabla-header">
+            <div>NOMBRE</div>
+            <div>FUNCIÓN</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎹 Teclado</div>
-            <div class="valor">H. Hugo Sorto</div>
+        <div class="fila">
+            <div class="nombre">H. Enrique Ramírez</div>
+            <div class="funcion">Cantor</div>
         </div>
 
-        <div class="item">
-            <div class="label">🥁 Batería</div>
-            <div class="valor">H. Fernando Fuentes</div>
+        <div class="fila">
+            <div class="nombre">H. Hugo Sorto</div>
+            <div class="funcion">Teclado</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎸 Guitarra</div>
-            <div class="valor">H. Danilo Cornejo</div>
+        <div class="fila">
+            <div class="nombre">H. Fernando Fuentes</div>
+            <div class="funcion">Batería</div>
         </div>
 
-        <div class="item">
-            <div class="label">🎶 Coros</div>
-            <div class="valor">H. Lesly Cruz, H. Gabriel Olivares</div>
+        <div class="fila">
+            <div class="nombre">H. Danilo Cornejo</div>
+            <div class="funcion">Guitarra</div>
+        </div>
+
+        <div class="fila">
+            <div class="nombre">H. Lesly Cruz / H. Gabriel Olivares</div>
+            <div class="funcion">Coro</div>
         </div>
 
     </div>
-
 </div>
+
 </div>
 
 </body>

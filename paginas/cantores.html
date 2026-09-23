@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,12 +8,12 @@
 
 <title>Programa de Cantores</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   BASE MODERNO
+   RESET
 ========================================================= */
 
 *{
@@ -21,18 +22,25 @@
     box-sizing:border-box;
 }
 
+
+/* =========================================================
+   BODY
+========================================================= */
+
 body{
     font-family:'Poppins',sans-serif;
-    background:radial-gradient(
-        circle at top,
-        #0B1F3A,
-        #0f2f5c,
-        #0a0f1a
-    );
+    background:
+        radial-gradient(
+            circle at top,
+            #0B1F3A,
+            #0f2f5c,
+            #0a0f1a
+        );
     min-height:100vh;
-    padding:12px;
+    padding:8px;
     color:#1f2937;
 }
+
 
 /* =========================================================
    CONTENEDOR
@@ -40,130 +48,145 @@ body{
 
 .contenedor{
     width:100%;
+    max-width:1500px;
+    margin:auto;
     background:#fff;
-    border-radius:16px;
+    border-radius:14px;
     overflow:hidden;
-    box-shadow:0 15px 50px rgba(0,0,0,.35);
+    box-shadow:0 12px 40px rgba(0,0,0,.30);
 }
 
+
 /* =========================================================
-   HEADER
+   ENCABEZADO
 ========================================================= */
 
 .encabezado{
-    background:linear-gradient(
-        90deg,
-        #0B1F3A,
-        #1565C0
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #0B1F3A,
+            #1565C0
+        );
     color:white;
     text-align:center;
-    padding:22px;
+    padding:16px 12px;
 }
 
 .encabezado h1{
-    font-size:22px;
-    letter-spacing:1px;
+    font-size:21px;
+    letter-spacing:.8px;
 }
 
 .encabezado p{
+    margin-top:3px;
     opacity:.85;
-    font-size:14px;
+    font-size:12px;
 }
 
+
 /* =========================================================
-   CALENDARIO DE BÚSQUEDA
+   CALENDARIO
 ========================================================= */
 
 .calendario-busqueda{
-    padding:20px;
+    padding:14px;
     background:#f8fafc;
     border-bottom:1px solid #e5e7eb;
 }
+
 
 .calendario-cabecera{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:12px;
-    margin-bottom:16px;
+    gap:10px;
+    margin-bottom:12px;
 }
 
+
 .calendario-btn{
-    width:42px;
-    height:42px;
+    width:38px;
+    height:38px;
     border:none;
-    border-radius:10px;
-    background:linear-gradient(
-        135deg,
-        #0B1F3A,
-        #1565C0
-    );
+    border-radius:9px;
+    background:
+        linear-gradient(
+            135deg,
+            #0B1F3A,
+            #1565C0
+        );
     color:white;
-    font-size:22px;
+    font-size:20px;
     font-weight:bold;
     cursor:pointer;
     transition:.2s;
 }
 
+
 .calendario-btn:hover{
     transform:scale(1.05);
-    box-shadow:0 5px 15px rgba(0,0,0,.20);
 }
 
+
 .calendario-mes{
-    min-width:190px;
+    min-width:180px;
     text-align:center;
-    font-size:18px;
+    font-size:17px;
     font-weight:700;
     color:#0B1F3A;
 }
 
+
 .calendario-semana{
     display:grid;
     grid-template-columns:repeat(7,1fr);
-    gap:5px;
-    max-width:600px;
+    gap:4px;
+    max-width:520px;
     margin:auto;
 }
 
+
 .calendario-semana div{
     text-align:center;
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
     color:#64748b;
-    padding:5px;
+    padding:4px;
 }
+
 
 .calendario-grid{
     display:grid;
     grid-template-columns:repeat(7,1fr);
-    gap:5px;
-    max-width:600px;
+    gap:4px;
+    max-width:520px;
     margin:auto;
 }
 
+
 .calendario-dia{
-    min-height:42px;
+    min-height:38px;
     border:1px solid #dbe3ec;
     background:white;
-    border-radius:9px;
+    border-radius:8px;
     display:flex;
     align-items:center;
     justify-content:center;
     position:relative;
     cursor:pointer;
-    font-size:13px;
+    font-size:12px;
     font-weight:600;
     color:#334155;
     transition:.2s;
 }
 
+
 .calendario-dia:hover{
     background:#e8f1ff;
     border-color:#2563EB;
-    transform:translateY(-2px);
 }
+
 
 .calendario-dia.vacio{
     border:none;
@@ -171,9 +194,11 @@ body{
     cursor:default;
 }
 
+
 .calendario-dia.vacio:hover{
-    transform:none;
+    background:transparent;
 }
+
 
 .calendario-dia.tiene-evento{
     background:#e8f1ff;
@@ -181,85 +206,83 @@ body{
     color:#0B1F3A;
 }
 
+
 .calendario-dia.tiene-evento::after{
     content:"";
     position:absolute;
-    bottom:4px;
+    bottom:3px;
     width:5px;
     height:5px;
     border-radius:50%;
     background:#22c55e;
 }
 
+
 .calendario-dia.activo{
-    background:linear-gradient(
-        135deg,
-        #2563EB,
-        #1d4ed8
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #2563EB,
+            #1d4ed8
+        );
     color:white;
     border-color:#1d4ed8;
-    box-shadow:0 5px 14px rgba(37,99,235,.30);
 }
+
 
 .calendario-dia.activo::after{
     background:white;
 }
 
+
 .calendario-seleccionado{
-    max-width:600px;
-    margin:15px auto 0;
-    padding:11px;
-    border-radius:10px;
+    max-width:520px;
+    margin:12px auto 0;
+    padding:9px;
+    border-radius:9px;
     background:white;
     border:1px solid #e2e8f0;
     text-align:center;
     color:#334155;
-    font-size:13px;
+    font-size:12px;
     font-weight:600;
 }
 
+
 .calendario-todas{
     display:block;
-    max-width:600px;
+    max-width:520px;
     width:100%;
-    margin:9px auto 0;
-    padding:10px;
+    margin:7px auto 0;
+    padding:9px;
     border:none;
-    border-radius:10px;
+    border-radius:9px;
     background:#e2e8f0;
     color:#334155;
     font-family:'Poppins',sans-serif;
+    font-size:12px;
     font-weight:600;
     cursor:pointer;
-    transition:.2s;
 }
+
 
 .calendario-todas:hover{
     background:#cbd5e1;
 }
 
-/* =========================================================
-   OCULTAR FILAS
-========================================================= */
-
-tr.oculta{
-    display:none;
-}
 
 /* =========================================================
-   SCROLL TABLE
+   TABLA GANTT
 ========================================================= */
 
 .tabla-scroll{
     width:100%;
     overflow-x:auto;
+    overflow-y:hidden;
     -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
 }
 
-/* =========================================================
-   TABLA ESTILO GANTT
-========================================================= */
 
 table{
     border-collapse:separate;
@@ -268,22 +291,26 @@ table{
     min-width:100%;
 }
 
+
 /* =========================================================
-   CELDAS
+   CELDAS COMPACTAS
 ========================================================= */
 
 th,
 td{
-    border:1px solid #e5e7eb;
-    padding:10px;
+    border:1px solid #e2e8f0;
+    padding:5px 3px;
     text-align:center;
     white-space:nowrap;
-    min-width:85px;
-    font-size:14px;
+    min-width:42px;
+    width:42px;
+    height:32px;
+    font-size:11px;
 }
 
+
 /* =========================================================
-   HEADER
+   ENCABEZADO TABLA
 ========================================================= */
 
 th{
@@ -292,20 +319,20 @@ th{
     position:sticky;
     top:0;
     z-index:5;
-}
-
-/* =========================================================
-   MESES
-========================================================= */
-
-.mes{
-    background:#1565C0;
-    color:white;
     font-weight:600;
 }
 
+
+th.mes{
+    background:#1565C0;
+    color:white;
+    font-size:11px;
+    height:28px;
+}
+
+
 /* =========================================================
-   NOMBRE FIJO
+   COLUMNA NOMBRE
 ========================================================= */
 
 .nombre{
@@ -313,135 +340,337 @@ th{
     left:0;
     background:#f8fafc;
     font-weight:600;
-    min-width:210px;
+    min-width:145px;
+    width:145px;
+    max-width:145px;
     text-align:left;
-    padding-left:14px;
+    padding:5px 7px;
     z-index:10;
-    box-shadow:2px 0 6px rgba(0,0,0,.08);
+    box-shadow:2px 0 5px rgba(0,0,0,.10);
+    font-size:11px;
 }
 
+
 /* =========================================================
-   EFECTO GANTT
+   NOMBRE EN HEADER
+========================================================= */
+
+th.nombre{
+    background:#0B1F3A;
+    color:white;
+    z-index:20;
+}
+
+
+/* =========================================================
+   CELDA ACTIVA
 ========================================================= */
 
 .activo{
-    background:linear-gradient(
-        135deg,
-        #2563EB,
-        #1d4ed8
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #2563EB,
+            #1d4ed8
+        );
     color:white;
     font-weight:700;
-    border-radius:6px;
-    transform:scale(1.05);
-    transition:.2s;
+    border-radius:4px;
+    font-size:12px;
+    cursor:pointer;
 }
 
+
 /* =========================================================
-   HOVER FILA
+   CELDAS NORMALES
 ========================================================= */
 
-tr:hover td{
-    background:#f1f5f9;
+td:not(.nombre){
+    cursor:pointer;
 }
 
-tr:hover td.activo{
-    background:linear-gradient(
-        135deg,
-        #1d4ed8,
-        #1e40af
-    );
+
+td:not(.nombre):hover{
+    background:#eff6ff;
 }
+
 
 /* =========================================================
-   VERSICULO FINAL
+   FILA OCULTA
+========================================================= */
+
+tr.oculta{
+    display:none;
+}
+
+
+/* =========================================================
+   VERSÍCULO
 ========================================================= */
 
 .versiculo{
-    margin:18px;
-    padding:18px;
-    border-radius:12px;
-    background:linear-gradient(
-        135deg,
-        #0B1F3A,
-        #1565C0
-    );
+    margin:12px;
+    padding:14px;
+    border-radius:10px;
+    background:
+        linear-gradient(
+            135deg,
+            #0B1F3A,
+            #1565C0
+        );
     color:white;
     text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
 }
+
 
 .versiculo h3{
-    font-size:16px;
-    margin-bottom:8px;
+    font-size:14px;
+    margin-bottom:5px;
 }
+
 
 .versiculo p{
-    font-size:14px;
-    opacity:.95;
+    font-size:12px;
+    line-height:1.5;
 }
 
+
 /* =========================================================
-   MOBILE
+   INDICADOR PARA CELULAR
 ========================================================= */
 
-@media(max-width:768px){
+.indicador-scroll{
+    text-align:center;
+    padding:7px;
+    background:#f8fafc;
+    color:#64748b;
+    font-size:10px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
 
     body{
-        padding:6px;
+        padding:5px;
+    }
+
+    .contenedor{
+        border-radius:10px;
+    }
+
+    .encabezado{
+        padding:13px 8px;
     }
 
     .encabezado h1{
         font-size:18px;
     }
 
-    .encabezado p{
-        font-size:12px;
+    th,
+    td{
+        min-width:40px;
+        width:40px;
+        height:30px;
+        padding:4px 2px;
+        font-size:10px;
     }
+
+    .nombre{
+        min-width:130px;
+        width:130px;
+        max-width:130px;
+        font-size:10px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media(max-width:600px){
+
+    body{
+        padding:3px;
+    }
+
+    .contenedor{
+        border-radius:8px;
+    }
+
+    .encabezado{
+        padding:12px 7px;
+    }
+
+    .encabezado h1{
+        font-size:16px;
+        letter-spacing:.4px;
+    }
+
+    .encabezado p{
+        font-size:10px;
+    }
+
+
+    /* CALENDARIO */
 
     .calendario-busqueda{
-        padding:12px;
+        padding:10px 7px;
     }
 
-    .calendario-mes{
-        font-size:15px;
-        min-width:150px;
+    .calendario-cabecera{
+        margin-bottom:8px;
     }
 
     .calendario-btn{
-        width:38px;
-        height:38px;
-        font-size:19px;
+        width:34px;
+        height:34px;
+        font-size:18px;
     }
 
-    .calendario-dia{
-        min-height:38px;
-        font-size:12px;
+    .calendario-mes{
+        min-width:145px;
+        font-size:14px;
+    }
+
+    .calendario-semana,
+    .calendario-grid{
+        max-width:360px;
+        gap:3px;
     }
 
     .calendario-semana div{
-        font-size:9px;
+        font-size:8px;
+    }
+
+    .calendario-dia{
+        min-height:34px;
+        font-size:11px;
+        border-radius:6px;
+    }
+
+    .calendario-seleccionado{
+        font-size:10px;
+        padding:8px;
+    }
+
+    .calendario-todas{
+        font-size:10px;
+        padding:8px;
+    }
+
+
+    /* TABLA */
+
+    .tabla-scroll{
+        border-top:1px solid #e5e7eb;
     }
 
     th,
     td{
-        min-width:75px;
-        padding:8px;
-        font-size:13px;
+        min-width:34px;
+        width:34px;
+        height:28px;
+        padding:3px 1px;
+        font-size:9px;
+    }
+
+    th.mes{
+        font-size:9px;
+        height:25px;
     }
 
     .nombre{
-        min-width:170px;
+        min-width:115px;
+        width:115px;
+        max-width:115px;
+        font-size:9px;
+        padding:4px 5px;
     }
+
+    .activo{
+        font-size:10px;
+        border-radius:3px;
+    }
+
+    .indicador-scroll{
+        font-size:9px;
+    }
+
+    .versiculo{
+        margin:8px;
+        padding:11px;
+    }
+
+    .versiculo h3{
+        font-size:12px;
+    }
+
+    .versiculo p{
+        font-size:10px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR MUY PEQUEÑO
+========================================================= */
+
+@media(max-width:380px){
+
+    .encabezado h1{
+        font-size:14px;
+    }
+
+    .calendario-mes{
+        font-size:13px;
+        min-width:125px;
+    }
+
+    .calendario-dia{
+        min-height:31px;
+        font-size:10px;
+    }
+
+    th,
+    td{
+        min-width:31px;
+        width:31px;
+        height:26px;
+        font-size:8px;
+    }
+
+    .nombre{
+        min-width:105px;
+        width:105px;
+        max-width:105px;
+        font-size:8px;
+    }
+
+    .activo{
+        font-size:9px;
+    }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
+
 <div class="contenedor">
+
 
 <!-- =========================================================
      ENCABEZADO
@@ -510,7 +739,7 @@ tr:hover td.activo{
         class="calendario-seleccionado"
         id="fechaSeleccionada">
 
-        📅 Selecciona una fecha para ver el cantor
+        📅 Selecciona una fecha
 
     </div>
 
@@ -520,9 +749,20 @@ tr:hover td.activo{
         class="calendario-todas"
         id="mostrarTodas">
 
-        🔄 Mostrar todas las fechas
+        🔄 Mostrar todo el programa
 
     </button>
+
+</div>
+
+
+<!-- =========================================================
+     INDICADOR
+========================================================= -->
+
+<div class="indicador-scroll">
+
+    👆 Desliza la tabla hacia los lados para ver todos los meses
 
 </div>
 
@@ -535,8 +775,9 @@ tr:hover td.activo{
 
 <table>
 
+
 <!-- =========================================================
-     ENCABEZADO DE MESES
+     MESES
 ========================================================= -->
 
 <tr>
@@ -544,7 +785,7 @@ tr:hover td.activo{
 <th
     class="nombre"
     rowspan="2">
-    Cantor
+    CANTOR
 </th>
 
 <th
@@ -598,6 +839,7 @@ tr:hover td.activo{
 <th>19</th>
 <th>26</th>
 
+
 <!-- AGOSTO -->
 
 <th>02</th>
@@ -606,12 +848,14 @@ tr:hover td.activo{
 <th>23</th>
 <th>30</th>
 
+
 <!-- SEPTIEMBRE -->
 
 <th>06</th>
 <th>13</th>
 <th>20</th>
 <th>27</th>
+
 
 <!-- OCTUBRE -->
 
@@ -620,6 +864,7 @@ tr:hover td.activo{
 <th>18</th>
 <th>25</th>
 
+
 <!-- NOVIEMBRE -->
 
 <th>01</th>
@@ -627,6 +872,7 @@ tr:hover td.activo{
 <th>15</th>
 <th>22</th>
 <th>29</th>
+
 
 <!-- DICIEMBRE -->
 
@@ -642,18 +888,19 @@ tr:hover td.activo{
      CARLOS GARCÍA
 ========================================================= -->
 
-<tr
-    data-cantor="H. Carlos García">
+<tr data-cantor="H. Carlos García">
 
 <td class="nombre">
     H. Carlos García
 </td>
+
 
 <!-- JULIO -->
 
 <td class="activo">✔</td>
 <td></td>
 <td></td>
+
 
 <!-- AGOSTO -->
 
@@ -663,12 +910,14 @@ tr:hover td.activo{
 <td></td>
 <td></td>
 
+
 <!-- SEPTIEMBRE -->
 
 <td class="activo">✔</td>
 <td></td>
 <td></td>
 <td></td>
+
 
 <!-- OCTUBRE -->
 
@@ -677,20 +926,22 @@ tr:hover td.activo{
 <td></td>
 <td></td>
 
+
 <!-- NOVIEMBRE -->
 
 <td class="activo">✔</td>
 <td></td>
 <td></td>
 <td></td>
-<td></td>
+<td class="activo">✔</td>
+
 
 <!-- DICIEMBRE -->
 
+<td></td>
+<td></td>
+<td></td>
 <td class="activo">✔</td>
-<td></td>
-<td></td>
-<td></td>
 
 </tr>
 
@@ -699,18 +950,19 @@ tr:hover td.activo{
      JUAN MONTERROSA
 ========================================================= -->
 
-<tr
-    data-cantor="H. Juan Monterrosa">
+<tr data-cantor="H. Juan Monterrosa">
 
 <td class="nombre">
     H. Juan Monterrosa
 </td>
+
 
 <!-- JULIO -->
 
 <td></td>
 <td class="activo">✔</td>
 <td></td>
+
 
 <!-- AGOSTO -->
 
@@ -720,6 +972,7 @@ tr:hover td.activo{
 <td></td>
 <td></td>
 
+
 <!-- SEPTIEMBRE -->
 
 <td></td>
@@ -727,12 +980,14 @@ tr:hover td.activo{
 <td></td>
 <td></td>
 
+
 <!-- OCTUBRE -->
 
 <td></td>
 <td class="activo">✔</td>
 <td></td>
 <td></td>
+
 
 <!-- NOVIEMBRE -->
 
@@ -742,10 +997,11 @@ tr:hover td.activo{
 <td></td>
 <td></td>
 
+
 <!-- DICIEMBRE -->
 
-<td></td>
 <td class="activo">✔</td>
+<td></td>
 <td></td>
 <td></td>
 
@@ -756,18 +1012,19 @@ tr:hover td.activo{
      GABRIEL OLIVARES
 ========================================================= -->
 
-<tr
-    data-cantor="H. Gabriel Olivares">
+<tr data-cantor="H. Gabriel Olivares">
 
 <td class="nombre">
     H. Gabriel Olivares
 </td>
+
 
 <!-- JULIO -->
 
 <td></td>
 <td></td>
 <td class="activo">✔</td>
+
 
 <!-- AGOSTO -->
 
@@ -777,6 +1034,7 @@ tr:hover td.activo{
 <td class="activo">✔</td>
 <td></td>
 
+
 <!-- SEPTIEMBRE -->
 
 <td></td>
@@ -784,12 +1042,14 @@ tr:hover td.activo{
 <td class="activo">✔</td>
 <td></td>
 
+
 <!-- OCTUBRE -->
 
 <td></td>
 <td></td>
 <td class="activo">✔</td>
 <td></td>
+
 
 <!-- NOVIEMBRE -->
 
@@ -799,11 +1059,12 @@ tr:hover td.activo{
 <td></td>
 <td></td>
 
+
 <!-- DICIEMBRE -->
 
 <td></td>
-<td></td>
 <td class="activo">✔</td>
+<td></td>
 <td></td>
 
 </tr>
@@ -813,18 +1074,19 @@ tr:hover td.activo{
      ENRIQUE RAMÍREZ
 ========================================================= -->
 
-<tr
-    data-cantor="H. Enrique Ramírez">
+<tr data-cantor="H. Enrique Ramírez">
 
 <td class="nombre">
     H. Enrique Ramírez
 </td>
+
 
 <!-- JULIO -->
 
 <td></td>
 <td></td>
 <td></td>
+
 
 <!-- AGOSTO -->
 
@@ -834,6 +1096,7 @@ tr:hover td.activo{
 <td></td>
 <td class="activo">✔</td>
 
+
 <!-- SEPTIEMBRE -->
 
 <td></td>
@@ -841,12 +1104,14 @@ tr:hover td.activo{
 <td></td>
 <td class="activo">✔</td>
 
+
 <!-- OCTUBRE -->
 
 <td></td>
 <td></td>
 <td></td>
 <td class="activo">✔</td>
+
 
 <!-- NOVIEMBRE -->
 
@@ -856,12 +1121,13 @@ tr:hover td.activo{
 <td class="activo">✔</td>
 <td></td>
 
+
 <!-- DICIEMBRE -->
 
 <td></td>
 <td></td>
-<td></td>
 <td class="activo">✔</td>
+<td></td>
 
 </tr>
 
@@ -900,14 +1166,10 @@ tr:hover td.activo{
 </div>
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
 <script>
 
 /* =========================================================
-   DATOS DEL PROGRAMA
+   FECHAS DEL PROGRAMA
 ========================================================= */
 
 const fechasPrograma = [
@@ -1062,22 +1324,34 @@ const fechasPrograma = [
 ========================================================= */
 
 const calendarioGrid =
-    document.getElementById("calendarioGrid");
+    document.getElementById(
+        "calendarioGrid"
+    );
 
 const nombreMes =
-    document.getElementById("nombreMes");
+    document.getElementById(
+        "nombreMes"
+    );
 
 const fechaSeleccionada =
-    document.getElementById("fechaSeleccionada");
+    document.getElementById(
+        "fechaSeleccionada"
+    );
 
 const botonAnterior =
-    document.getElementById("mesAnterior");
+    document.getElementById(
+        "mesAnterior"
+    );
 
 const botonSiguiente =
-    document.getElementById("mesSiguiente");
+    document.getElementById(
+        "mesSiguiente"
+    );
 
 const botonTodas =
-    document.getElementById("mostrarTodas");
+    document.getElementById(
+        "mostrarTodas"
+    );
 
 
 /* =========================================================
@@ -1103,10 +1377,11 @@ const meses = [
 
 
 /* =========================================================
-   FECHA INICIAL
+   MES INICIAL
 ========================================================= */
 
 let mesActual = 8;
+
 let añoActual = 2026;
 
 
@@ -1119,7 +1394,9 @@ function renderizarCalendario(){
     calendarioGrid.innerHTML = "";
 
     nombreMes.textContent =
-        meses[mesActual] + " " + añoActual;
+        meses[mesActual] +
+        " " +
+        añoActual;
 
 
     const primerDia =
@@ -1146,9 +1423,7 @@ function renderizarCalendario(){
         primerDia.getDay();
 
 
-    /* -----------------------------------------------------
-       ESPACIOS ANTES DEL PRIMER DÍA
-    ----------------------------------------------------- */
+    /* ESPACIOS */
 
     for(
         let i = 0;
@@ -1157,7 +1432,9 @@ function renderizarCalendario(){
     ){
 
         const espacio =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
         espacio.className =
             "calendario-dia vacio";
@@ -1169,9 +1446,7 @@ function renderizarCalendario(){
     }
 
 
-    /* -----------------------------------------------------
-       CREAR DÍAS
-    ----------------------------------------------------- */
+    /* DÍAS */
 
     for(
         let dia = 1;
@@ -1180,7 +1455,9 @@ function renderizarCalendario(){
     ){
 
         const boton =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
         boton.className =
             "calendario-dia";
@@ -1190,18 +1467,21 @@ function renderizarCalendario(){
 
 
         const fecha =
-            `${añoActual}-${String(mesActual + 1).padStart(2,"0")}-${String(dia).padStart(2,"0")}`;
+            añoActual +
+            "-" +
+            String(
+                mesActual + 1
+            ).padStart(2,"0") +
+            "-" +
+            String(dia).padStart(2,"0");
 
 
         const evento =
             fechasPrograma.find(
-                item => item.fecha === fecha
+                item =>
+                    item.fecha === fecha
             );
 
-
-        /* -------------------------------------------------
-           SI EXISTE PROGRAMA
-        ------------------------------------------------- */
 
         if(evento){
 
@@ -1211,7 +1491,6 @@ function renderizarCalendario(){
 
 
             boton.title =
-                "Cantor: " +
                 evento.cantor;
 
 
@@ -1250,9 +1529,7 @@ function seleccionarFecha(evento){
         );
 
 
-    /* -----------------------------------------------------
-       OCULTAR TODAS LAS FILAS
-    ----------------------------------------------------- */
+    /* OCULTAR TODAS */
 
     filas.forEach(
         fila => {
@@ -1265,9 +1542,7 @@ function seleccionarFecha(evento){
     );
 
 
-    /* -----------------------------------------------------
-       MOSTRAR CANTOR SELECCIONADO
-    ----------------------------------------------------- */
+    /* MOSTRAR CANTOR */
 
     filas.forEach(
         fila => {
@@ -1287,20 +1562,21 @@ function seleccionarFecha(evento){
     );
 
 
-    /* -----------------------------------------------------
-       MOSTRAR INFORMACIÓN
-    ----------------------------------------------------- */
+    /* FECHA */
 
     const fecha =
         new Date(
-            evento.fecha + "T12:00:00"
+            evento.fecha +
+            "T12:00:00"
         );
 
 
     const opciones = {
+
         weekday:"long",
         day:"numeric",
         month:"long"
+
     };
 
 
@@ -1319,9 +1595,7 @@ function seleccionarFecha(evento){
         evento.cantor;
 
 
-    /* -----------------------------------------------------
-       MARCAR DÍA
-    ----------------------------------------------------- */
+    /* LIMPIAR ACTIVOS */
 
     document
         .querySelectorAll(
@@ -1338,9 +1612,17 @@ function seleccionarFecha(evento){
         );
 
 
+    /* MARCAR FECHA */
+
     const dias =
         document.querySelectorAll(
             ".calendario-dia:not(.vacio)"
+        );
+
+
+    const diaBuscado =
+        parseInt(
+            evento.fecha.split("-")[2]
         );
 
 
@@ -1350,10 +1632,7 @@ function seleccionarFecha(evento){
             if(
                 parseInt(
                     dia.textContent
-                ) ===
-                parseInt(
-                    evento.fecha.split("-")[2]
-                )
+                ) === diaBuscado
             ){
 
                 dia.classList.add(
@@ -1366,16 +1645,14 @@ function seleccionarFecha(evento){
     );
 
 
-    /* -----------------------------------------------------
-       BAJAR A LA TABLA
-    ----------------------------------------------------- */
+    /* BAJAR A TABLA */
 
     setTimeout(
         function(){
 
             document
                 .querySelector(
-                    "table"
+                    ".tabla-scroll"
                 )
                 .scrollIntoView({
                     behavior:"smooth",
@@ -1399,7 +1676,9 @@ botonAnterior.addEventListener(
 
         mesActual--;
 
-        if(mesActual < 0){
+        if(
+            mesActual < 0
+        ){
 
             mesActual = 11;
 
@@ -1423,7 +1702,9 @@ botonSiguiente.addEventListener(
 
         mesActual++;
 
-        if(mesActual > 11){
+        if(
+            mesActual > 11
+        ){
 
             mesActual = 0;
 
@@ -1463,7 +1744,7 @@ botonTodas.addEventListener(
 
 
         fechaSeleccionada.innerHTML =
-            "📅 <strong>Mostrando todos los cantores</strong>";
+            "📅 <strong>Mostrando todo el programa</strong>";
 
 
         document
@@ -1480,18 +1761,12 @@ botonTodas.addEventListener(
                 }
             );
 
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
     }
 );
 
 
 /* =========================================================
-   CLIC EN LAS CELDAS DE LA TABLA
+   CLIC EN LAS CELDAS DEL GANTT
 ========================================================= */
 
 document
@@ -1528,7 +1803,7 @@ document
 
 
 /* =========================================================
-   INICIAR CALENDARIO
+   INICIAR
 ========================================================= */
 
 renderizarCalendario();

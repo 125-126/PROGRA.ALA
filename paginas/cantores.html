@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,9 +11,9 @@
 
 <style>
 
-/* =========================
+/* =========================================================
    BASE MODERNO
-========================= */
+========================================================= */
 
 *{
     margin:0;
@@ -22,15 +23,20 @@
 
 body{
     font-family:'Poppins',sans-serif;
-    background: radial-gradient(circle at top,#0B1F3A,#0f2f5c,#0a0f1a);
+    background:radial-gradient(
+        circle at top,
+        #0B1F3A,
+        #0f2f5c,
+        #0a0f1a
+    );
     min-height:100vh;
     padding:12px;
     color:#1f2937;
 }
 
-/* =========================
+/* =========================================================
    CONTENEDOR
-========================= */
+========================================================= */
 
 .contenedor{
     width:100%;
@@ -40,12 +46,16 @@ body{
     box-shadow:0 15px 50px rgba(0,0,0,.35);
 }
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 .encabezado{
-    background:linear-gradient(90deg,#0B1F3A,#1565C0);
+    background:linear-gradient(
+        90deg,
+        #0B1F3A,
+        #1565C0
+    );
     color:white;
     text-align:center;
     padding:22px;
@@ -61,9 +71,185 @@ body{
     font-size:14px;
 }
 
-/* =========================
+/* =========================================================
+   CALENDARIO DE BÚSQUEDA
+========================================================= */
+
+.calendario-busqueda{
+    padding:20px;
+    background:#f8fafc;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.calendario-cabecera{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:16px;
+}
+
+.calendario-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(
+        135deg,
+        #0B1F3A,
+        #1565C0
+    );
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.calendario-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 5px 15px rgba(0,0,0,.20);
+}
+
+.calendario-mes{
+    min-width:190px;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    color:#0B1F3A;
+}
+
+.calendario-semana{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:5px;
+    max-width:600px;
+    margin:auto;
+}
+
+.calendario-semana div{
+    text-align:center;
+    font-size:11px;
+    font-weight:700;
+    color:#64748b;
+    padding:5px;
+}
+
+.calendario-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:5px;
+    max-width:600px;
+    margin:auto;
+}
+
+.calendario-dia{
+    min-height:42px;
+    border:1px solid #dbe3ec;
+    background:white;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+    color:#334155;
+    transition:.2s;
+}
+
+.calendario-dia:hover{
+    background:#e8f1ff;
+    border-color:#2563EB;
+    transform:translateY(-2px);
+}
+
+.calendario-dia.vacio{
+    border:none;
+    background:transparent;
+    cursor:default;
+}
+
+.calendario-dia.vacio:hover{
+    transform:none;
+}
+
+.calendario-dia.tiene-evento{
+    background:#e8f1ff;
+    border:2px solid #2563EB;
+    color:#0B1F3A;
+}
+
+.calendario-dia.tiene-evento::after{
+    content:"";
+    position:absolute;
+    bottom:4px;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#22c55e;
+}
+
+.calendario-dia.activo{
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #1d4ed8
+    );
+    color:white;
+    border-color:#1d4ed8;
+    box-shadow:0 5px 14px rgba(37,99,235,.30);
+}
+
+.calendario-dia.activo::after{
+    background:white;
+}
+
+.calendario-seleccionado{
+    max-width:600px;
+    margin:15px auto 0;
+    padding:11px;
+    border-radius:10px;
+    background:white;
+    border:1px solid #e2e8f0;
+    text-align:center;
+    color:#334155;
+    font-size:13px;
+    font-weight:600;
+}
+
+.calendario-todas{
+    display:block;
+    max-width:600px;
+    width:100%;
+    margin:9px auto 0;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    background:#e2e8f0;
+    color:#334155;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.calendario-todas:hover{
+    background:#cbd5e1;
+}
+
+/* =========================================================
+   OCULTAR FILAS
+========================================================= */
+
+tr.oculta{
+    display:none;
+}
+
+/* =========================================================
    SCROLL TABLE
-========================= */
+========================================================= */
 
 .tabla-scroll{
     width:100%;
@@ -71,7 +257,10 @@ body{
     -webkit-overflow-scrolling:touch;
 }
 
-/* tabla estilo Gantt */
+/* =========================================================
+   TABLA ESTILO GANTT
+========================================================= */
+
 table{
     border-collapse:separate;
     border-spacing:0;
@@ -79,11 +268,12 @@ table{
     min-width:100%;
 }
 
-/* =========================
+/* =========================================================
    CELDAS
-========================= */
+========================================================= */
 
-th, td{
+th,
+td{
     border:1px solid #e5e7eb;
     padding:10px;
     text-align:center;
@@ -92,7 +282,10 @@ th, td{
     font-size:14px;
 }
 
-/* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
+
 th{
     background:#0B1F3A;
     color:white;
@@ -101,16 +294,19 @@ th{
     z-index:5;
 }
 
-/* meses */
+/* =========================================================
+   MESES
+========================================================= */
+
 .mes{
     background:#1565C0;
     color:white;
     font-weight:600;
 }
 
-/* =========================
+/* =========================================================
    NOMBRE FIJO
-========================= */
+========================================================= */
 
 .nombre{
     position:sticky;
@@ -124,12 +320,16 @@ th{
     box-shadow:2px 0 6px rgba(0,0,0,.08);
 }
 
-/* =========================
-   EFECTO GANTT (BLOQUES)
-========================= */
+/* =========================================================
+   EFECTO GANTT
+========================================================= */
 
 .activo{
-    background:linear-gradient(135deg,#2563EB,#1d4ed8);
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #1d4ed8
+    );
     color:white;
     font-weight:700;
     border-radius:6px;
@@ -137,46 +337,35 @@ th{
     transition:.2s;
 }
 
-/* hover fila */
+/* =========================================================
+   HOVER FILA
+========================================================= */
+
 tr:hover td{
     background:#f1f5f9;
 }
 
-/* excepto activos */
 tr:hover td.activo{
-    background:linear-gradient(135deg,#1d4ed8,#1e40af);
+    background:linear-gradient(
+        135deg,
+        #1d4ed8,
+        #1e40af
+    );
 }
 
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    body{ padding:6px; }
-
-    .encabezado h1{ font-size:18px; }
-
-    th, td{
-        min-width:75px;
-        padding:8px;
-        font-size:13px;
-    }
-
-    .nombre{
-        min-width:170px;
-    }
-}
-
-/* =========================
+/* =========================================================
    VERSICULO FINAL
-========================= */
+========================================================= */
 
 .versiculo{
     margin:18px;
     padding:18px;
     border-radius:12px;
-    background:linear-gradient(135deg,#0B1F3A,#1565C0);
+    background:linear-gradient(
+        135deg,
+        #0B1F3A,
+        #1565C0
+    );
     color:white;
     text-align:center;
     box-shadow:0 10px 30px rgba(0,0,0,.25);
@@ -192,6 +381,60 @@ tr:hover td.activo{
     opacity:.95;
 }
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+    body{
+        padding:6px;
+    }
+
+    .encabezado h1{
+        font-size:18px;
+    }
+
+    .encabezado p{
+        font-size:12px;
+    }
+
+    .calendario-busqueda{
+        padding:12px;
+    }
+
+    .calendario-mes{
+        font-size:15px;
+        min-width:150px;
+    }
+
+    .calendario-btn{
+        width:38px;
+        height:38px;
+        font-size:19px;
+    }
+
+    .calendario-dia{
+        min-height:38px;
+        font-size:12px;
+    }
+
+    .calendario-semana div{
+        font-size:9px;
+    }
+
+    th,
+    td{
+        min-width:75px;
+        padding:8px;
+        font-size:13px;
+    }
+
+    .nombre{
+        min-width:170px;
+    }
+}
+
 </style>
 
 </head>
@@ -200,80 +443,1095 @@ tr:hover td.activo{
 
 <div class="contenedor">
 
+<!-- =========================================================
+     ENCABEZADO
+========================================================= -->
+
 <div class="encabezado">
+
     <h1>🎤 PROGRAMA DE CANTORES</h1>
+
     <p>Ministerio de Alabanza</p>
+
 </div>
+
+
+<!-- =========================================================
+     CALENDARIO
+========================================================= -->
+
+<div class="calendario-busqueda">
+
+    <div class="calendario-cabecera">
+
+        <button
+            type="button"
+            class="calendario-btn"
+            id="mesAnterior">
+            ‹
+        </button>
+
+        <div
+            class="calendario-mes"
+            id="nombreMes">
+            SEPTIEMBRE 2026
+        </div>
+
+        <button
+            type="button"
+            class="calendario-btn"
+            id="mesSiguiente">
+            ›
+        </button>
+
+    </div>
+
+
+    <div class="calendario-semana">
+
+        <div>DOM</div>
+        <div>LUN</div>
+        <div>MAR</div>
+        <div>MIÉ</div>
+        <div>JUE</div>
+        <div>VIE</div>
+        <div>SÁB</div>
+
+    </div>
+
+
+    <div
+        class="calendario-grid"
+        id="calendarioGrid">
+    </div>
+
+
+    <div
+        class="calendario-seleccionado"
+        id="fechaSeleccionada">
+
+        📅 Selecciona una fecha para ver el cantor
+
+    </div>
+
+
+    <button
+        type="button"
+        class="calendario-todas"
+        id="mostrarTodas">
+
+        🔄 Mostrar todas las fechas
+
+    </button>
+
+</div>
+
+
+<!-- =========================================================
+     TABLA
+========================================================= -->
 
 <div class="tabla-scroll">
 
 <table>
 
-<tr>
-<th class="nombre" rowspan="2">Cantor</th>
-<th class="mes" colspan="3">JULIO</th>
-<th class="mes" colspan="5">AGOSTO</th>
-<th class="mes" colspan="4">SEPTIEMBRE</th>
-</tr>
+<!-- =========================================================
+     ENCABEZADO DE MESES
+========================================================= -->
 
 <tr>
-<th>12</th><th>19</th><th>26</th>
-<th>02</th><th>09</th><th>16</th><th>23</th><th>30</th>
-<th>06</th><th>13</th><th>20</th><th>27</th>
+
+<th
+    class="nombre"
+    rowspan="2">
+    Cantor
+</th>
+
+<th
+    class="mes"
+    colspan="3">
+    JULIO
+</th>
+
+<th
+    class="mes"
+    colspan="5">
+    AGOSTO
+</th>
+
+<th
+    class="mes"
+    colspan="4">
+    SEPTIEMBRE
+</th>
+
+<th
+    class="mes"
+    colspan="4">
+    OCTUBRE
+</th>
+
+<th
+    class="mes"
+    colspan="5">
+    NOVIEMBRE
+</th>
+
+<th
+    class="mes"
+    colspan="4">
+    DICIEMBRE
+</th>
+
 </tr>
 
-<tr>
-<td class="nombre">H. Carlos García</td>
-<td class="activo">✔</td><td></td><td></td>
-<td></td><td class="activo">✔</td><td></td><td></td><td></td>
-<td class="activo">✔</td><td></td><td></td><td></td>
-</tr>
+
+<!-- =========================================================
+     DÍAS
+========================================================= -->
 
 <tr>
-<td class="nombre">H. Juan Monterrosa</td>
-<td></td><td class="activo">✔</td><td></td>
-<td></td><td></td><td class="activo">✔</td><td></td><td></td>
-<td></td><td class="activo">✔</td><td></td><td></td>
+
+<!-- JULIO -->
+
+<th>12</th>
+<th>19</th>
+<th>26</th>
+
+<!-- AGOSTO -->
+
+<th>02</th>
+<th>09</th>
+<th>16</th>
+<th>23</th>
+<th>30</th>
+
+<!-- SEPTIEMBRE -->
+
+<th>06</th>
+<th>13</th>
+<th>20</th>
+<th>27</th>
+
+<!-- OCTUBRE -->
+
+<th>04</th>
+<th>11</th>
+<th>18</th>
+<th>25</th>
+
+<!-- NOVIEMBRE -->
+
+<th>01</th>
+<th>08</th>
+<th>15</th>
+<th>22</th>
+<th>29</th>
+
+<!-- DICIEMBRE -->
+
+<th>06</th>
+<th>13</th>
+<th>20</th>
+<th>27</th>
+
 </tr>
 
-<tr>
-<td class="nombre">H. Gabriel Olivares</td>
-<td></td><td></td><td class="activo">✔</td>
-<td></td><td></td><td></td><td class="activo">✔</td><td></td>
-<td></td><td></td><td class="activo">✔</td><td></td>
+
+<!-- =========================================================
+     CARLOS GARCÍA
+========================================================= -->
+
+<tr
+    data-cantor="H. Carlos García">
+
+<td class="nombre">
+    H. Carlos García
+</td>
+
+<!-- JULIO -->
+
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+
+<!-- AGOSTO -->
+
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+<td></td>
+
+<!-- SEPTIEMBRE -->
+
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+<td></td>
+
+<!-- OCTUBRE -->
+
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+<td></td>
+
+<!-- NOVIEMBRE -->
+
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+
+<!-- DICIEMBRE -->
+
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+<td></td>
+
 </tr>
 
-<tr>
-<td class="nombre">H. Enrique Ramírez</td>
-<td></td><td></td><td></td>
-<td class="activo">✔</td><td></td><td></td><td></td><td class="activo">✔</td>
-<td></td><td></td><td></td><td class="activo">✔</td>
+
+<!-- =========================================================
+     JUAN MONTERROSA
+========================================================= -->
+
+<tr
+    data-cantor="H. Juan Monterrosa">
+
+<td class="nombre">
+    H. Juan Monterrosa
+</td>
+
+<!-- JULIO -->
+
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+
+<!-- AGOSTO -->
+
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+
+<!-- SEPTIEMBRE -->
+
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+
+<!-- OCTUBRE -->
+
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+
+<!-- NOVIEMBRE -->
+
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+<td></td>
+
+<!-- DICIEMBRE -->
+
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+
 </tr>
+
+
+<!-- =========================================================
+     GABRIEL OLIVARES
+========================================================= -->
+
+<tr
+    data-cantor="H. Gabriel Olivares">
+
+<td class="nombre">
+    H. Gabriel Olivares
+</td>
+
+<!-- JULIO -->
+
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+
+<!-- AGOSTO -->
+
+<td></td>
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+
+<!-- SEPTIEMBRE -->
+
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+
+<!-- OCTUBRE -->
+
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+
+<!-- NOVIEMBRE -->
+
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+
+<!-- DICIEMBRE -->
+
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+
+</tr>
+
+
+<!-- =========================================================
+     ENRIQUE RAMÍREZ
+========================================================= -->
+
+<tr
+    data-cantor="H. Enrique Ramírez">
+
+<td class="nombre">
+    H. Enrique Ramírez
+</td>
+
+<!-- JULIO -->
+
+<td></td>
+<td></td>
+<td></td>
+
+<!-- AGOSTO -->
+
+<td class="activo">✔</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+
+<!-- SEPTIEMBRE -->
+
+<td></td>
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+
+<!-- OCTUBRE -->
+
+<td></td>
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+
+<!-- NOVIEMBRE -->
+
+<td></td>
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+<td></td>
+
+<!-- DICIEMBRE -->
+
+<td></td>
+<td></td>
+<td></td>
+<td class="activo">✔</td>
+
+</tr>
+
 
 </table>
 
 </div>
 
+
+<!-- =========================================================
+     VERSÍCULO
+========================================================= -->
+
 <div class="versiculo">
-    <h3>📖 Versículo de reflexión</h3>
+
+    <h3>
+        📖 Versículo de reflexión
+    </h3>
+
     <p>
-        “¡Mirad cuán bueno y cuán delicioso es habitar los hermanos juntos en armonía!”<br>
-        <strong>Salmos 133:1</strong>
+
+        “¡Mirad cuán bueno y cuán delicioso es
+        habitar los hermanos juntos en armonía!”
+
+        <br>
+
+        <strong>
+            Salmos 133:1
+        </strong>
+
     </p>
-</div>
 
 </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
 
-// Toggle estilo Gantt interactivo
-document.querySelectorAll("td").forEach(td => {
-    if(td.classList.contains("nombre")) return;
+/* =========================================================
+   DATOS DEL PROGRAMA
+========================================================= */
 
-    td.addEventListener("click", function(){
-        this.classList.toggle("activo");
-    });
-});
+const fechasPrograma = [
+
+    /* JULIO */
+
+    {
+        fecha:"2026-07-12",
+        cantor:"H. Carlos García"
+    },
+
+    {
+        fecha:"2026-07-19",
+        cantor:"H. Juan Monterrosa"
+    },
+
+    {
+        fecha:"2026-07-26",
+        cantor:"H. Gabriel Olivares"
+    },
+
+
+    /* AGOSTO */
+
+    {
+        fecha:"2026-08-02",
+        cantor:"H. Enrique Ramírez"
+    },
+
+    {
+        fecha:"2026-08-09",
+        cantor:"H. Carlos García"
+    },
+
+    {
+        fecha:"2026-08-16",
+        cantor:"H. Juan Monterrosa"
+    },
+
+    {
+        fecha:"2026-08-23",
+        cantor:"H. Gabriel Olivares"
+    },
+
+    {
+        fecha:"2026-08-30",
+        cantor:"H. Enrique Ramírez"
+    },
+
+
+    /* SEPTIEMBRE */
+
+    {
+        fecha:"2026-09-06",
+        cantor:"H. Carlos García"
+    },
+
+    {
+        fecha:"2026-09-13",
+        cantor:"H. Juan Monterrosa"
+    },
+
+    {
+        fecha:"2026-09-20",
+        cantor:"H. Gabriel Olivares"
+    },
+
+    {
+        fecha:"2026-09-27",
+        cantor:"H. Enrique Ramírez"
+    },
+
+
+    /* OCTUBRE */
+
+    {
+        fecha:"2026-10-04",
+        cantor:"H. Carlos García"
+    },
+
+    {
+        fecha:"2026-10-11",
+        cantor:"H. Juan Monterrosa"
+    },
+
+    {
+        fecha:"2026-10-18",
+        cantor:"H. Gabriel Olivares"
+    },
+
+    {
+        fecha:"2026-10-25",
+        cantor:"H. Enrique Ramírez"
+    },
+
+
+    /* NOVIEMBRE */
+
+    {
+        fecha:"2026-11-01",
+        cantor:"H. Carlos García"
+    },
+
+    {
+        fecha:"2026-11-08",
+        cantor:"H. Juan Monterrosa"
+    },
+
+    {
+        fecha:"2026-11-15",
+        cantor:"H. Gabriel Olivares"
+    },
+
+    {
+        fecha:"2026-11-22",
+        cantor:"H. Enrique Ramírez"
+    },
+
+    {
+        fecha:"2026-11-29",
+        cantor:"H. Carlos García"
+    },
+
+
+    /* DICIEMBRE */
+
+    {
+        fecha:"2026-12-06",
+        cantor:"H. Juan Monterrosa"
+    },
+
+    {
+        fecha:"2026-12-13",
+        cantor:"H. Gabriel Olivares"
+    },
+
+    {
+        fecha:"2026-12-20",
+        cantor:"H. Enrique Ramírez"
+    },
+
+    {
+        fecha:"2026-12-27",
+        cantor:"H. Carlos García"
+    }
+
+];
+
+
+/* =========================================================
+   ELEMENTOS
+========================================================= */
+
+const calendarioGrid =
+    document.getElementById("calendarioGrid");
+
+const nombreMes =
+    document.getElementById("nombreMes");
+
+const fechaSeleccionada =
+    document.getElementById("fechaSeleccionada");
+
+const botonAnterior =
+    document.getElementById("mesAnterior");
+
+const botonSiguiente =
+    document.getElementById("mesSiguiente");
+
+const botonTodas =
+    document.getElementById("mostrarTodas");
+
+
+/* =========================================================
+   MESES
+========================================================= */
+
+const meses = [
+
+    "ENERO",
+    "FEBRERO",
+    "MARZO",
+    "ABRIL",
+    "MAYO",
+    "JUNIO",
+    "JULIO",
+    "AGOSTO",
+    "SEPTIEMBRE",
+    "OCTUBRE",
+    "NOVIEMBRE",
+    "DICIEMBRE"
+
+];
+
+
+/* =========================================================
+   FECHA INICIAL
+========================================================= */
+
+let mesActual = 8;
+let añoActual = 2026;
+
+
+/* =========================================================
+   RENDERIZAR CALENDARIO
+========================================================= */
+
+function renderizarCalendario(){
+
+    calendarioGrid.innerHTML = "";
+
+    nombreMes.textContent =
+        meses[mesActual] + " " + añoActual;
+
+
+    const primerDia =
+        new Date(
+            añoActual,
+            mesActual,
+            1
+        );
+
+
+    const ultimoDia =
+        new Date(
+            añoActual,
+            mesActual + 1,
+            0
+        );
+
+
+    const cantidadDias =
+        ultimoDia.getDate();
+
+
+    const primerDiaSemana =
+        primerDia.getDay();
+
+
+    /* -----------------------------------------------------
+       ESPACIOS ANTES DEL PRIMER DÍA
+    ----------------------------------------------------- */
+
+    for(
+        let i = 0;
+        i < primerDiaSemana;
+        i++
+    ){
+
+        const espacio =
+            document.createElement("div");
+
+        espacio.className =
+            "calendario-dia vacio";
+
+        calendarioGrid.appendChild(
+            espacio
+        );
+
+    }
+
+
+    /* -----------------------------------------------------
+       CREAR DÍAS
+    ----------------------------------------------------- */
+
+    for(
+        let dia = 1;
+        dia <= cantidadDias;
+        dia++
+    ){
+
+        const boton =
+            document.createElement("div");
+
+        boton.className =
+            "calendario-dia";
+
+        boton.textContent =
+            dia;
+
+
+        const fecha =
+            `${añoActual}-${String(mesActual + 1).padStart(2,"0")}-${String(dia).padStart(2,"0")}`;
+
+
+        const evento =
+            fechasPrograma.find(
+                item => item.fecha === fecha
+            );
+
+
+        /* -------------------------------------------------
+           SI EXISTE PROGRAMA
+        ------------------------------------------------- */
+
+        if(evento){
+
+            boton.classList.add(
+                "tiene-evento"
+            );
+
+
+            boton.title =
+                "Cantor: " +
+                evento.cantor;
+
+
+            boton.addEventListener(
+                "click",
+                function(){
+
+                    seleccionarFecha(
+                        evento
+                    );
+
+                }
+            );
+
+        }
+
+
+        calendarioGrid.appendChild(
+            boton
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SELECCIONAR FECHA
+========================================================= */
+
+function seleccionarFecha(evento){
+
+    const filas =
+        document.querySelectorAll(
+            "table tr[data-cantor]"
+        );
+
+
+    /* -----------------------------------------------------
+       OCULTAR TODAS LAS FILAS
+    ----------------------------------------------------- */
+
+    filas.forEach(
+        fila => {
+
+            fila.classList.add(
+                "oculta"
+            );
+
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       MOSTRAR CANTOR SELECCIONADO
+    ----------------------------------------------------- */
+
+    filas.forEach(
+        fila => {
+
+            if(
+                fila.dataset.cantor ===
+                evento.cantor
+            ){
+
+                fila.classList.remove(
+                    "oculta"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       MOSTRAR INFORMACIÓN
+    ----------------------------------------------------- */
+
+    const fecha =
+        new Date(
+            evento.fecha + "T12:00:00"
+        );
+
+
+    const opciones = {
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+    };
+
+
+    const textoFecha =
+        fecha.toLocaleDateString(
+            "es-ES",
+            opciones
+        );
+
+
+    fechaSeleccionada.innerHTML =
+        "📅 <strong>" +
+        textoFecha.charAt(0).toUpperCase() +
+        textoFecha.slice(1) +
+        "</strong> — 🎤 " +
+        evento.cantor;
+
+
+    /* -----------------------------------------------------
+       MARCAR DÍA
+    ----------------------------------------------------- */
+
+    document
+        .querySelectorAll(
+            ".calendario-dia"
+        )
+        .forEach(
+            dia => {
+
+                dia.classList.remove(
+                    "activo"
+                );
+
+            }
+        );
+
+
+    const dias =
+        document.querySelectorAll(
+            ".calendario-dia:not(.vacio)"
+        );
+
+
+    dias.forEach(
+        dia => {
+
+            if(
+                parseInt(
+                    dia.textContent
+                ) ===
+                parseInt(
+                    evento.fecha.split("-")[2]
+                )
+            ){
+
+                dia.classList.add(
+                    "activo"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       BAJAR A LA TABLA
+    ----------------------------------------------------- */
+
+    setTimeout(
+        function(){
+
+            document
+                .querySelector(
+                    "table"
+                )
+                .scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+        },
+        100
+    );
+
+}
+
+
+/* =========================================================
+   MES ANTERIOR
+========================================================= */
+
+botonAnterior.addEventListener(
+    "click",
+    function(){
+
+        mesActual--;
+
+        if(mesActual < 0){
+
+            mesActual = 11;
+
+            añoActual--;
+
+        }
+
+        renderizarCalendario();
+
+    }
+);
+
+
+/* =========================================================
+   MES SIGUIENTE
+========================================================= */
+
+botonSiguiente.addEventListener(
+    "click",
+    function(){
+
+        mesActual++;
+
+        if(mesActual > 11){
+
+            mesActual = 0;
+
+            añoActual++;
+
+        }
+
+        renderizarCalendario();
+
+    }
+);
+
+
+/* =========================================================
+   MOSTRAR TODAS
+========================================================= */
+
+botonTodas.addEventListener(
+    "click",
+    function(){
+
+        const filas =
+            document.querySelectorAll(
+                "table tr[data-cantor]"
+            );
+
+
+        filas.forEach(
+            fila => {
+
+                fila.classList.remove(
+                    "oculta"
+                );
+
+            }
+        );
+
+
+        fechaSeleccionada.innerHTML =
+            "📅 <strong>Mostrando todos los cantores</strong>";
+
+
+        document
+            .querySelectorAll(
+                ".calendario-dia"
+            )
+            .forEach(
+                dia => {
+
+                    dia.classList.remove(
+                        "activo"
+                    );
+
+                }
+            );
+
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+);
+
+
+/* =========================================================
+   CLIC EN LAS CELDAS DE LA TABLA
+========================================================= */
+
+document
+    .querySelectorAll(
+        "table td"
+    )
+    .forEach(
+        td => {
+
+            if(
+                td.classList.contains(
+                    "nombre"
+                )
+            ){
+
+                return;
+
+            }
+
+
+            td.addEventListener(
+                "click",
+                function(){
+
+                    this.classList.toggle(
+                        "activo"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   INICIAR CALENDARIO
+========================================================= */
+
+renderizarCalendario();
 
 </script>
 

@@ -146,6 +146,208 @@ h1{
     }
 }
 
+
+/* =========================================================
+   CALENDARIO DE BÚSQUEDA
+   ========================================================= */
+
+.calendario-busqueda{
+    background:rgba(255,255,255,.97);
+    border-radius:22px;
+    padding:20px;
+    margin-bottom:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.20);
+}
+
+.calendario-cabecera{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:18px;
+}
+
+.calendario-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--azul),var(--azul2));
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.calendario-btn:hover{
+    transform:scale(1.06);
+    box-shadow:0 6px 15px rgba(0,0,0,.20);
+}
+
+.calendario-mes{
+    flex:1;
+    text-align:center;
+    font-size:20px;
+    font-weight:700;
+    color:var(--azul);
+    text-transform:uppercase;
+}
+
+.calendario-semana{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:6px;
+    margin-bottom:7px;
+}
+
+.calendario-semana div{
+    text-align:center;
+    font-size:11px;
+    font-weight:700;
+    color:#64748b;
+    padding:5px 0;
+}
+
+.calendario-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:6px;
+}
+
+.calendario-dia{
+    min-height:45px;
+    border:1px solid #e5e7eb;
+    background:#f8fafc;
+    border-radius:10px;
+    cursor:pointer;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    color:#334155;
+    transition:.2s;
+}
+
+.calendario-dia:hover{
+    background:#e8f1ff;
+    border-color:var(--celeste);
+    transform:translateY(-2px);
+}
+
+.calendario-dia.vacio{
+    border:none;
+    background:transparent;
+    cursor:default;
+}
+
+.calendario-dia.vacio:hover{
+    transform:none;
+    background:transparent;
+}
+
+.calendario-dia.tiene-evento{
+    background:#e8f1ff;
+    border:2px solid var(--celeste);
+    color:var(--azul);
+}
+
+.calendario-dia.tiene-evento::after{
+    content:"";
+    position:absolute;
+    bottom:5px;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:#22c55e;
+}
+
+.calendario-dia.activo{
+    background:linear-gradient(135deg,var(--azul),var(--celeste));
+    color:white;
+    border-color:transparent;
+    box-shadow:0 6px 15px rgba(30,58,138,.30);
+}
+
+.calendario-dia.activo::after{
+    background:white;
+}
+
+.calendario-dia.hoy{
+    box-shadow:inset 0 0 0 2px #f59e0b;
+}
+
+.calendario-seleccionado{
+    margin-top:18px;
+    background:#f1f5f9;
+    border-radius:12px;
+    padding:12px;
+    text-align:center;
+    color:#334155;
+    font-size:14px;
+    font-weight:600;
+}
+
+.calendario-todas{
+    display:block;
+    width:100%;
+    margin-top:10px;
+    padding:11px 15px;
+    border:none;
+    border-radius:12px;
+    background:#e2e8f0;
+    color:#334155;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.calendario-todas:hover{
+    background:#cbd5e1;
+}
+
+.card.oculta{
+    display:none;
+}
+
+@media(max-width:600px){
+
+    .calendario-busqueda{
+        padding:14px;
+        border-radius:17px;
+    }
+
+    .calendario-mes{
+        font-size:16px;
+    }
+
+    .calendario-btn{
+        width:38px;
+        height:38px;
+        font-size:18px;
+    }
+
+    .calendario-grid{
+        gap:4px;
+    }
+
+    .calendario-semana{
+        gap:4px;
+    }
+
+    .calendario-dia{
+        min-height:40px;
+        font-size:13px;
+        border-radius:8px;
+    }
+
+    .calendario-semana div{
+        font-size:9px;
+    }
+}
+
 </style>
 
 </head>
@@ -155,6 +357,52 @@ h1{
 <div class="contenedor">
 
 <h1>🎼 PROGRAMA DE MÚSICOS</h1>
+
+
+<!-- =========================================================
+     CALENDARIO DE BÚSQUEDA
+     ========================================================= -->
+
+<div class="calendario-busqueda">
+
+    <div class="calendario-cabecera">
+
+        <button type="button" class="calendario-btn" id="mesAnterior">
+            ‹
+        </button>
+
+        <div class="calendario-mes" id="nombreMes">
+            SEPTIEMBRE 2026
+        </div>
+
+        <button type="button" class="calendario-btn" id="mesSiguiente">
+            ›
+        </button>
+
+    </div>
+
+    <div class="calendario-semana">
+        <div>DOM</div>
+        <div>LUN</div>
+        <div>MAR</div>
+        <div>MIÉ</div>
+        <div>JUE</div>
+        <div>VIE</div>
+        <div>SÁB</div>
+    </div>
+
+    <div class="calendario-grid" id="calendarioGrid"></div>
+
+    <div class="calendario-seleccionado" id="fechaSeleccionada">
+        📅 Selecciona una fecha para ver el programa
+    </div>
+
+    <button type="button" class="calendario-todas" id="mostrarTodas">
+        🔄 Mostrar todas las fechas
+    </button>
+
+</div>
+
 
 <!-- 12 JULIO -->
 <div class="card">
@@ -851,6 +1099,234 @@ h1{
 
 </div>
 </div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    const calendarioGrid = document.getElementById("calendarioGrid");
+    const nombreMes = document.getElementById("nombreMes");
+    const fechaSeleccionada = document.getElementById("fechaSeleccionada");
+
+    const botonAnterior = document.getElementById("mesAnterior");
+    const botonSiguiente = document.getElementById("mesSiguiente");
+    const botonTodas = document.getElementById("mostrarTodas");
+
+    const tarjetas = Array.from(document.querySelectorAll(".card"));
+
+    const meses = [
+        "ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO",
+        "JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE"
+    ];
+
+    const mesesBusqueda = {
+        "enero":0,
+        "febrero":1,
+        "marzo":2,
+        "abril":3,
+        "mayo":4,
+        "junio":5,
+        "julio":6,
+        "agosto":7,
+        "septiembre":8,
+        "setiembre":8,
+        "octubre":9,
+        "noviembre":10,
+        "diciembre":11
+    };
+
+    const eventos = [];
+
+    tarjetas.forEach(function(card){
+
+        const elementoFecha = card.querySelector(".fecha");
+
+        if(!elementoFecha) return;
+
+        const texto = elementoFecha.textContent.trim().toLowerCase();
+
+        const resultado = texto.match(/(\d{1,2})\s+de\s+([a-záéíóú]+)(?:\s+de\s+(\d{4}))?/);
+
+        if(!resultado) return;
+
+        const dia = parseInt(resultado[1],10);
+
+        const nombreMesTexto = resultado[2]
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g,"");
+
+        const mes = mesesBusqueda[nombreMesTexto];
+
+        if(mes === undefined) return;
+
+        const año = resultado[3] ? parseInt(resultado[3],10) : 2026;
+
+        eventos.push({
+            fecha: new Date(año, mes, dia),
+            dia: dia,
+            mes: mes,
+            año: año,
+            card: card
+        });
+
+    });
+
+    let mesActual = 8;
+    let añoActual = 2026;
+
+    function renderizarCalendario(){
+
+        calendarioGrid.innerHTML = "";
+
+        nombreMes.textContent = meses[mesActual] + " " + añoActual;
+
+        const primerDia = new Date(añoActual, mesActual, 1);
+        const ultimoDia = new Date(añoActual, mesActual + 1, 0);
+        const cantidadDias = ultimoDia.getDate();
+        const primerDiaSemana = primerDia.getDay();
+
+        for(let i = 0; i < primerDiaSemana; i++){
+
+            const espacio = document.createElement("div");
+            espacio.className = "calendario-dia vacio";
+            calendarioGrid.appendChild(espacio);
+
+        }
+
+        for(let dia = 1; dia <= cantidadDias; dia++){
+
+            const boton = document.createElement("div");
+            boton.className = "calendario-dia";
+            boton.textContent = dia;
+
+            const evento = eventos.find(function(item){
+
+                return (
+                    item.dia === dia &&
+                    item.mes === mesActual &&
+                    item.año === añoActual
+                );
+
+            });
+
+            if(evento){
+
+                boton.classList.add("tiene-evento");
+
+                boton.title =
+                    "Ver programa del " +
+                    dia +
+                    " de " +
+                    meses[mesActual].toLowerCase();
+
+                boton.addEventListener("click", function(){
+                    seleccionarFecha(evento);
+                });
+
+            }
+
+            const hoy = new Date();
+
+            if(
+                hoy.getDate() === dia &&
+                hoy.getMonth() === mesActual &&
+                hoy.getFullYear() === añoActual
+            ){
+                boton.classList.add("hoy");
+            }
+
+            calendarioGrid.appendChild(boton);
+
+        }
+
+    }
+
+    function seleccionarFecha(evento){
+
+        tarjetas.forEach(function(card){
+            card.classList.add("oculta");
+        });
+
+        evento.card.classList.remove("oculta");
+
+        fechaSeleccionada.innerHTML =
+            "📅 <strong>" +
+            evento.card.querySelector(".fecha").textContent.trim() +
+            "</strong>";
+
+        document.querySelectorAll(".calendario-dia").forEach(function(dia){
+            dia.classList.remove("activo");
+        });
+
+        document.querySelectorAll(".calendario-dia:not(.vacio)").forEach(function(boton){
+
+            if(parseInt(boton.textContent,10) === evento.dia){
+                boton.classList.add("activo");
+            }
+
+        });
+
+        setTimeout(function(){
+
+            evento.card.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        },100);
+
+    }
+
+    botonAnterior.addEventListener("click", function(){
+
+        mesActual--;
+
+        if(mesActual < 0){
+            mesActual = 11;
+            añoActual--;
+        }
+
+        renderizarCalendario();
+
+    });
+
+    botonSiguiente.addEventListener("click", function(){
+
+        mesActual++;
+
+        if(mesActual > 11){
+            mesActual = 0;
+            añoActual++;
+        }
+
+        renderizarCalendario();
+
+    });
+
+    botonTodas.addEventListener("click", function(){
+
+        tarjetas.forEach(function(card){
+            card.classList.remove("oculta");
+        });
+
+        fechaSeleccionada.innerHTML =
+            "📅 <strong>Mostrando todas las fechas</strong>";
+
+        document.querySelectorAll(".calendario-dia").forEach(function(dia){
+            dia.classList.remove("activo");
+        });
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    });
+
+    renderizarCalendario();
+
+});
+</script>
 
 </body>
 </html>

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Reuniones de Ensayo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================================================
-   RESET
-========================================================= */
+:root{
+    --azul:#0B1F3A;
+    --azul2:#1e3a8a;
+    --celeste:#3b82f6;
+    --verde:#22c55e;
+    --fondo:#eef2f7;
+    --texto:#172033;
+}
 
 *{
     margin:0;
@@ -23,1489 +25,1843 @@
     box-sizing:border-box;
 }
 
-
-/* =========================================================
-   BODY
-========================================================= */
-
 body{
     font-family:'Poppins',sans-serif;
-    background:
-        radial-gradient(
-            circle at top,
-            #0B1F3A 0%,
-            #123b70 45%,
-            #07111f 100%
-        );
+    background:linear-gradient(135deg,#0B1F3A,#1e3a8a,#eef2f7);
     min-height:100vh;
-    padding:12px;
-    color:#1f2937;
+    padding:10px;
+    color:var(--texto);
 }
 
-
-/* =========================================================
-   CONTENEDOR
-========================================================= */
-
 .contenedor{
-    width:100%;
-    max-width:950px;
+    max-width:720px;
     margin:auto;
 }
 
-
 /* =========================================================
-   TITULO PRINCIPAL
-========================================================= */
+   TITULO
+   ========================================================= */
 
-.encabezado{
+h1{
     text-align:center;
     color:white;
-    padding:12px 8px 22px;
+    font-size:19px;
+    margin:5px 0 12px;
+    letter-spacing:.7px;
 }
-
-.encabezado h1{
-    font-size:25px;
-    font-weight:800;
-    letter-spacing:.8px;
-}
-
-.encabezado p{
-    margin-top:4px;
-    font-size:13px;
-    opacity:.85;
-}
-
 
 /* =========================================================
    PROXIMA REUNION
-========================================================= */
+   ========================================================= */
 
-.proxima-reunion{
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #eef5ff
-        );
-
-    border-radius:18px;
-    padding:17px;
-    margin-bottom:20px;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.22);
-
-    border:1px solid rgba(255,255,255,.35);
-
-    position:relative;
-    overflow:hidden;
+.proxima{
+    background:rgba(255,255,255,.97);
+    border-radius:14px;
+    padding:11px 13px;
+    margin-bottom:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.16);
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.proxima-reunion::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
-    width:6px;
-    background:
-        linear-gradient(
-            #2563EB,
-            #60A5FA
-        );
+.proxima-icono{
+    width:38px;
+    height:38px;
+    min-width:38px;
+    border-radius:11px;
+    background:linear-gradient(135deg,var(--azul),var(--celeste));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:19px;
 }
 
-.proxima-titulo{
+.proxima-info{
+    flex:1;
+    min-width:0;
+}
+
+.proxima-label{
     color:#64748b;
-    font-size:11px;
+    font-size:9px;
     font-weight:700;
-    text-transform:uppercase;
     letter-spacing:1px;
 }
 
 .proxima-fecha{
-    color:#0B1F3A;
-    font-size:20px;
-    font-weight:800;
-    margin-top:3px;
-}
-
-.proxima-info{
-    color:#475569;
-    font-size:12px;
-    margin-top:4px;
-}
-
-
-/* =========================================================
-   CARD REUNION
-========================================================= */
-
-.card{
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #f8fafc
-        );
-
-    border-radius:18px;
-    margin-bottom:18px;
-    overflow:hidden;
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,.15);
-
-    border:1px solid rgba(37,99,235,.08);
-
-    transition:.25s ease;
-}
-
-.card:hover{
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.22);
-}
-
-
-/* =========================================================
-   FECHA
-========================================================= */
-
-.fecha{
-    background:
-        linear-gradient(
-            90deg,
-            #0B1F3A,
-            #2563EB
-        );
-
-    color:white;
-
-    padding:14px 17px;
-
-    font-weight:700;
-
-    letter-spacing:.4px;
-
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.fecha.proxima{
-    background:
-        linear-gradient(
-            90deg,
-            #123b70,
-            #2563EB,
-            #3B82F6
-        );
-}
-
-
-/* =========================================================
-   CUERPO
-========================================================= */
-
-.cuerpo{
-    padding:18px;
-}
-
-
-/* =========================================================
-   LABEL
-========================================================= */
-
-.label{
-    font-weight:700;
+    color:var(--azul);
     font-size:13px;
-    color:#0B1F3A;
-
-    margin-bottom:10px;
-
-    display:flex;
-    align-items:center;
-    gap:6px;
+    font-weight:700;
+    line-height:1.2;
 }
 
+.proxima-badge{
+    background:#dcfce7;
+    color:#15803d;
+    padding:5px 8px;
+    border-radius:8px;
+    font-size:8px;
+    font-weight:700;
+    white-space:nowrap;
+}
 
 /* =========================================================
-   CANCIONES
-========================================================= */
+   CALENDARIO
+   ========================================================= */
 
-.cancion{
-    cursor:pointer;
+.calendario-busqueda{
+    background:rgba(255,255,255,.98);
+    border-radius:15px;
+    padding:12px;
+    margin-bottom:12px;
+    box-shadow:0 9px 22px rgba(0,0,0,.17);
+}
 
+.calendario-cabecera{
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:7px;
+    margin-bottom:9px;
+}
 
-    gap:10px;
+.calendario-btn{
+    width:32px;
+    height:32px;
+    border:none;
+    border-radius:9px;
+    background:linear-gradient(135deg,var(--azul),var(--celeste));
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
-    padding:13px 14px;
-
-    margin:9px 0;
-
-    border-radius:13px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #f8fafc,
-            #eef2f7
-        );
-
-    color:#0f2f5c;
-
+.calendario-mes{
+    flex:1;
+    text-align:center;
+    color:var(--azul);
+    font-size:15px;
     font-weight:700;
+}
 
-    letter-spacing:.25px;
+.calendario-semana{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:3px;
+    margin-bottom:4px;
+}
 
-    border:1px solid rgba(37,99,235,.12);
+.calendario-semana div{
+    text-align:center;
+    color:#64748b;
+    font-size:8px;
+    font-weight:700;
+    padding:2px 0;
+}
 
-    box-shadow:
-        0 5px 13px rgba(0,0,0,.05);
+.calendario-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:3px;
+}
 
-    transition:all .25s ease;
-
+.calendario-dia{
+    height:34px;
+    border:1px solid #e5e7eb;
+    background:#f8fafc;
+    border-radius:7px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     position:relative;
+    color:#334155;
+    font-size:11px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.15s;
+}
+
+.calendario-dia:hover{
+    background:#e8f1ff;
+    border-color:var(--celeste);
+}
+
+.calendario-dia.vacio{
+    border:none;
+    background:transparent;
+    cursor:default;
+}
+
+.calendario-dia.tiene-evento{
+    background:#e8f1ff;
+    border:1.5px solid var(--celeste);
+    color:var(--azul);
+}
+
+.calendario-dia.tiene-evento::after{
+    content:"";
+    position:absolute;
+    bottom:3px;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:var(--verde);
+}
+
+.calendario-dia.activo{
+    background:linear-gradient(135deg,var(--azul),var(--celeste));
+    color:white;
+    border-color:transparent;
+    box-shadow:0 4px 10px rgba(30,58,138,.28);
+}
+
+.calendario-dia.activo::after{
+    background:white;
+}
+
+.calendario-dia.hoy{
+    box-shadow:inset 0 0 0 2px #f59e0b;
+}
+
+.calendario-seleccionado{
+    margin-top:8px;
+    background:#f1f5f9;
+    border-radius:8px;
+    padding:7px 8px;
+    text-align:center;
+    color:#475569;
+    font-size:10px;
+    font-weight:600;
+}
+
+.calendario-todas{
+    width:100%;
+    margin-top:6px;
+    padding:7px;
+    border:none;
+    border-radius:8px;
+    background:#e2e8f0;
+    color:#334155;
+    font-family:'Poppins',sans-serif;
+    font-size:10px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* =========================================================
+   TARJETAS DE ENSAYO
+   ========================================================= */
+
+.card{
+    background:white;
+    border-radius:13px;
+    margin-bottom:10px;
     overflow:hidden;
+    box-shadow:0 7px 18px rgba(0,0,0,.13);
 }
 
-.cancion::before{
-    content:"🎶";
-    font-size:16px;
+.card.oculta{
+    display:none;
 }
 
-.cancion::after{
-    content:"›";
+.fecha{
+    background:linear-gradient(90deg,var(--azul),var(--celeste));
+    color:white;
+    padding:8px 11px;
+    font-size:11px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 
-    font-size:23px;
-    font-weight:400;
+.proxima-card{
+    background:linear-gradient(90deg,#0f766e,#22c55e);
+}
 
-    color:#2563EB;
+.fecha-badge{
+    background:rgba(255,255,255,.2);
+    border-radius:6px;
+    padding:3px 6px;
+    font-size:7px;
+    letter-spacing:.4px;
+}
 
-    margin-left:auto;
+.lista-canciones{
+    padding:4px 0;
+}
 
-    transition:.2s;
+.cancion{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding:8px 10px;
+    border-bottom:1px solid #f1f5f9;
+    cursor:pointer;
+    transition:.15s;
+}
+
+.cancion:last-child{
+    border-bottom:none;
 }
 
 .cancion:hover{
-    transform:
-        translateY(-2px)
-        scale(1.01);
-
-    background:
-        linear-gradient(
-            145deg,
-            #e0ecff,
-            #dbeafe
-        );
-
-    border-left:5px solid #2563EB;
-
-    box-shadow:
-        0 10px 25px rgba(37,99,235,.20);
+    background:#f8fbff;
 }
 
-.cancion:hover::after{
-    transform:translateX(4px);
+.cancion-icono{
+    width:29px;
+    height:29px;
+    min-width:29px;
+    border-radius:8px;
+    background:#e8f1ff;
+    color:var(--celeste);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
 }
 
+.cancion-info{
+    flex:1;
+    min-width:0;
+}
+
+.cancion-nombre{
+    font-size:11px;
+    font-weight:700;
+    color:#172033;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.cancion-tono{
+    font-size:8px;
+    color:#64748b;
+    margin-top:1px;
+}
+
+.cancion-flecha{
+    color:#94a3b8;
+    font-size:15px;
+}
 
 /* =========================================================
-   MODAL
-========================================================= */
+   MODAL ACORDES
+   ========================================================= */
 
 .modal{
-    display:none;
-
     position:fixed;
-
     inset:0;
-
-    width:100%;
-    height:100%;
-
-    background:
-        rgba(3,12,25,.82);
-
+    background:rgba(3,12,28,.72);
     backdrop-filter:blur(5px);
-
-    justify-content:center;
+    display:none;
     align-items:center;
-
-    padding:12px;
-
+    justify-content:center;
+    padding:10px;
     z-index:9999;
 }
 
-
-/* =========================================================
-   CONTENIDO MODAL
-========================================================= */
-
-.modal-contenido{
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #f8fafc
-        );
-
-    width:100%;
-
-    max-width:760px;
-
-    max-height:94vh;
-
-    overflow-y:auto;
-
-    border-radius:20px;
-
-    padding:0;
-
-    position:relative;
-
-    box-shadow:
-        0 25px 80px rgba(0,0,0,.45);
-
-    animation:
-        aparecer .25s ease;
+.modal.mostrar{
+    display:flex;
 }
 
-@keyframes aparecer{
+.modal-contenido{
+    width:100%;
+    max-width:500px;
+    max-height:88vh;
+    background:white;
+    border-radius:17px;
+    overflow:hidden;
+    box-shadow:0 20px 55px rgba(0,0,0,.35);
+    animation:entrada .2s ease;
+    display:flex;
+    flex-direction:column;
+}
 
+@keyframes entrada{
     from{
         opacity:0;
-        transform:translateY(20px) scale(.97);
+        transform:translateY(15px) scale(.97);
     }
-
     to{
         opacity:1;
         transform:translateY(0) scale(1);
     }
-
 }
 
-
-/* =========================================================
-   CABECERA DEL MODAL
-========================================================= */
-
-.modal-header{
-
-    background:
-        linear-gradient(
-            135deg,
-            #0B1F3A,
-            #1565C0
-        );
-
+.modal-cabecera{
+    background:linear-gradient(135deg,var(--azul),var(--celeste));
     color:white;
-
-    padding:20px 55px 18px 20px;
-
+    padding:11px 12px;
     position:relative;
 }
 
-.modal-header h2{
-
-    font-size:22px;
-
-    font-weight:800;
-
-    letter-spacing:.5px;
-}
-
-.modal-header p{
-
-    margin-top:3px;
-
-    font-size:11px;
-
-    opacity:.8;
-}
-
-
-/* =========================================================
-   BOTON CERRAR
-========================================================= */
-
-.cerrar{
-
-    position:absolute;
-
-    right:14px;
-    top:12px;
-
-    width:38px;
-    height:38px;
-
-    border-radius:50%;
-
+.modal-cabecera-top{
     display:flex;
+    align-items:center;
+    gap:9px;
+    padding-right:35px;
+}
 
+.modal-disco{
+    width:35px;
+    height:35px;
+    min-width:35px;
+    border-radius:50%;
+    background:rgba(255,255,255,.18);
+    display:flex;
     align-items:center;
     justify-content:center;
-
-    background:
-        rgba(255,255,255,.15);
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-    transition:.2s;
+    font-size:16px;
 }
 
-.cerrar:hover{
-
-    background:
-        rgba(255,255,255,.28);
-
-    transform:rotate(90deg);
-
-}
-
-
-/* =========================================================
-   CONTENIDO ACORDES
-========================================================= */
-
-.acordes-contenido{
-
-    padding:20px;
-}
-
-
-/* =========================================================
-   INFORMACION RAPIDA
-========================================================= */
-
-.info-cancion{
-
-    display:flex;
-
-    gap:8px;
-
-    flex-wrap:wrap;
-
-    margin-bottom:18px;
-}
-
-.info-item{
-
-    background:#eef4ff;
-
-    border:1px solid #dbeafe;
-
-    color:#0f2f5c;
-
-    border-radius:9px;
-
-    padding:7px 10px;
-
-    font-size:10px;
-
+.modal-titulo{
+    font-size:14px;
     font-weight:700;
+    line-height:1.15;
 }
 
+.modal-subtitulo{
+    font-size:8px;
+    opacity:.78;
+    margin-top:2px;
+}
 
-/* =========================================================
-   SECCIONES
-========================================================= */
+.modal-cerrar{
+    position:absolute;
+    top:9px;
+    right:10px;
+    width:27px;
+    height:27px;
+    border:none;
+    border-radius:8px;
+    background:rgba(255,255,255,.15);
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+}
 
-.seccion{
+.modal-datos{
+    display:flex;
+    gap:5px;
+    margin-top:9px;
+    flex-wrap:wrap;
+}
 
-    margin-bottom:18px;
+.dato{
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:7px;
+    padding:4px 7px;
+    font-size:7px;
+    font-weight:600;
+}
 
-    border-radius:14px;
+.dato strong{
+    font-size:9px;
+    margin-left:2px;
+}
 
-    overflow:hidden;
+.modal-cuerpo{
+    padding:10px;
+    overflow:auto;
+    background:#f8fafc;
+}
 
-    border:1px solid #e2e8f0;
-
+.seccion-cancion{
     background:white;
-
-    box-shadow:
-        0 5px 14px rgba(15,23,42,.05);
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    margin-bottom:7px;
+    overflow:hidden;
 }
 
 .seccion-titulo{
+    background:#f1f5f9;
+    padding:5px 8px;
+    color:#64748b;
+    font-size:7px;
+    font-weight:700;
+    letter-spacing:1px;
+}
 
-    background:
-        linear-gradient(
-            90deg,
-            #eff6ff,
-            #f8fafc
-        );
-
-    color:#0B1F3A;
-
-    padding:9px 12px;
-
+.acordes{
+    padding:8px 9px;
+    font-family:'Courier New',monospace;
     font-size:11px;
-
-    font-weight:800;
-
-    text-transform:uppercase;
-
-    letter-spacing:.7px;
-
-    border-bottom:1px solid #e2e8f0;
-}
-
-
-/* =========================================================
-   LETRA + ACORDES
-========================================================= */
-
-.letra{
-
-    padding:15px;
-
-    overflow-x:auto;
-
-    font-family:
-        'Roboto Mono',
-        monospace;
-
-    font-size:15px;
-
-    line-height:1.9;
-
-    color:#334155;
-
+    line-height:1.55;
+    color:#1e293b;
     white-space:pre-wrap;
+    word-break:normal;
 }
-
-
-/* =========================================================
-   ACORDE DESTACADO
-========================================================= */
 
 .acorde{
-
-    color:#2563EB;
-
-    font-weight:800;
+    color:#1d4ed8;
+    font-weight:900;
 }
 
-
-/* =========================================================
-   BLOQUE SIMPLE
-========================================================= */
-
-.acorde-simple{
-
-    background:
-        #0B1F3A;
-
-    color:white;
-
-    border-radius:11px;
-
-    padding:13px;
-
-    font-family:
-        'Roboto Mono',
-        monospace;
-
-    font-size:16px;
-
-    line-height:1.7;
-
-    overflow-x:auto;
-
-    white-space:pre-wrap;
+.modal-pie{
+    padding:7px 10px;
+    border-top:1px solid #e5e7eb;
+    background:white;
+    display:flex;
+    justify-content:center;
 }
 
-
-/* =========================================================
-   PIE DEL MODAL
-========================================================= */
-
-.modal-footer{
-
-    padding:12px 20px 18px;
-
-    color:#64748b;
-
-    text-align:center;
-
-    font-size:10px;
+.indicacion{
+    font-size:8px;
+    color:#94a3b8;
 }
-
 
 /* =========================================================
    CELULAR
-========================================================= */
+   ========================================================= */
 
 @media(max-width:600px){
 
     body{
-        padding:6px;
+        padding:7px;
     }
 
-    .encabezado{
-        padding:9px 5px 15px;
+    h1{
+        font-size:16px;
+        margin:4px 0 9px;
     }
 
-    .encabezado h1{
-        font-size:19px;
+    .proxima{
+        padding:9px 10px;
+        margin-bottom:8px;
+        border-radius:12px;
     }
 
-    .encabezado p{
-        font-size:11px;
-    }
-
-    .proxima-reunion{
-        padding:14px;
-        border-radius:14px;
+    .proxima-icono{
+        width:33px;
+        height:33px;
+        min-width:33px;
+        font-size:16px;
     }
 
     .proxima-fecha{
-        font-size:17px;
+        font-size:11px;
     }
 
-    .card{
-        border-radius:14px;
+    .proxima-label{
+        font-size:8px;
     }
 
-    .fecha{
-        padding:12px 13px;
-        font-size:12px;
+    .proxima-badge{
+        font-size:7px;
+        padding:4px 6px;
     }
 
-    .cuerpo{
-        padding:13px;
+    .calendario-busqueda{
+        padding:9px;
+        border-radius:12px;
+        margin-bottom:9px;
     }
 
-    .cancion{
-        padding:12px;
-        font-size:12px;
+    .calendario-mes{
+        font-size:13px;
     }
 
-    .modal{
+    .calendario-btn{
+        width:29px;
+        height:29px;
+        font-size:16px;
+        border-radius:7px;
+    }
+
+    .calendario-dia{
+        height:30px;
+        font-size:10px;
+        border-radius:6px;
+    }
+
+    .calendario-semana div{
+        font-size:7px;
+    }
+
+    .calendario-seleccionado{
+        font-size:9px;
         padding:6px;
     }
 
+    .calendario-todas{
+        font-size:9px;
+        padding:6px;
+    }
+
+    .card{
+        border-radius:11px;
+        margin-bottom:8px;
+    }
+
+    .fecha{
+        padding:7px 9px;
+        font-size:10px;
+    }
+
+    .cancion{
+        padding:7px 8px;
+    }
+
+    .cancion-icono{
+        width:27px;
+        height:27px;
+        min-width:27px;
+        font-size:12px;
+    }
+
+    .cancion-nombre{
+        font-size:10px;
+    }
+
+    .cancion-tono{
+        font-size:7px;
+    }
+
+    .modal{
+        padding:7px;
+    }
+
     .modal-contenido{
-        max-height:96vh;
-        border-radius:15px;
+        max-height:91vh;
+        border-radius:14px;
     }
 
-    .modal-header{
-        padding:17px 50px 15px 15px;
+    .modal-cabecera{
+        padding:9px 10px;
     }
 
-    .modal-header h2{
-        font-size:18px;
+    .modal-titulo{
+        font-size:12px;
     }
 
-    .acordes-contenido{
-        padding:12px;
+    .modal-cuerpo{
+        padding:7px;
     }
 
-    .letra{
-        font-size:13px;
-        line-height:1.8;
-        padding:12px;
-    }
-
-    .acorde-simple{
-        font-size:14px;
-        padding:11px;
+    .acordes{
+        font-size:10px;
+        line-height:1.48;
+        padding:7px;
     }
 
 }
 
-
-/* =========================================================
-   CELULAR PEQUEÑO
-========================================================= */
-
 @media(max-width:380px){
 
-    .encabezado h1{
-        font-size:17px;
+    body{
+        padding:5px;
+    }
+
+    .calendario-dia{
+        height:27px;
+        font-size:9px;
+    }
+
+    .calendario-grid,
+    .calendario-semana{
+        gap:2px;
     }
 
     .cancion{
-        font-size:11px;
+        padding:6px 7px;
     }
 
-    .modal-header h2{
-        font-size:16px;
+    .cancion-icono{
+        width:25px;
+        height:25px;
+        min-width:25px;
     }
 
-    .letra{
-        font-size:12px;
+    .modal-contenido{
+        max-height:93vh;
+    }
+
+    .acordes{
+        font-size:9px;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="contenedor">
 
-<!-- =====================================================
-     ENCABEZADO
-===================================================== -->
-
-<div class="encabezado">
-
-```
 <h1>🎤 REUNIONES DE ENSAYO</h1>
 
-<p>
-    Ministerio de Alabanza
-</p>
-```
-
-</div>
-
-<!-- =====================================================
+<!-- =========================================================
      PROXIMA REUNION
-===================================================== -->
+     ========================================================= -->
 
-<div class="proxima-reunion">
+<div class="proxima">
 
-```
-<div class="proxima-titulo">
-    📢 Próxima reunión
-</div>
+    <div class="proxima-icono">📅</div>
 
-<div class="proxima-fecha">
-    📅 Domingo 11 de Octubre de 2026
-</div>
+    <div class="proxima-info">
+        <div class="proxima-label">PRÓXIMA REUNIÓN</div>
+        <div class="proxima-fecha">Domingo 11 de Octubre de 2026</div>
+    </div>
 
-<div class="proxima-info">
-    🎶 Ensayo del Ministerio de Alabanza
-</div>
-```
+    <div class="proxima-badge">
+        PRÓXIMA
+    </div>
 
 </div>
 
-<!-- =====================================================
-     AGOSTO 09
-===================================================== -->
+
+<!-- =========================================================
+     CALENDARIO
+     ========================================================= -->
+
+<div class="calendario-busqueda">
+
+    <div class="calendario-cabecera">
+
+        <button type="button"
+                class="calendario-btn"
+                id="mesAnterior">
+            ‹
+        </button>
+
+        <div class="calendario-mes" id="nombreMes">
+            SEPTIEMBRE 2026
+        </div>
+
+        <button type="button"
+                class="calendario-btn"
+                id="mesSiguiente">
+            ›
+        </button>
+
+    </div>
+
+    <div class="calendario-semana">
+        <div>DOM</div>
+        <div>LUN</div>
+        <div>MAR</div>
+        <div>MIÉ</div>
+        <div>JUE</div>
+        <div>VIE</div>
+        <div>SÁB</div>
+    </div>
+
+    <div class="calendario-grid"
+         id="calendarioGrid"></div>
+
+    <div class="calendario-seleccionado"
+         id="fechaSeleccionada">
+        📅 Selecciona una fecha de ensayo
+    </div>
+
+    <button type="button"
+            class="calendario-todas"
+            id="mostrarTodas">
+        🔄 Mostrar todas las reuniones
+    </button>
+
+</div>
+
+
+<!-- =========================================================
+     09 AGOSTO
+     ========================================================= -->
 
 <div class="card">
 
-```
-<div class="fecha">
-    📅 Domingo 09 de Agosto
+    <div class="fecha">
+        <span>📅 Domingo 09 de Agosto</span>
+    </div>
+
+    <div class="lista-canciones">
+
+        <div class="cancion"
+             data-cancion="PODEROSO DIOS">
+
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    PODEROSO DIOS
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: C
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
+        </div>
+
+
+        <div class="cancion"
+             data-cancion="TU MIRADA">
+
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    TU MIRADA
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: G
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
+        </div>
+
+
+        <div class="cancion"
+             data-cancion="HERMOSO ERES">
+
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    HERMOSO ERES
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: A
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
+        </div>
+
+
+        <div class="cancion"
+             data-cancion="ME GOZARÉ">
+
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    ME GOZARÉ
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: Em
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
+        </div>
+
+    </div>
+
 </div>
 
-<div class="cuerpo">
 
-    <div class="label">
-        🎶 Alabanzas a Ensayar
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('poderoso')">
-
-        <span>PODEROSO DIOS</span>
-
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('mirada')">
-
-        <span>TU MIRADA</span>
-
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('hermoso')">
-
-        <span>HERMOSO ERES</span>
-
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('megozare')">
-
-        <span>ME GOZARÉ</span>
-
-    </div>
-
-</div>
-```
-
-</div>
-
-<!-- =====================================================
-     SEPTIEMBRE 13
-===================================================== -->
+<!-- =========================================================
+     13 SEPTIEMBRE
+     ========================================================= -->
 
 <div class="card">
 
-```
-<div class="fecha">
-    📅 Domingo 13 de Septiembre
+    <div class="fecha">
+        <span>📅 Domingo 13 de Septiembre</span>
+    </div>
+
+    <div class="lista-canciones">
+
+        <div class="cancion"
+             data-cancion="PODEROSO DIOS">
+
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    PODEROSO DIOS
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: C
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
+        </div>
+
+
+        <div class="cancion"
+             data-cancion="TU MIRADA">
+
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    TU MIRADA
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: G
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
+        </div>
+
+
+        <div class="cancion"
+             data-cancion="HERMOSO ERES">
+
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    HERMOSO ERES
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: A
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
+        </div>
+
+
+        <div class="cancion"
+             data-cancion="ME GOZARÉ">
+
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    ME GOZARÉ
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: Em
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
+        </div>
+
+    </div>
+
 </div>
 
-<div class="cuerpo">
 
-    <div class="label">
-        🎶 Alabanzas a Ensayar
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('poderoso')">
-
-        <span>PODEROSO DIOS</span>
-
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('mirada')">
-
-        <span>TU MIRADA</span>
-
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('hermoso')">
-
-        <span>HERMOSO ERES</span>
-
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('megozare')">
-
-        <span>ME GOZARÉ</span>
-
-    </div>
-
-</div>
-```
-
-</div>
-
-<!-- =====================================================
-     OCTUBRE 11 - PROXIMA REUNION
-===================================================== -->
+<!-- =========================================================
+     11 OCTUBRE
+     ========================================================= -->
 
 <div class="card">
 
-```
-<div class="fecha proxima">
-    📅 Domingo 11 de Octubre — PRÓXIMA REUNIÓN
-</div>
+    <div class="fecha proxima-card">
 
-<div class="cuerpo">
+        <span>📅 Domingo 11 de Octubre</span>
 
-    <div class="label">
-        🎶 Alabanzas a Ensayar
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('poderoso')">
-
-        <span>PODEROSO DIOS</span>
-
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('mirada')">
-
-        <span>TU MIRADA</span>
-
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('hermoso')">
-
-        <span>HERMOSO ERES</span>
-
-    </div>
-
-
-    <div
-        class="cancion"
-        onclick="abrirCancion('megozare')">
-
-        <span>ME GOZARÉ</span>
-
-    </div>
-
-</div>
-```
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     MODAL
-===================================================== -->
-
-<div
-    id="modal"
-    class="modal">
-
-```
-<div class="modal-contenido">
-
-
-    <div class="modal-header">
-
-        <span
-            class="cerrar"
-            onclick="cerrarModal()">
-
-            ✕
-
+        <span class="fecha-badge">
+            PRÓXIMA REUNIÓN
         </span>
 
-        <h2 id="titulo"></h2>
-
-        <p>
-            🎸 Acordes y guía de ensayo
-        </p>
-
     </div>
 
+    <div class="lista-canciones">
 
-    <div class="acordes-contenido">
+        <div class="cancion"
+             data-cancion="PODEROSO DIOS">
 
-        <div
-            id="infoCancion"
-            class="info-cancion">
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    PODEROSO DIOS
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: C
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
         </div>
 
-        <div
-            id="contenidoCancion">
+
+        <div class="cancion"
+             data-cancion="TU MIRADA">
+
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    TU MIRADA
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: G
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
         </div>
 
-    </div>
+
+        <div class="cancion"
+             data-cancion="HERMOSO ERES">
+
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    HERMOSO ERES
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: A
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
+        </div>
 
 
-    <div class="modal-footer">
+        <div class="cancion"
+             data-cancion="ME GOZARÉ">
 
-        🎶 Ministerio de Alabanza · Guía de ensayo
+            <div class="cancion-icono">🎵</div>
+
+            <div class="cancion-info">
+                <div class="cancion-nombre">
+                    ME GOZARÉ
+                </div>
+
+                <div class="cancion-tono">
+                    🎸 Tono: Em
+                </div>
+            </div>
+
+            <div class="cancion-flecha">›</div>
+
+        </div>
 
     </div>
 
 </div>
-```
 
 </div>
 
-<script>
 
+<!-- =========================================================
+     MODAL DE ACORDES
+     ========================================================= -->
 
-/* =========================================================
-   CANCIONES
-========================================================= */
+<div class="modal" id="modal">
 
-const canciones = {
+    <div class="modal-contenido">
 
+        <div class="modal-cabecera">
 
-/* =====================================================
-   PODEROSO DIOS
-===================================================== */
+            <button class="modal-cerrar"
+                    id="cerrarModal">
+                ×
+            </button>
 
-poderoso:{
+            <div class="modal-cabecera-top">
 
-    titulo:"PODEROSO DIOS",
+                <div class="modal-disco">
+                    🎸
+                </div>
 
-    tono:"C",
+                <div>
 
-    ritmo:"Adoración",
-
-    letra:`
-
-[ VERSO ]
-
-C                         Am
-Al que está sentado en el trono
-
-        F               G
-y al Cordero, sea el honor
-
-
-C                     Am
-Sea la gloria, sea la honra
-
-        F                       G
-Sea el dominio por los siglos
-de los siglos...
-
-
-[ CORO ]
-
-C
-Poderoso Dios
-
-Am
-Poderoso Dios
-
-F
-Poderoso Dios
-
-G
-Mi alma clama por ti...
-
-`
-
-},
-
-
-/* =====================================================
-   TU MIRADA
-===================================================== */
-
-mirada:{
-
-    titulo:"TU MIRADA",
-
-    tono:"G",
-
-    ritmo:"Adoración",
-
-    letra:`
-
-[ VERSO ]
-
-G                       Em
-Tus ojos revelan que yo nada
-puedo esconder
-
-                C    Am
-que no soy nada sin ti
-
-            D
-Oh fiel Señor.
-
-
-G                                  Em
-Todo lo sabes de mí cuando miras
-el corazón,
-
-       C        Am              D
-todo lo puedes ver muy dentro de mí.
-
-
-[ PUENTE ]
-
-G        C    G               C   G
-Lleva mi vida a una sola verdad
-
-              C    G                D
-Que cuando me miras nada puedo ocultar
-
-
-[ CORO ]
-
-G         D/F#         Em
-Sé que es tu fidelidad
-
-          G        C
-que lleva mi vida más allá
-
-          Am          D
-de lo que puedo imaginar.
-
-
-G      D/F#       Em
-Sé que no puedo negar
-
-           G              C
-que tu mirada puesta en mí
-
-    D          G
-me llena de tu paz.
-
-`
-
-},
-
-
-/* =====================================================
-   HERMOSO ERES
-===================================================== */
-
-hermoso:{
-
-    titulo:"HERMOSO ERES",
-
-    tono:"A",
-
-    ritmo:"Adoración",
-
-    letra:`
-
-[ VERSO ]
-
-A           D              E
-En mi corazón hay una canción
-
-A      D             E
-Que demuestra mi pasión
-
-F#m      E          D   A/C#
-Para mi Rey y mi Señor
-
-Bm       A           E
-Para Aquel que me amó
-
-
-[ CORO ]
-
-A        C#m  D     E
-Hermoso eres, mi Señor
-
-A       C#m      D      E
-Hermoso eres Tú, Amado mío
-
-Bm                        E
-Tú eres la fuente de mi vida
-
-Bm      A/C# D    E     A
-Y el anhelo de mi corazón
-
-
-[ VERSO ]
-
-A           D              E
-En mi corazón hay una canción
-
-A      D             E
-Que demuestra mi pasión
-
-F#m      E          D   A/C#
-Para mi Rey y mi Señor
-
-Bm       A           E
-Para Aquel que me amó
-
-
-[ CORO ]
-
-A        C#m  D     E
-Hermoso eres, mi Señor
-
-A       C#m      D      E
-Hermoso eres Tú, Amado mío
-
-Bm                        E
-Tú eres la fuente de mi vida
-
-Bm      A/C# D    E     A
-Y el anhelo de mi corazón
-
-`
-
-},
-
-
-/* =====================================================
-   ME GOZARÉ
-===================================================== */
-
-megozare:{
-
-    titulo:"ME GOZARÉ",
-
-    tono:"Em",
-
-    ritmo:"Alabanza",
-
-    letra:`
-
-[ VERSO ]
-
-Em
-Cuando el Señor hiciere volver
-
-             D
-De la cautividad
-
-        Am              B
-Seremos como los que sueñan
-
-
-[ VERSO 2 ]
-
-Em
-Mi boca llenará de risa,
-
-    D
-mis labios de alabanza,
-
-  Am
-Entonces dirán las naciones:
-
-           B
-Grandes cosas ha hecho
-
-el Señor
-
-
-[ CORO ]
-
-          Em
-Me gozaré, me gozaré,
-
-
-
-me gozaré,
-
-                 D
-me gozaré en Jehová.
-
-
-          Am
-Pues ha llevado todo mi dolor,
-
-             B
-me ha hecho libre
-
-
-[ FINAL ]
-
-Em
-Así como David cantaba,
-
-D
-Así como David danzaba,
-
-Am
-Así como David fluía
-
-          B
-en su presencia
-
-`
-
-}
-
-};
-
-
-/* =========================================================
-   ABRIR CANCION
-========================================================= */
-
-function abrirCancion(nombre){
-
-    const cancion =
-        canciones[nombre];
-
-
-    document.getElementById(
-        "titulo"
-    ).innerText =
-        cancion.titulo;
-
-
-    document.getElementById(
-        "infoCancion"
-    ).innerHTML =
-
-        `
-        <div class="info-item">
-            🎼 TONO: ${cancion.tono}
-        </div>
-
-        <div class="info-item">
-            🎵 ${cancion.ritmo}
-        </div>
-
-        <div class="info-item">
-            🎸 ACORDES DESTACADOS
-        </div>
-        `;
-
-
-    /* -----------------------------------------------------
-       SEPARAR LAS SECCIONES
-    ----------------------------------------------------- */
-
-    const bloques =
-        cancion.letra
-            .trim()
-            .split(/\n\s*\n/);
-
-
-    let html = "";
-
-
-    bloques.forEach(
-        bloque => {
-
-
-            const lineas =
-                bloque.trim().split("\n");
-
-
-            let tituloSeccion =
-                lineas.shift();
-
-
-            tituloSeccion =
-                tituloSeccion
-                    .replace("[","")
-                    .replace("]","");
-
-
-            const contenido =
-                lineas
-                    .join("\n");
-
-
-            html += `
-
-                <div class="seccion">
-
-                    <div class="seccion-titulo">
-
-                        🎶 ${tituloSeccion}
-
+                    <div class="modal-titulo"
+                         id="modalTitulo">
+                        ALABANZA
                     </div>
 
-                    <div class="letra">
-
-${resaltarAcordes(contenido)}
-
+                    <div class="modal-subtitulo">
+                        Acordes y guía para ensayo
                     </div>
 
                 </div>
 
-            `;
+            </div>
 
-        }
-    );
+            <div class="modal-datos">
 
+                <div class="dato">
+                    TONO
+                    <strong id="modalTono">—</strong>
+                </div>
 
-    document.getElementById(
-        "contenidoCancion"
-    ).innerHTML =
-        html;
+                <div class="dato">
+                    🎼 ACORDES
+                    <strong id="modalAcordes">—</strong>
+                </div>
 
+            </div>
 
-    document.getElementById(
-        "modal"
-    ).style.display =
-        "flex";
-
-}
-
-
-/* =========================================================
-   RESALTAR ACORDES
-========================================================= */
-
-function resaltarAcordes(texto){
-
-    const acordes =
-        /\b([A-G](?:#|b)?(?:m|maj|sus|dim|aug|add)?(?:\/[A-G](?:#|b)?)?)\b/g;
+        </div>
 
 
-    return texto.replace(
-        acordes,
-        '<span class="acorde">$1</span>'
-    );
-
-}
+        <div class="modal-cuerpo"
+             id="modalCuerpo">
+        </div>
 
 
-/* =========================================================
-   CERRAR MODAL
-========================================================= */
+        <div class="modal-pie">
 
-function cerrarModal(){
+            <div class="indicacion">
+                🎵 Desliza para leer toda la canción
+            </div>
 
-    document.getElementById(
-        "modal"
-    ).style.display =
-        "none";
+        </div>
 
-}
+    </div>
+
+</div>
 
 
-/* =========================================================
-   CERRAR HACIENDO CLICK FUERA
-========================================================= */
+<script>
 
-window.addEventListener(
-    "click",
-    function(e){
+document.addEventListener("DOMContentLoaded",function(){
 
-        const modal =
-            document.getElementById(
-                "modal"
+    /* =====================================================
+       CALENDARIO
+       ===================================================== */
+
+    const calendarioGrid =
+        document.getElementById("calendarioGrid");
+
+    const nombreMes =
+        document.getElementById("nombreMes");
+
+    const fechaSeleccionada =
+        document.getElementById("fechaSeleccionada");
+
+    const botonAnterior =
+        document.getElementById("mesAnterior");
+
+    const botonSiguiente =
+        document.getElementById("mesSiguiente");
+
+    const botonTodas =
+        document.getElementById("mostrarTodas");
+
+    const tarjetas =
+        Array.from(document.querySelectorAll(".card"));
+
+
+    const meses = [
+        "ENERO",
+        "FEBRERO",
+        "MARZO",
+        "ABRIL",
+        "MAYO",
+        "JUNIO",
+        "JULIO",
+        "AGOSTO",
+        "SEPTIEMBRE",
+        "OCTUBRE",
+        "NOVIEMBRE",
+        "DICIEMBRE"
+    ];
+
+
+    const mesesBusqueda = {
+        enero:0,
+        febrero:1,
+        marzo:2,
+        abril:3,
+        mayo:4,
+        junio:5,
+        julio:6,
+        agosto:7,
+        septiembre:8,
+        setiembre:8,
+        octubre:9,
+        noviembre:10,
+        diciembre:11
+    };
+
+
+    const eventos = [];
+
+
+    tarjetas.forEach(function(card){
+
+        const elementoFecha =
+            card.querySelector(".fecha");
+
+        if(!elementoFecha) return;
+
+        const texto =
+            elementoFecha.textContent
+            .trim()
+            .toLowerCase();
+
+        const resultado =
+            texto.match(
+                /(\d{1,2})\s+de\s+([a-záéíóú]+)/
             );
 
+        if(!resultado) return;
 
-        if(e.target === modal){
+        const dia =
+            parseInt(resultado[1],10);
 
-            cerrarModal();
+        const nombreMesTexto =
+            resultado[2]
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g,"");
+
+        const mes =
+            mesesBusqueda[nombreMesTexto];
+
+        if(mes === undefined) return;
+
+        eventos.push({
+            dia:dia,
+            mes:mes,
+            año:2026,
+            card:card
+        });
+
+    });
+
+
+    let mesActual = 8;
+    let añoActual = 2026;
+
+
+    function renderizarCalendario(){
+
+        calendarioGrid.innerHTML = "";
+
+        nombreMes.textContent =
+            meses[mesActual] +
+            " " +
+            añoActual;
+
+
+        const primerDia =
+            new Date(
+                añoActual,
+                mesActual,
+                1
+            );
+
+        const ultimoDia =
+            new Date(
+                añoActual,
+                mesActual + 1,
+                0
+            );
+
+        const cantidadDias =
+            ultimoDia.getDate();
+
+        const primerDiaSemana =
+            primerDia.getDay();
+
+
+        for(
+            let i=0;
+            i<primerDiaSemana;
+            i++
+        ){
+
+            const espacio =
+                document.createElement("div");
+
+            espacio.className =
+                "calendario-dia vacio";
+
+            calendarioGrid.appendChild(
+                espacio
+            );
+
+        }
+
+
+        for(
+            let dia=1;
+            dia<=cantidadDias;
+            dia++
+        ){
+
+            const boton =
+                document.createElement("div");
+
+            boton.className =
+                "calendario-dia";
+
+            boton.textContent =
+                dia;
+
+
+            const evento =
+                eventos.find(function(item){
+
+                    return (
+                        item.dia === dia &&
+                        item.mes === mesActual &&
+                        item.año === añoActual
+                    );
+
+                });
+
+
+            if(evento){
+
+                boton.classList.add(
+                    "tiene-evento"
+                );
+
+                boton.addEventListener(
+                    "click",
+                    function(){
+
+                        seleccionarFecha(
+                            evento
+                        );
+
+                    }
+                );
+
+            }
+
+
+            const hoy =
+                new Date();
+
+
+            if(
+                hoy.getDate() === dia &&
+                hoy.getMonth() === mesActual &&
+                hoy.getFullYear() === añoActual
+            ){
+
+                boton.classList.add("hoy");
+
+            }
+
+
+            calendarioGrid.appendChild(
+                boton
+            );
 
         }
 
     }
-);
 
 
-/* =========================================================
-   CERRAR CON ESCAPE
-========================================================= */
+    function seleccionarFecha(evento){
 
-document.addEventListener(
-    "keydown",
-    function(e){
+        tarjetas.forEach(function(card){
 
-        if(e.key === "Escape"){
+            card.classList.add("oculta");
 
-            cerrarModal();
+        });
 
-        }
+
+        evento.card.classList.remove(
+            "oculta"
+        );
+
+
+        fechaSeleccionada.innerHTML =
+            "📅 <strong>" +
+            evento.card
+                .querySelector(".fecha")
+                .textContent
+                .trim() +
+            "</strong>";
+
+
+        document
+            .querySelectorAll(
+                ".calendario-dia"
+            )
+            .forEach(function(dia){
+
+                dia.classList.remove(
+                    "activo"
+                );
+
+            });
+
+
+        document
+            .querySelectorAll(
+                ".calendario-dia:not(.vacio)"
+            )
+            .forEach(function(boton){
+
+                if(
+                    parseInt(
+                        boton.textContent,
+                        10
+                    ) === evento.dia
+                ){
+
+                    boton.classList.add(
+                        "activo"
+                    );
+
+                }
+
+            });
+
+
+        setTimeout(function(){
+
+            evento.card.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        },100);
 
     }
-);
+
+
+    botonAnterior.addEventListener(
+        "click",
+        function(){
+
+            mesActual--;
+
+            if(mesActual < 0){
+
+                mesActual = 11;
+                añoActual--;
+
+            }
+
+            renderizarCalendario();
+
+        }
+    );
+
+
+    botonSiguiente.addEventListener(
+        "click",
+        function(){
+
+            mesActual++;
+
+            if(mesActual > 11){
+
+                mesActual = 0;
+                añoActual++;
+
+            }
+
+            renderizarCalendario();
+
+        }
+    );
+
+
+    botonTodas.addEventListener(
+        "click",
+        function(){
+
+            tarjetas.forEach(function(card){
+
+                card.classList.remove(
+                    "oculta"
+                );
+
+            });
+
+
+            fechaSeleccionada.innerHTML =
+                "📅 <strong>Mostrando todas las reuniones</strong>";
+
+
+            document
+                .querySelectorAll(
+                    ".calendario-dia"
+                )
+                .forEach(function(dia){
+
+                    dia.classList.remove(
+                        "activo"
+                    );
+
+                });
+
+
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+
+        }
+    );
+
+
+    renderizarCalendario();
+
+
+    /* =====================================================
+       CANCIONES / ACORDES
+       ===================================================== */
+
+    const modal =
+        document.getElementById("modal");
+
+    const modalTitulo =
+        document.getElementById("modalTitulo");
+
+    const modalTono =
+        document.getElementById("modalTono");
+
+    const modalAcordes =
+        document.getElementById("modalAcordes");
+
+    const modalCuerpo =
+        document.getElementById("modalCuerpo");
+
+    const cerrarModal =
+        document.getElementById("cerrarModal");
+
+
+    const canciones = {
+
+        "PODEROSO DIOS":{
+            tono:"C",
+            acordes:"C · Am · F · G",
+
+            secciones:[
+
+                {
+                    titulo:"VERSO",
+                    texto:`C                             Am
+Al que está sentado en el trono
+          F               G
+y al cordero, sea el honor
+
+C                     Am
+sea la gloria, sea la honra
+          F                       G
+sea el dominio por los siglos de los siglos...`
+                },
+
+                {
+                    titulo:"CORO",
+                    texto:`C
+Poderoso Dios
+Am
+Poderoso Dios
+F
+Poderoso Dios
+G
+Mi alma clama por ti...`
+                }
+
+            ]
+        },
+
+
+        "TU MIRADA":{
+            tono:"G",
+            acordes:"G · Em · C · Am · D · D/F#",
+
+            secciones:[
+
+                {
+                    titulo:"VERSO",
+                    texto:`G                       Em
+Tus ojos revelan que yo nada puedo esconder
+                  C Am            D
+que no soy nada sin ti   Oh fiel Señor.
+
+G                                  Em
+Todo lo sabes de mí cuando miras el corazón,
+         C        Am              D
+todo lo puedes ver muy dentro de mí.`
+                },
+
+                {
+                    titulo:"PUENTE",
+                    texto:`G        C    G               C   G
+Lleva mi vida a una sola verdad
+                C    G                D
+Que cuando me miras nada puedo ocultar`
+                },
+
+                {
+                    titulo:"CORO",
+                    texto:`G         D/F#         Em           G        C
+Sé que es tu fidelidad que lleva mi vida más allá
+            Am          D
+de lo que puedo imaginar.
+
+G      D/F#       Em            G              C
+Sé que no puedo negar que tu mirada puesta en mí
+      D          G
+me llena de tu paz.`
+                }
+
+            ]
+        },
+
+
+        "HERMOSO ERES":{
+            tono:"A",
+            acordes:"A · D · E · F#m · C#m · Bm · A/C#",
+
+            secciones:[
+
+                {
+                    titulo:"VERSO",
+                    texto:`A           D              E
+En mi corazón hay una canción
+A      D             E
+Que demuestra mi pasión
+F#m      E          D   A/C#
+Para mi Rey y mi Señor
+Bm       A           E
+Para Aquel que me amó`
+                },
+
+                {
+                    titulo:"CORO",
+                    texto:`A        C#m  D     E
+Hermoso eres, mi Señor
+A       C#m      D      E
+Hermoso eres Tú, Amado mío
+Bm                        E
+Tú eres la fuente de mi vida
+Bm      A/C# D    E     A
+Y el anhelo de mi corazón`
+                }
+
+            ]
+        },
+
+
+        "ME GOZARÉ":{
+            tono:"Em",
+            acordes:"Em · D · Am · B",
+
+            secciones:[
+
+                {
+                    titulo:"VERSO",
+                    texto:`Em
+//Cuando el Señor hiciere volver
+               D
+De la cautividad
+          Am              B
+seremos como los que sueñan//`
+                },
+
+                {
+                    titulo:"CORO",
+                    texto:`Em
+//Mi boca llenará de risa,
+      D
+mis labios de alabanza,
+    Am
+Entonces dirán las naciones:
+             B
+Grandes cosas ha hecho
+
+el Señor//`
+                },
+
+                {
+                    titulo:"CORO FINAL",
+                    texto:`Em
+//Me gozaré, me gozaré,
+
+me gozaré,
+                   D
+me gozaré en Jehová.
+            Am
+Pues ha llevado todo mi dolor,
+               B
+me ha hecho libre//`
+                },
+
+                {
+                    titulo:"FINAL",
+                    texto:`Em
+//Así como David cantaba,
+ D
+así como David danzaba,
+ Am
+así como David fluía
+          B
+en su presencia//`
+                }
+
+            ]
+        }
+
+    };
+
+
+    function escaparHTML(texto){
+
+        return texto
+            .replace(/&/g,"&amp;")
+            .replace(/</g,"&lt;")
+            .replace(/>/g,"&gt;");
+
+    }
+
+
+    function resaltarAcordes(texto){
+
+        let html =
+            escaparHTML(texto);
+
+
+        const regex =
+            /(^|[\s(])((?:[A-G](?:#|b)?)(?:m|maj|sus|dim|aug|add)?(?:\/[A-G](?:#|b)?)?)(?=[\s,.;:!?)]|$)/g;
+
+
+        return html.replace(
+            regex,
+            '$1<span class="acorde">$2</span>'
+        );
+
+    }
+
+
+    document
+        .querySelectorAll(".cancion")
+        .forEach(function(boton){
+
+            boton.addEventListener(
+                "click",
+                function(){
+
+                    const nombre =
+                        boton.dataset.cancion;
+
+                    const cancion =
+                        canciones[nombre];
+
+                    if(!cancion) return;
+
+
+                    modalTitulo.textContent =
+                        nombre;
+
+                    modalTono.textContent =
+                        cancion.tono;
+
+                    modalAcordes.textContent =
+                        cancion.acordes;
+
+
+                    modalCuerpo.innerHTML =
+                        cancion.secciones
+                        .map(function(seccion){
+
+                            return `
+                                <div class="seccion-cancion">
+
+                                    <div class="seccion-titulo">
+                                        [ ${seccion.titulo} ]
+                                    </div>
+
+                                    <div class="acordes">
+                                        ${resaltarAcordes(seccion.texto)}
+                                    </div>
+
+                                </div>
+                            `;
+
+                        })
+                        .join("");
+
+
+                    modal.classList.add(
+                        "mostrar"
+                    );
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+            );
+
+        });
+
+
+    function cerrar(){
+
+        modal.classList.remove(
+            "mostrar"
+        );
+
+        document.body.style.overflow =
+            "";
+
+    }
+
+
+    cerrarModal.addEventListener(
+        "click",
+        cerrar
+    );
+
+
+    modal.addEventListener(
+        "click",
+        function(e){
+
+            if(e.target === modal){
+
+                cerrar();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function(e){
+
+            if(e.key === "Escape"){
+
+                cerrar();
+
+            }
+
+        }
+    );
+
+});
 
 </script>
 
 </body>
-
 </html>
+

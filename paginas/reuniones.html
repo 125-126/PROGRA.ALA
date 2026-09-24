@@ -1,12 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1F3A">
 
 <title>Reuniones de Ensayo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,6 +22,7 @@
     --dorado:#D4AF37;
     --fondo:#eef2f7;
     --texto:#172033;
+    --blanco:#ffffff;
 }
 
 *{
@@ -28,1008 +33,802 @@
 
 body{
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#0B1F3A,#1e3a8a,#eef2f7);
     min-height:100vh;
-    padding:10px;
     color:var(--texto);
+    background:
+        radial-gradient(circle at top right,rgba(59,130,246,.35),transparent 30%),
+        linear-gradient(135deg,#071a35,#0B1F3A 45%,#1e3a8a);
+    padding:18px;
 }
 
+/* CONTENEDOR */
+
 .contenedor{
+    width:100%;
     max-width:720px;
     margin:auto;
 }
 
-/* =========================================================
-   TITULO
-========================================================= */
+/* CABECERA */
 
-h1{
+header{
     text-align:center;
     color:white;
-    font-size:19px;
-    margin:5px 0 12px;
-    letter-spacing:.7px;
+    padding:8px 10px 18px;
 }
 
-/* =========================================================
-   PROXIMA REUNION
-========================================================= */
+header h1{
+    font-size:25px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+header p{
+    margin-top:4px;
+    font-size:12px;
+    color:#dbe7f5;
+}
+
+.linea{
+    width:70px;
+    height:3px;
+    background:var(--dorado);
+    border-radius:20px;
+    margin:10px auto 0;
+}
+
+/* PRÓXIMA REUNIÓN */
 
 .proxima{
-    background:rgba(255,255,255,.97);
-    border-radius:14px;
-    padding:11px 13px;
-    margin-bottom:10px;
-    box-shadow:0 8px 20px rgba(0,0,0,.16);
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.proxima-icono{
-    width:38px;
-    height:38px;
-    min-width:38px;
-    border-radius:11px;
-    background:linear-gradient(135deg,var(--azul),var(--celeste));
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-radius:18px;
+    padding:15px;
     color:white;
-    font-size:19px;
+    margin-bottom:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
 }
 
-.proxima-info{
-    flex:1;
-    min-width:0;
-}
-
-.proxima-label{
-    color:#64748b;
-    font-size:9px;
+.proxima-titulo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:11px;
     font-weight:700;
-    letter-spacing:1px;
+    letter-spacing:.7px;
+    color:#cfe0ff;
+    margin-bottom:7px;
+}
+
+.indicador{
+    width:8px;
+    height:8px;
+    background:var(--verde);
+    border-radius:50%;
+    box-shadow:0 0 0 4px rgba(34,197,94,.12);
 }
 
 .proxima-fecha{
-    color:var(--azul);
-    font-size:13px;
+    font-size:18px;
     font-weight:700;
-    line-height:1.2;
 }
 
-.proxima-badge{
-    background:#dcfce7;
-    color:#15803d;
-    padding:5px 8px;
-    border-radius:8px;
-    font-size:8px;
-    font-weight:700;
-    white-space:nowrap;
+.proxima-sub{
+    font-size:11px;
+    color:#dbe7f5;
+    margin-top:2px;
 }
 
-/* =========================================================
-   CALENDARIO
-========================================================= */
+/* CALENDARIO */
 
 .calendario-busqueda{
-    background:rgba(255,255,255,.98);
-    border-radius:15px;
-    padding:12px;
-    margin-bottom:12px;
-    box-shadow:0 9px 22px rgba(0,0,0,.17);
+    background:white;
+    border-radius:18px;
+    padding:15px;
+    margin-bottom:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.14);
 }
 
 .calendario-cabecera{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:7px;
-    margin-bottom:9px;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.calendario-cabecera h2{
+    flex:1;
+    text-align:center;
+    font-size:14px;
+    color:var(--azul);
+    font-weight:700;
 }
 
 .calendario-btn{
-    width:32px;
-    height:32px;
+    width:34px;
+    height:34px;
     border:none;
-    border-radius:9px;
-    background:linear-gradient(135deg,var(--azul),var(--celeste));
-    color:white;
+    border-radius:10px;
+    background:#edf3ff;
+    color:var(--azul2);
     font-size:18px;
-    font-weight:bold;
+    font-weight:700;
     cursor:pointer;
+    transition:.2s;
 }
 
-.calendario-mes{
-    flex:1;
-    text-align:center;
-    color:var(--azul);
-    font-size:15px;
-    font-weight:700;
+.calendario-btn:hover{
+    background:var(--celeste);
+    color:white;
 }
 
-.calendario-semana{
-    display:grid;
-    grid-template-columns:repeat(7,1fr);
-    gap:3px;
-    margin-bottom:4px;
-}
-
-.calendario-semana div{
-    text-align:center;
-    color:#64748b;
-    font-size:8px;
-    font-weight:700;
-    padding:2px 0;
-}
-
+.dias-semana,
 .calendario-grid{
     display:grid;
     grid-template-columns:repeat(7,1fr);
-    gap:3px;
+    gap:5px;
+}
+
+.dia-semana{
+    text-align:center;
+    font-size:9px;
+    font-weight:700;
+    color:#8993a5;
+    padding-bottom:5px;
 }
 
 .calendario-dia{
-    height:34px;
-    border:1px solid #e5e7eb;
-    background:#f8fafc;
-    border-radius:7px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-    color:#334155;
+    height:36px;
+    border:none;
+    border-radius:9px;
+    background:#f5f7fa;
+    color:#384152;
+    font-family:inherit;
     font-size:11px;
     font-weight:600;
     cursor:pointer;
-    transition:.15s;
+    position:relative;
+    transition:.2s;
 }
 
 .calendario-dia:hover{
-    background:#e8f1ff;
-    border-color:var(--celeste);
+    background:#e7efff;
 }
 
 .calendario-dia.vacio{
-    border:none;
     background:transparent;
     cursor:default;
 }
 
 .calendario-dia.tiene-evento{
     background:#e8f1ff;
-    border:1.5px solid var(--celeste);
-    color:var(--azul);
+    color:#1555a5;
+    font-weight:700;
 }
 
 .calendario-dia.tiene-evento::after{
     content:"";
     position:absolute;
-    bottom:3px;
-    width:4px;
-    height:4px;
+    width:5px;
+    height:5px;
     border-radius:50%;
     background:var(--verde);
+    bottom:5px;
+    left:50%;
+    transform:translateX(-50%);
 }
 
 .calendario-dia.activo{
-    background:linear-gradient(135deg,var(--azul),var(--celeste));
+    background:linear-gradient(135deg,#2563eb,#1e40af);
     color:white;
-    border-color:transparent;
-    box-shadow:0 4px 10px rgba(30,58,138,.28);
+    box-shadow:0 5px 12px rgba(37,99,235,.28);
 }
 
 .calendario-dia.activo::after{
     background:white;
 }
 
-.calendario-dia.hoy{
-    box-shadow:inset 0 0 0 2px #f59e0b;
-}
+/* RESULTADO */
 
-.calendario-seleccionado{
-    margin-top:8px;
-    background:#f1f5f9;
-    border-radius:8px;
-    padding:7px 8px;
+.fecha-seleccionada{
+    margin-top:12px;
+    padding:10px 12px;
+    border-radius:10px;
+    background:#f4f7fb;
+    color:#536074;
     text-align:center;
-    color:#475569;
     font-size:10px;
-    font-weight:600;
 }
 
-.calendario-todas{
+/* BOTÓN TODAS */
+
+.mostrar-todas{
     width:100%;
-    margin-top:6px;
-    padding:7px;
     border:none;
-    border-radius:8px;
-    background:#e2e8f0;
-    color:#334155;
-    font-family:'Poppins',sans-serif;
+    margin-top:9px;
+    padding:10px;
+    border-radius:10px;
+    background:#eef4ff;
+    color:#1e40af;
+    font-family:inherit;
     font-size:10px;
-    font-weight:600;
+    font-weight:700;
     cursor:pointer;
 }
 
-/* =========================================================
-   TARJETAS
-========================================================= */
+.mostrar-todas:hover{
+    background:#dce9ff;
+}
+
+/* SECCIÓN */
+
+.titulo-seccion{
+    color:white;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.7px;
+    margin:17px 2px 9px;
+}
+
+/* TARJETAS */
 
 .card{
     background:white;
-    border-radius:13px;
-    margin-bottom:10px;
-    overflow:hidden;
-    box-shadow:0 7px 18px rgba(0,0,0,.13);
+    border-radius:17px;
+    padding:15px;
+    margin-bottom:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.13);
+    transition:.25s;
 }
 
 .card.oculta{
     display:none;
 }
 
+.card:hover{
+    transform:translateY(-2px);
+}
+
 .fecha{
-    background:linear-gradient(90deg,var(--azul),var(--celeste));
-    color:white;
-    padding:8px 11px;
-    font-size:11px;
-    font-weight:700;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    margin-bottom:12px;
 }
 
-.proxima-card{
-    background:linear-gradient(90deg,#0f766e,#22c55e);
+.fecha-info{
+    display:flex;
+    align-items:center;
+    gap:9px;
 }
 
-.fecha-badge{
-    background:rgba(255,255,255,.2);
-    border-radius:6px;
-    padding:3px 6px;
-    font-size:7px;
-    letter-spacing:.4px;
+.icono-fecha{
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    background:#edf4ff;
+    color:#2563eb;
+    font-size:16px;
 }
 
-.lista-canciones{
-    padding:4px 0;
+.fecha strong{
+    display:block;
+    color:var(--azul);
+    font-size:13px;
+}
+
+.fecha small{
+    display:block;
+    color:#8993a5;
+    font-size:9px;
+    margin-top:1px;
+}
+
+.estado{
+    font-size:8px;
+    font-weight:700;
+    padding:5px 8px;
+    border-radius:20px;
+    background:#eaf9ef;
+    color:#15803d;
+}
+
+/* CANCIONES */
+
+.canciones{
+    display:grid;
+    gap:7px;
 }
 
 .cancion{
     display:flex;
     align-items:center;
-    gap:9px;
-    padding:8px 10px;
-    border-bottom:1px solid #f1f5f9;
+    justify-content:space-between;
+    gap:10px;
+    padding:10px 11px;
+    border:1px solid #edf0f4;
+    border-radius:11px;
+    background:#fafbfd;
     cursor:pointer;
-    transition:.15s;
-}
-
-.cancion:last-child{
-    border-bottom:none;
+    transition:.2s;
 }
 
 .cancion:hover{
-    background:#f8fbff;
-}
-
-.cancion-icono{
-    width:29px;
-    height:29px;
-    min-width:29px;
-    border-radius:8px;
-    background:#e8f1ff;
-    color:var(--celeste);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:13px;
+    border-color:#bfd4ff;
+    background:#f2f6ff;
+    transform:translateX(2px);
 }
 
 .cancion-info{
-    flex:1;
+    display:flex;
+    align-items:center;
+    gap:9px;
     min-width:0;
+}
+
+.icono-cancion{
+    width:27px;
+    height:27px;
+    min-width:27px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:8px;
+    background:#e8f0ff;
+    color:#2563eb;
+    font-size:11px;
 }
 
 .cancion-nombre{
     font-size:11px;
     font-weight:700;
-    color:#172033;
+    color:#263248;
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
 }
 
-.cancion-tono{
+.tono{
+    font-size:9px;
+    color:#778196;
+    margin-left:4px;
+}
+
+.ver-mini{
+    flex-shrink:0;
     font-size:8px;
-    color:#64748b;
-    margin-top:1px;
+    font-weight:700;
+    color:#1d4ed8;
+    background:#e8f0ff;
+    padding:5px 7px;
+    border-radius:7px;
 }
 
-.cancion-flecha{
-    color:#94a3b8;
-    font-size:15px;
+/* PIE */
+
+footer{
+    text-align:center;
+    color:#cbd7e8;
+    font-size:9px;
+    padding:12px 0 4px;
 }
 
-.pdf-mini{
-    display:inline-flex;
-    align-items:center;
-    gap:4px;
-    margin-left:5px;
-    padding:2px 5px;
-    border-radius:5px;
-    background:#fee2e2;
-    color:#dc2626;
-    font-size:7px;
+footer span{
+    color:var(--dorado);
     font-weight:700;
 }
 
-/* =========================================================
-   AVISO PDF
-========================================================= */
+/* MÓVIL */
 
-.aviso-pdf{
-    background:linear-gradient(135deg,#eff6ff,#f8fafc);
-    border:1px solid #dbeafe;
-    border-radius:10px;
-    margin:0 10px 8px;
-    padding:7px 9px;
-    display:flex;
-    align-items:center;
-    gap:7px;
-}
-
-.aviso-pdf-icono{
-    width:27px;
-    height:27px;
-    border-radius:7px;
-    background:#fee2e2;
-    color:#dc2626;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
-}
-
-.aviso-pdf-texto{
-    flex:1;
-}
-
-.aviso-pdf-texto strong{
-    display:block;
-    color:#334155;
-    font-size:8px;
-}
-
-.aviso-pdf-texto span{
-    color:#64748b;
-    font-size:7px;
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:600px){
+@media(max-width:500px){
 
     body{
-        padding:7px;
+        padding:10px;
     }
 
-    h1{
-        font-size:16px;
-        margin:4px 0 9px;
+    header h1{
+        font-size:21px;
     }
 
     .proxima{
-        padding:9px 10px;
-        margin-bottom:8px;
-        border-radius:12px;
-    }
-
-    .proxima-icono{
-        width:33px;
-        height:33px;
-        min-width:33px;
-        font-size:16px;
+        padding:13px;
     }
 
     .proxima-fecha{
-        font-size:11px;
-    }
-
-    .proxima-label{
-        font-size:8px;
-    }
-
-    .proxima-badge{
-        font-size:7px;
-        padding:4px 6px;
+        font-size:16px;
     }
 
     .calendario-busqueda{
-        padding:9px;
-        border-radius:12px;
-        margin-bottom:9px;
-    }
-
-    .calendario-mes{
-        font-size:13px;
-    }
-
-    .calendario-btn{
-        width:29px;
-        height:29px;
-        font-size:16px;
-        border-radius:7px;
+        padding:12px;
     }
 
     .calendario-dia{
-        height:30px;
-        font-size:10px;
-        border-radius:6px;
-    }
-
-    .calendario-semana div{
-        font-size:7px;
+        height:34px;
     }
 
     .card{
-        border-radius:11px;
-        margin-bottom:8px;
+        padding:12px;
     }
-
-    .fecha{
-        padding:7px 9px;
-        font-size:10px;
-    }
-
-    .cancion{
-        padding:7px 8px;
-    }
-
-    .cancion-icono{
-        width:27px;
-        height:27px;
-        min-width:27px;
-        font-size:12px;
-    }
-
-    .cancion-nombre{
-        font-size:10px;
-    }
-
-    .cancion-tono{
-        font-size:7px;
-    }
-
-}
-
-@media(max-width:380px){
-
-    body{
-        padding:5px;
-    }
-
-    .calendario-dia{
-        height:27px;
-        font-size:9px;
-    }
-
-    .calendario-grid,
-    .calendario-semana{
-        gap:2px;
-    }
-
-    .cancion{
-        padding:6px 7px;
-    }
-
-    .cancion-icono{
-        width:25px;
-        height:25px;
-        min-width:25px;
-    }
-
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="contenedor">
 
-<h1>🎤 REUNIONES DE ENSAYO</h1>
+<header>
+    <h1>🎤 REUNIONES DE ENSAYO</h1>
+    <p>Ministerio de Alabanza</p>
+    <div class="linea"></div>
+</header>
 
-<!-- =========================================================
-     PROXIMA REUNION
-========================================================= -->
+<section class="proxima">
 
-<div class="proxima">
-
-    <div class="proxima-icono">📅</div>
-
-    <div class="proxima-info">
-
-        <div class="proxima-label">
-            PRÓXIMA REUNIÓN
-        </div>
-
-        <div class="proxima-fecha">
-            Domingo 11 de Octubre de 2026
-        </div>
-
-    </div>
-
-    <div class="proxima-badge">
-        PRÓXIMA
-    </div>
-
+```
+<div class="proxima-titulo">
+    <span class="indicador"></span>
+    PRÓXIMA REUNIÓN
 </div>
 
+<div class="proxima-fecha">
+    Domingo 11 de Octubre de 2026
+</div>
 
-<!-- =========================================================
-     CALENDARIO
-========================================================= -->
+<div class="proxima-sub">
+    Ensayo del Ministerio de Alabanza
+</div>
+```
 
-<div class="calendario-busqueda">
+</section>
 
-    <div class="calendario-cabecera">
+<section class="calendario-busqueda">
 
-        <button type="button"
-                class="calendario-btn"
-                id="mesAnterior">
-            ‹
-        </button>
+```
+<div class="calendario-cabecera">
 
-        <div class="calendario-mes"
-             id="nombreMes">
-            SEPTIEMBRE 2026
-        </div>
+    <button
+        class="calendario-btn"
+        id="mesAnterior"
+        type="button">
+        ‹
+    </button>
 
-        <button type="button"
-                class="calendario-btn"
-                id="mesSiguiente">
-            ›
-        </button>
+    <h2 id="nombreMes">
+        SEPTIEMBRE 2026
+    </h2>
 
-    </div>
-
-    <div class="calendario-semana">
-        <div>DOM</div>
-        <div>LUN</div>
-        <div>MAR</div>
-        <div>MIÉ</div>
-        <div>JUE</div>
-        <div>VIE</div>
-        <div>SÁB</div>
-    </div>
-
-    <div class="calendario-grid"
-         id="calendarioGrid"></div>
-
-    <div class="calendario-seleccionado"
-         id="fechaSeleccionada">
-        📅 Selecciona una fecha de ensayo
-    </div>
-
-    <button type="button"
-            class="calendario-todas"
-            id="mostrarTodas">
-        🔄 Mostrar todas las reuniones
+    <button
+        class="calendario-btn"
+        id="mesSiguiente"
+        type="button">
+        ›
     </button>
 
 </div>
 
+<div class="dias-semana">
+    <div class="dia-semana">DOM</div>
+    <div class="dia-semana">LUN</div>
+    <div class="dia-semana">MAR</div>
+    <div class="dia-semana">MIÉ</div>
+    <div class="dia-semana">JUE</div>
+    <div class="dia-semana">VIE</div>
+    <div class="dia-semana">SÁB</div>
+</div>
 
-<!-- =========================================================
-     09 AGOSTO
-========================================================= -->
+<div
+    class="calendario-grid"
+    id="calendarioGrid">
+</div>
 
-<div class="card">
+<div
+    class="fecha-seleccionada"
+    id="fechaSeleccionada">
+    📅 Selecciona una fecha para ver la reunión
+</div>
 
-    <div class="fecha">
-        <span>📅 Domingo 09 de Agosto</span>
-    </div>
+<button
+    class="mostrar-todas"
+    id="mostrarTodas"
+    type="button">
+    🔄 Mostrar todas las fechas
+</button>
+```
 
-    <div class="aviso-pdf">
+</section>
 
-        <div class="aviso-pdf-icono">
-            📄
+<div class="titulo-seccion">
+    REUNIONES PROGRAMADAS
+</div>
+
+<!-- 09 AGOSTO -->
+
+<div
+    class="card"
+    data-fecha="2026-08-09">
+
+```
+<div class="fecha">
+
+    <div class="fecha-info">
+
+        <div class="icono-fecha">
+            📅
         </div>
 
-        <div class="aviso-pdf-texto">
-
-            <strong>
-                Alabanzas disponibles
-            </strong>
-
-            <span>
-                Toca una alabanza para ver su presentación.
-            </span>
-
-        </div>
-
-    </div>
-
-    <div class="lista-canciones">
-
-        <div class="cancion"
-             data-cancion="PODEROSO DIOS">
-
-            <div class="cancion-icono">
-                🎵
-            </div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    PODEROSO DIOS
-                    <span class="pdf-mini">
-                        PDF
-                    </span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: C
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">
-                ›
-            </div>
-
-        </div>
-
-
-        <div class="cancion"
-             data-cancion="TU MIRADA">
-
-            <div class="cancion-icono">
-                🎵
-            </div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    TU MIRADA
-                    <span class="pdf-mini">
-                        PDF
-                    </span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: G
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">
-                ›
-            </div>
-
-        </div>
-
-
-        <div class="cancion"
-             data-cancion="HERMOSO ERES">
-
-            <div class="cancion-icono">
-                🎵
-            </div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    HERMOSO ERES
-                    <span class="pdf-mini">
-                        PDF
-                    </span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: A
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">
-                ›
-            </div>
-
-        </div>
-
-
-        <div class="cancion"
-             data-cancion="ME GOZARÉ">
-
-            <div class="cancion-icono">
-                🎵
-            </div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    ME GOZARÉ
-                    <span class="pdf-mini">
-                        PDF
-                    </span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: Em
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">
-                ›
-            </div>
-
+        <div>
+            <strong>Domingo 09 de Agosto</strong>
+            <small>Ensayo del Ministerio de Alabanza</small>
         </div>
 
     </div>
+
+    <span class="estado">
+        REALIZADA
+    </span>
 
 </div>
 
+<div class="canciones">
 
-<!-- =========================================================
-     13 SEPTIEMBRE
-========================================================= -->
-
-<div class="card">
-
-    <div class="fecha">
-        <span>📅 Domingo 13 de Septiembre</span>
+    <div class="cancion" data-cancion="PODEROSO DIOS">
+        <div class="cancion-info">
+            <div class="icono-cancion">♫</div>
+            <div>
+                <span class="cancion-nombre">PODEROSO DIOS</span>
+                <span class="tono">C</span>
+            </div>
+        </div>
+        <span class="ver-mini">LETRA</span>
     </div>
 
-    <div class="lista-canciones">
-
-        <div class="cancion"
-             data-cancion="PODEROSO DIOS">
-
-            <div class="cancion-icono">🎵</div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    PODEROSO DIOS
-                    <span class="pdf-mini">PDF</span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: C
-                </div>
-
+    <div class="cancion" data-cancion="TU MIRADA">
+        <div class="cancion-info">
+            <div class="icono-cancion">♫</div>
+            <div>
+                <span class="cancion-nombre">TU MIRADA</span>
+                <span class="tono">G</span>
             </div>
-
-            <div class="cancion-flecha">›</div>
-
         </div>
-
-
-        <div class="cancion"
-             data-cancion="TU MIRADA">
-
-            <div class="cancion-icono">🎵</div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    TU MIRADA
-                    <span class="pdf-mini">PDF</span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: G
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">›</div>
-
-        </div>
-
-
-        <div class="cancion"
-             data-cancion="HERMOSO ERES">
-
-            <div class="cancion-icono">🎵</div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    HERMOSO ERES
-                    <span class="pdf-mini">PDF</span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: A
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">›</div>
-
-        </div>
-
-
-        <div class="cancion"
-             data-cancion="ME GOZARÉ">
-
-            <div class="cancion-icono">🎵</div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    ME GOZARÉ
-                    <span class="pdf-mini">PDF</span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: Em
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">›</div>
-
-        </div>
-
+        <span class="ver-mini">LETRA</span>
     </div>
 
 </div>
+```
 
+</div>
 
-<!-- =========================================================
-     11 OCTUBRE
-========================================================= -->
+<!-- 13 SEPTIEMBRE -->
 
-<div class="card">
+<div
+    class="card"
+    data-fecha="2026-09-13">
 
-    <div class="fecha proxima-card">
+```
+<div class="fecha">
 
-        <span>
-            📅 Domingo 11 de Octubre
-        </span>
+    <div class="fecha-info">
 
-        <span class="fecha-badge">
-            PRÓXIMA REUNIÓN
-        </span>
-
-    </div>
-
-    <div class="lista-canciones">
-
-        <div class="cancion"
-             data-cancion="PODEROSO DIOS">
-
-            <div class="cancion-icono">🎵</div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    PODEROSO DIOS
-                    <span class="pdf-mini">PDF</span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: C
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">›</div>
-
+        <div class="icono-fecha">
+            📅
         </div>
 
-
-        <div class="cancion"
-             data-cancion="TU MIRADA">
-
-            <div class="cancion-icono">🎵</div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    TU MIRADA
-                    <span class="pdf-mini">PDF</span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: G
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">›</div>
-
-        </div>
-
-
-        <div class="cancion"
-             data-cancion="HERMOSO ERES">
-
-            <div class="cancion-icono">🎵</div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    HERMOSO ERES
-                    <span class="pdf-mini">PDF</span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: A
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">›</div>
-
-        </div>
-
-
-        <div class="cancion"
-             data-cancion="ME GOZARÉ">
-
-            <div class="cancion-icono">🎵</div>
-
-            <div class="cancion-info">
-
-                <div class="cancion-nombre">
-                    ME GOZARÉ
-                    <span class="pdf-mini">PDF</span>
-                </div>
-
-                <div class="cancion-tono">
-                    🎸 Tono: Em
-                </div>
-
-            </div>
-
-            <div class="cancion-flecha">›</div>
-
+        <div>
+            <strong>Domingo 13 de Septiembre</strong>
+            <small>Ensayo del Ministerio de Alabanza</small>
         </div>
 
     </div>
 
-</div>
+    <span class="estado">
+        REALIZADA
+    </span>
 
 </div>
 
+<div class="canciones">
+
+    <div class="cancion" data-cancion="HERMOSO ERES">
+        <div class="cancion-info">
+            <div class="icono-cancion">♫</div>
+            <div>
+                <span class="cancion-nombre">HERMOSO ERES</span>
+                <span class="tono">A</span>
+            </div>
+        </div>
+        <span class="ver-mini">LETRA</span>
+    </div>
+
+    <div class="cancion" data-cancion="ME GOZARÉ">
+        <div class="cancion-info">
+            <div class="icono-cancion">♫</div>
+            <div>
+                <span class="cancion-nombre">ME GOZARÉ</span>
+                <span class="tono">Em</span>
+            </div>
+        </div>
+        <span class="ver-mini">LETRA</span>
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- 11 OCTUBRE -->
+
+<div
+    class="card"
+    data-fecha="2026-10-11">
+
+```
+<div class="fecha">
+
+    <div class="fecha-info">
+
+        <div class="icono-fecha">
+            📅
+        </div>
+
+        <div>
+            <strong>Domingo 11 de Octubre</strong>
+            <small>Ensayo del Ministerio de Alabanza</small>
+        </div>
+
+    </div>
+
+    <span class="estado">
+        PRÓXIMA
+    </span>
+
+</div>
+
+<div class="canciones">
+
+    <div class="cancion" data-cancion="PODEROSO DIOS">
+        <div class="cancion-info">
+            <div class="icono-cancion">♫</div>
+            <div>
+                <span class="cancion-nombre">PODEROSO DIOS</span>
+                <span class="tono">C</span>
+            </div>
+        </div>
+        <span class="ver-mini">LETRA</span>
+    </div>
+
+    <div class="cancion" data-cancion="TU MIRADA">
+        <div class="cancion-info">
+            <div class="icono-cancion">♫</div>
+            <div>
+                <span class="cancion-nombre">TU MIRADA</span>
+                <span class="tono">G</span>
+            </div>
+        </div>
+        <span class="ver-mini">LETRA</span>
+    </div>
+
+    <div class="cancion" data-cancion="HERMOSO ERES">
+        <div class="cancion-info">
+            <div class="icono-cancion">♫</div>
+            <div>
+                <span class="cancion-nombre">HERMOSO ERES</span>
+                <span class="tono">A</span>
+            </div>
+        </div>
+        <span class="ver-mini">LETRA</span>
+    </div>
+
+    <div class="cancion" data-cancion="ME GOZARÉ">
+        <div class="cancion-info">
+            <div class="icono-cancion">♫</div>
+            <div>
+                <span class="cancion-nombre">ME GOZARÉ</span>
+                <span class="tono">Em</span>
+            </div>
+        </div>
+        <span class="ver-mini">LETRA</span>
+    </div>
+
+</div>
+```
+
+</div>
+
+<footer>
+    <span>Ministerio de Alabanza</span><br>
+    Programación de reuniones
+</footer>
+
+</div>
 
 <script>
 
-document.addEventListener("DOMContentLoaded",function(){
+/* =========================================================
+   CONFIGURACIÓN DE LAS ALABANZAS
+   No existen archivos PDF.
+   Cada alabanza se genera desde alabanza.html
+========================================================= */
+
+const canciones = {
+
+    "PODEROSO DIOS":{
+        tono:"C"
+    },
+
+    "TU MIRADA":{
+        tono:"G"
+    },
+
+    "HERMOSO ERES":{
+        tono:"A"
+    },
+
+    "ME GOZARÉ":{
+        tono:"Em"
+    }
+
+};
+
+
+/* =========================================================
+   ABRIR ALABANZA
+========================================================= */
+
+document
+    .querySelectorAll(".cancion")
+    .forEach(function(cancion){
+
+        cancion.addEventListener("click",function(){
+
+            const nombre =
+                cancion.dataset.cancion;
+
+            if(!canciones[nombre]){
+
+                alert(
+                    "Esta alabanza todavía no está configurada."
+                );
+
+                return;
+            }
+
+            window.location.href =
+                "alabanza.html?cancion=" +
+                encodeURIComponent(nombre);
+
+        });
+
+    });
+
 
 /* =========================================================
    CALENDARIO
 ========================================================= */
 
-const calendarioGrid =
-    document.getElementById("calendarioGrid");
-
-const nombreMes =
-    document.getElementById("nombreMes");
-
-const fechaSeleccionada =
-    document.getElementById("fechaSeleccionada");
-
-const botonAnterior =
-    document.getElementById("mesAnterior");
-
-const botonSiguiente =
-    document.getElementById("mesSiguiente");
-
-const botonTodas =
-    document.getElementById("mostrarTodas");
-
 const tarjetas =
-    Array.from(document.querySelectorAll(".card"));
+    Array.from(
+        document.querySelectorAll(".card")
+    );
 
+const fechasEventos =
+    tarjetas.map(function(card){
+
+        return card.dataset.fecha;
+
+    });
+
+
+let mesActual = 8;
+let añoActual = 2026;
 
 const meses = [
     "ENERO",
@@ -1046,74 +845,17 @@ const meses = [
     "DICIEMBRE"
 ];
 
+const nombreMes =
+    document.getElementById("nombreMes");
 
-const mesesBusqueda = {
-    enero:0,
-    febrero:1,
-    marzo:2,
-    abril:3,
-    mayo:4,
-    junio:5,
-    julio:6,
-    agosto:7,
-    septiembre:8,
-    setiembre:8,
-    octubre:9,
-    noviembre:10,
-    diciembre:11
-};
+const calendarioGrid =
+    document.getElementById("calendarioGrid");
+
+const fechaSeleccionada =
+    document.getElementById("fechaSeleccionada");
 
 
-const eventos = [];
-
-
-tarjetas.forEach(function(card){
-
-    const elementoFecha =
-        card.querySelector(".fecha");
-
-    if(!elementoFecha) return;
-
-    const texto =
-        elementoFecha.textContent
-        .trim()
-        .toLowerCase();
-
-    const resultado =
-        texto.match(
-            /(\d{1,2})\s+de\s+([a-záéíóú]+)/
-        );
-
-    if(!resultado) return;
-
-    const dia =
-        parseInt(resultado[1],10);
-
-    const nombreMesTexto =
-        resultado[2]
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g,"");
-
-    const mes =
-        mesesBusqueda[nombreMesTexto];
-
-    if(mes === undefined) return;
-
-    eventos.push({
-        dia:dia,
-        mes:mes,
-        año:2026,
-        card:card
-    });
-
-});
-
-
-let mesActual = 8;
-let añoActual = 2026;
-
-
-function renderizarCalendario(){
+function renderCalendario(){
 
     calendarioGrid.innerHTML = "";
 
@@ -1122,54 +864,41 @@ function renderizarCalendario(){
         " " +
         añoActual;
 
+
     const primerDia =
         new Date(
             añoActual,
             mesActual,
             1
-        );
+        ).getDay();
 
-    const ultimoDia =
+    const cantidadDias =
         new Date(
             añoActual,
             mesActual + 1,
             0
-        );
-
-    const cantidadDias =
-        ultimoDia.getDate();
-
-    const primerDiaSemana =
-        primerDia.getDay();
+        ).getDate();
 
 
-    for(
-        let i=0;
-        i<primerDiaSemana;
-        i++
-    ){
+    for(let i = 0; i < primerDia; i++){
 
-        const espacio =
+        const vacio =
             document.createElement("div");
 
-        espacio.className =
+        vacio.className =
             "calendario-dia vacio";
 
-        calendarioGrid.appendChild(
-            espacio
-        );
+        calendarioGrid.appendChild(vacio);
 
     }
 
 
-    for(
-        let dia=1;
-        dia<=cantidadDias;
-        dia++
-    ){
+    for(let dia = 1; dia <= cantidadDias; dia++){
 
         const boton =
-            document.createElement("div");
+            document.createElement("button");
+
+        boton.type = "button";
 
         boton.className =
             "calendario-dia";
@@ -1178,84 +907,151 @@ function renderizarCalendario(){
             dia;
 
 
-        const evento =
-            eventos.find(function(item){
-
-                return (
-                    item.dia === dia &&
-                    item.mes === mesActual &&
-                    item.año === añoActual
-                );
-
-            });
+        const fecha =
+            añoActual +
+            "-" +
+            String(mesActual + 1).padStart(2,"0") +
+            "-" +
+            String(dia).padStart(2,"0");
 
 
-        if(evento){
+        if(fechasEventos.includes(fecha)){
 
             boton.classList.add(
                 "tiene-evento"
             );
 
-            boton.addEventListener(
-                "click",
-                function(){
-
-                    seleccionarFecha(
-                        evento
-                    );
-
-                }
-            );
-
         }
 
 
-        const hoy =
-            new Date();
+        boton.addEventListener(
+            "click",
+            function(){
 
+                document
+                    .querySelectorAll(
+                        ".calendario-dia"
+                    )
+                    .forEach(function(d){
 
-        if(
-            hoy.getDate() === dia &&
-            hoy.getMonth() === mesActual &&
-            hoy.getFullYear() === añoActual
-        ){
+                        d.classList.remove(
+                            "activo"
+                        );
 
-            boton.classList.add("hoy");
+                    });
 
-        }
+                boton.classList.add("activo");
 
+                mostrarFecha(fecha);
 
-        calendarioGrid.appendChild(
-            boton
+            }
         );
+
+
+        calendarioGrid.appendChild(boton);
 
     }
 
 }
 
 
-function seleccionarFecha(evento){
+function mostrarFecha(fecha){
 
     tarjetas.forEach(function(card){
 
-        card.classList.add("oculta");
+        card.classList.toggle(
+            "oculta",
+            card.dataset.fecha !== fecha
+        );
 
     });
 
 
-    evento.card.classList.remove(
-        "oculta"
+    const partes =
+        fecha.split("-");
+
+    const fechaObj =
+        new Date(
+            Number(partes[0]),
+            Number(partes[1]) - 1,
+            Number(partes[2])
+        );
+
+
+    const texto =
+        fechaObj.toLocaleDateString(
+            "es-ES",
+            {
+                weekday:"long",
+                day:"numeric",
+                month:"long",
+                year:"numeric"
+            }
+        );
+
+
+    fechaSeleccionada.textContent =
+        "📅 " +
+        texto.charAt(0).toUpperCase() +
+        texto.slice(1);
+
+}
+
+
+document
+    .getElementById("mesAnterior")
+    .addEventListener(
+        "click",
+        function(){
+
+            mesActual--;
+
+            if(mesActual < 0){
+
+                mesActual = 11;
+                añoActual--;
+
+            }
+
+            mostrarTodasLasTarjetas();
+            renderCalendario();
+
+        }
     );
 
 
-    fechaSeleccionada.innerHTML =
-        "📅 <strong>" +
-        evento.card
-            .querySelector(".fecha")
-            .textContent
-            .trim() +
-        "</strong>";
+document
+    .getElementById("mesSiguiente")
+    .addEventListener(
+        "click",
+        function(){
 
+            mesActual++;
+
+            if(mesActual > 11){
+
+                mesActual = 0;
+                añoActual++;
+
+            }
+
+            mostrarTodasLasTarjetas();
+            renderCalendario();
+
+        }
+    );
+
+
+function mostrarTodasLasTarjetas(){
+
+    tarjetas.forEach(function(card){
+
+        card.classList.remove("oculta");
+
+    });
+
+    fechaSeleccionada.textContent =
+        "📅 Selecciona una fecha para ver la reunión";
 
     document
         .querySelectorAll(
@@ -1263,211 +1059,24 @@ function seleccionarFecha(evento){
         )
         .forEach(function(dia){
 
-            dia.classList.remove(
-                "activo"
-            );
+            dia.classList.remove("activo");
 
         });
-
-
-    document
-        .querySelectorAll(
-            ".calendario-dia:not(.vacio)"
-        )
-        .forEach(function(boton){
-
-            if(
-                parseInt(
-                    boton.textContent,
-                    10
-                ) === evento.dia
-            ){
-
-                boton.classList.add(
-                    "activo"
-                );
-
-            }
-
-        });
-
-
-    setTimeout(function(){
-
-        evento.card.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
-
-    },100);
 
 }
 
 
-botonAnterior.addEventListener(
-    "click",
-    function(){
-
-        mesActual--;
-
-        if(mesActual < 0){
-
-            mesActual = 11;
-            añoActual--;
-
-        }
-
-        renderizarCalendario();
-
-    }
-);
-
-
-botonSiguiente.addEventListener(
-    "click",
-    function(){
-
-        mesActual++;
-
-        if(mesActual > 11){
-
-            mesActual = 0;
-            añoActual++;
-
-        }
-
-        renderizarCalendario();
-
-    }
-);
-
-
-botonTodas.addEventListener(
-    "click",
-    function(){
-
-        tarjetas.forEach(function(card){
-
-            card.classList.remove(
-                "oculta"
-            );
-
-        });
-
-
-        fechaSeleccionada.innerHTML =
-            "📅 <strong>Mostrando todas las reuniones</strong>";
-
-
-        document
-            .querySelectorAll(
-                ".calendario-dia"
-            )
-            .forEach(function(dia){
-
-                dia.classList.remove(
-                    "activo"
-                );
-
-            });
-
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-    }
-);
-
-
-renderizarCalendario();
-
-
-/* =========================================================
-   ALABANZAS
-   Cada nombre abre alabanza.html
-   Los PDF serán creados por nosotros a partir de la letra.
-========================================================= */
-
-const canciones = {
-
-    "PODEROSO DIOS":{
-        archivo:"poderoso-dios.pdf",
-        tono:"C"
-    },
-
-    "TU MIRADA":{
-        archivo:"tu-mirada.pdf",
-        tono:"G"
-    },
-
-    "HERMOSO ERES":{
-        archivo:"hermoso-eres.pdf",
-        tono:"A"
-    },
-
-    "ME GOZARÉ":{
-        archivo:"me-gozare.pdf",
-        tono:"Em"
-    }
-
-};
-
-
-/* =========================================================
-   ABRIR ALABANZA
-========================================================= */
-
 document
-    .querySelectorAll(".cancion")
-    .forEach(function(cancion){
-
-        cancion.addEventListener(
-            "click",
-            function(){
-
-                const nombre =
-                    cancion.dataset.cancion;
-
-                const informacion =
-                    canciones[nombre];
+    .getElementById("mostrarTodas")
+    .addEventListener(
+        "click",
+        mostrarTodasLasTarjetas
+    );
 
 
-                if(!informacion){
-
-                    alert(
-                        "Esta alabanza todavía no está configurada."
-                    );
-
-                    return;
-
-                }
-
-
-                /*
-                 * reuniones.html está dentro de /paginas/
-                 *
-                 * El visor alabanza.html también está
-                 * dentro de /paginas/.
-                 *
-                 * El visor será el encargado de mostrar
-                 * el PDF diseñado para esta alabanza.
-                 */
-
-                window.location.href =
-                    "alabanza.html?cancion=" +
-                    encodeURIComponent(nombre);
-
-            }
-        );
-
-    });
-
-});
+renderCalendario();
 
 </script>
 
 </body>
 </html>
-

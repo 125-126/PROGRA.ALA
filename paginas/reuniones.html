@@ -753,9 +753,7 @@ footer span{
 <script>
 
 /* =========================================================
-   CONFIGURACIÓN DE LAS ALABANZAS
-   No existen archivos PDF.
-   Cada alabanza se genera desde alabanza.html
+   ALABANZAS DISPONIBLES
 ========================================================= */
 
 const canciones = {
@@ -792,6 +790,11 @@ document
             const nombre =
                 cancion.dataset.cancion;
 
+            /*
+             * Verificamos primero que la canción
+             * exista en nuestra base de datos.
+             */
+
             if(!canciones[nombre]){
 
                 alert(
@@ -799,11 +802,33 @@ document
                 );
 
                 return;
+
             }
 
-            window.location.href =
-                "alabanza.html?cancion=" +
-                encodeURIComponent(nombre);
+
+            /*
+             * alabanza.html está en la misma carpeta
+             * que reuniones.html.
+             *
+             * Usamos URLSearchParams para codificar
+             * correctamente espacios y acentos.
+             */
+
+            const parametros =
+                new URLSearchParams();
+
+            parametros.set(
+                "cancion",
+                nombre
+            );
+
+
+            const ruta =
+                "alabanza.html?" +
+                parametros.toString();
+
+
+            window.location.assign(ruta);
 
         });
 
@@ -830,6 +855,7 @@ const fechasEventos =
 let mesActual = 8;
 let añoActual = 2026;
 
+
 const meses = [
     "ENERO",
     "FEBRERO",
@@ -845,19 +871,29 @@ const meses = [
     "DICIEMBRE"
 ];
 
+
 const nombreMes =
-    document.getElementById("nombreMes");
+    document.getElementById(
+        "nombreMes"
+    );
+
 
 const calendarioGrid =
-    document.getElementById("calendarioGrid");
+    document.getElementById(
+        "calendarioGrid"
+    );
+
 
 const fechaSeleccionada =
-    document.getElementById("fechaSeleccionada");
+    document.getElementById(
+        "fechaSeleccionada"
+    );
 
 
 function renderCalendario(){
 
     calendarioGrid.innerHTML = "";
+
 
     nombreMes.textContent =
         meses[mesActual] +
@@ -871,6 +907,7 @@ function renderCalendario(){
             mesActual,
             1
         ).getDay();
+
 
     const cantidadDias =
         new Date(
@@ -888,12 +925,18 @@ function renderCalendario(){
         vacio.className =
             "calendario-dia vacio";
 
-        calendarioGrid.appendChild(vacio);
+        calendarioGrid.appendChild(
+            vacio
+        );
 
     }
 
 
-    for(let dia = 1; dia <= cantidadDias; dia++){
+    for(
+        let dia = 1;
+        dia <= cantidadDias;
+        dia++
+    ){
 
         const boton =
             document.createElement("button");
@@ -915,7 +958,9 @@ function renderCalendario(){
             String(dia).padStart(2,"0");
 
 
-        if(fechasEventos.includes(fecha)){
+        if(
+            fechasEventos.includes(fecha)
+        ){
 
             boton.classList.add(
                 "tiene-evento"
@@ -940,15 +985,23 @@ function renderCalendario(){
 
                     });
 
-                boton.classList.add("activo");
 
-                mostrarFecha(fecha);
+                boton.classList.add(
+                    "activo"
+                );
+
+
+                mostrarFecha(
+                    fecha
+                );
 
             }
         );
 
 
-        calendarioGrid.appendChild(boton);
+        calendarioGrid.appendChild(
+            boton
+        );
 
     }
 
@@ -969,6 +1022,7 @@ function mostrarFecha(fecha){
 
     const partes =
         fecha.split("-");
+
 
     const fechaObj =
         new Date(
@@ -998,6 +1052,36 @@ function mostrarFecha(fecha){
 }
 
 
+function mostrarTodasLasTarjetas(){
+
+    tarjetas.forEach(function(card){
+
+        card.classList.remove(
+            "oculta"
+        );
+
+    });
+
+
+    fechaSeleccionada.textContent =
+        "📅 Selecciona una fecha para ver la reunión";
+
+
+    document
+        .querySelectorAll(
+            ".calendario-dia"
+        )
+        .forEach(function(dia){
+
+            dia.classList.remove(
+                "activo"
+            );
+
+        });
+
+}
+
+
 document
     .getElementById("mesAnterior")
     .addEventListener(
@@ -1006,6 +1090,7 @@ document
 
             mesActual--;
 
+
             if(mesActual < 0){
 
                 mesActual = 11;
@@ -1013,7 +1098,9 @@ document
 
             }
 
+
             mostrarTodasLasTarjetas();
+
             renderCalendario();
 
         }
@@ -1028,6 +1115,7 @@ document
 
             mesActual++;
 
+
             if(mesActual > 11){
 
                 mesActual = 0;
@@ -1035,35 +1123,13 @@ document
 
             }
 
+
             mostrarTodasLasTarjetas();
+
             renderCalendario();
 
         }
     );
-
-
-function mostrarTodasLasTarjetas(){
-
-    tarjetas.forEach(function(card){
-
-        card.classList.remove("oculta");
-
-    });
-
-    fechaSeleccionada.textContent =
-        "📅 Selecciona una fecha para ver la reunión";
-
-    document
-        .querySelectorAll(
-            ".calendario-dia"
-        )
-        .forEach(function(dia){
-
-            dia.classList.remove("activo");
-
-        });
-
-}
 
 
 document
@@ -1077,6 +1143,7 @@ document
 renderCalendario();
 
 </script>
+
 
 </body>
 </html>

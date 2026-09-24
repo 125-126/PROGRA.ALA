@@ -1,14 +1,65 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Actividades</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+>
+
+<meta
+name="theme-color"
+content="#0B1F3A"
+
+>
+
+<title>Actividades | Ministerio de Alabanza</title>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+>
 
 <style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --azul:#0B1F3A;
+    --azul2:#1e3a8a;
+    --celeste:#3b82f6;
+    --verde:#22c55e;
+    --dorado:#D4AF37;
+
+    --fondo:#eef2f7;
+    --texto:#172033;
+    --gris:#64748b;
+    --borde:#e5eaf1;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -16,84 +67,832 @@
     box-sizing:border-box;
 }
 
+
+/* =========================================================
+   BODY
+========================================================= */
+
 body{
+
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#0B1F3A,#0f2f5c,#eef2f7);
+
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:15px;
+
+    padding:12px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(59,130,246,.30),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #071a35,
+            #0B1F3A 48%,
+            #1e3a8a
+        );
+
+    color:var(--texto);
+
 }
 
-/* CONTENEDOR */
-.card{
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.contenedor{
+
     width:100%;
-    max-width:700px;
-    background:white;
-    border-radius:16px;
-    box-shadow:0 10px 40px rgba(0,0,0,.25);
-    overflow:hidden;
+
+    max-width:720px;
+
+    margin:auto;
+
 }
 
-/* HEADER */
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 .header{
-    background:linear-gradient(90deg,#0B1F3A,#1565C0);
+
     color:white;
+
     text-align:center;
-    padding:20px;
+
+    padding:8px 8px 18px;
+
 }
+
 
 .header h1{
-    font-size:22px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:.4px;
+
 }
+
 
 .header p{
-    font-size:14px;
-    opacity:.9;
+
+    margin-top:3px;
+
+    font-size:11px;
+
+    color:#dbe7f5;
+
 }
 
-/* CUERPO */
-.content{
-    padding:25px;
-    text-align:center;
+
+.linea{
+
+    width:65px;
+
+    height:3px;
+
+    background:var(--dorado);
+
+    border-radius:20px;
+
+    margin:9px auto 0;
+
 }
 
-.icon{
-    font-size:50px;
+
+/* =========================================================
+   BOTÓN VOLVER
+========================================================= */
+
+.volver{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    width:max-content;
+
+    border:none;
+
+    border-radius:9px;
+
+    padding:8px 11px;
+
     margin-bottom:10px;
-}
 
-.title{
-    font-size:20px;
-    font-weight:600;
-    color:#0B1F3A;
-    margin-bottom:10px;
-}
+    background:rgba(255,255,255,.12);
 
-.message{
-    font-size:16px;
-    color:#555;
-    line-height:1.6;
-}
+    border:1px solid rgba(255,255,255,.15);
 
-/* BADGE */
-.badge{
-    margin-top:20px;
-    display:inline-block;
-    padding:10px 15px;
-    background:#2563EB;
     color:white;
-    border-radius:30px;
-    font-weight:600;
-    font-size:14px;
+
+    font-family:inherit;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
 }
 
-/* FOOTER */
-.footer{
-    margin-top:25px;
+
+.volver:hover{
+
+    background:rgba(255,255,255,.20);
+
+}
+
+
+/* =========================================================
+   PRÓXIMA ACTIVIDAD
+========================================================= */
+
+.proxima{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.15),
+            rgba(255,255,255,.08)
+        );
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border-radius:17px;
+
+    padding:16px;
+
+    color:white;
+
+    margin-bottom:13px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+
+}
+
+
+.proxima-titulo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    color:#cfe0ff;
+
+    margin-bottom:7px;
+
+}
+
+
+.indicador{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--verde);
+
+    box-shadow:
+        0 0 0 4px rgba(34,197,94,.12);
+
+}
+
+
+.proxima-nombre{
+
+    font-size:19px;
+
+    font-weight:700;
+
+}
+
+
+.proxima-fecha{
+
+    margin-top:3px;
+
+    font-size:11px;
+
+    color:#dbe7f5;
+
+}
+
+
+.proxima-lugar{
+
+    margin-top:9px;
+
+    font-size:10px;
+
+    color:#c9d8ec;
+
+}
+
+
+/* =========================================================
+   CALENDARIO
+========================================================= */
+
+.calendario{
+
+    background:white;
+
+    border-radius:17px;
+
+    padding:14px;
+
+    margin-bottom:13px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.14);
+
+}
+
+
+.calendario-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:8px;
+
+    margin-bottom:12px;
+
+}
+
+
+.calendario-header h2{
+
+    flex:1;
+
+    text-align:center;
+
+    font-size:14px;
+
+    color:var(--azul);
+
+}
+
+
+.nav{
+
+    width:32px;
+
+    height:32px;
+
+    border:none;
+
+    border-radius:9px;
+
+    background:#edf3ff;
+
+    color:#1e40af;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+
+.nav:hover{
+
+    background:var(--celeste);
+
+    color:white;
+
+}
+
+
+/* DÍAS */
+
+.semana{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:4px;
+
+    margin-bottom:4px;
+
+}
+
+
+.semana div{
+
+    text-align:center;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    color:#8b95a7;
+
+}
+
+
+/* GRID */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:4px;
+
+}
+
+
+.dia{
+
+    position:relative;
+
+    height:35px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#f5f7fa;
+
+    color:#3b4557;
+
+    font-family:inherit;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+.dia:hover{
+
+    background:#e7efff;
+
+}
+
+
+.dia.vacio{
+
+    background:transparent;
+
+    cursor:default;
+
+}
+
+
+.dia.evento{
+
+    background:#e9f1ff;
+
+    color:#1555a5;
+
+}
+
+
+.dia.evento::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:4px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:var(--verde);
+
+}
+
+
+.dia.seleccionado{
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1e40af
+        );
+
+    color:white;
+
+    box-shadow:
+        0 5px 12px rgba(37,99,235,.25);
+
+}
+
+
+.dia.seleccionado::after{
+
+    background:white;
+
+}
+
+
+/* =========================================================
+   RESULTADO CALENDARIO
+========================================================= */
+
+.resultado{
+
+    margin-top:11px;
+
+    padding:9px 11px;
+
+    background:#f4f7fb;
+
+    border-radius:9px;
+
+    text-align:center;
+
+    color:#5b6678;
+
+    font-size:9px;
+
+}
+
+
+/* =========================================================
+   TÍTULO SECCIÓN
+========================================================= */
+
+.titulo-seccion{
+
+    color:white;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.7px;
+
+    margin:16px 2px 8px;
+
+}
+
+
+/* =========================================================
+   ACTIVIDADES
+========================================================= */
+
+.actividad{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:14px;
+
+    margin-bottom:10px;
+
+    box-shadow:
+        0 9px 24px rgba(0,0,0,.13);
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+.actividad:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+.actividad.oculta{
+
+    display:none;
+
+}
+
+
+.actividad-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+}
+
+
+.actividad-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    min-width:0;
+
+}
+
+
+.icono{
+
+    width:36px;
+
+    height:36px;
+
+    min-width:36px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:#edf4ff;
+
+    color:#2563eb;
+
+    font-size:16px;
+
+}
+
+
+.nombre{
+
     font-size:12px;
-    color:#888;
+
+    font-weight:700;
+
+    color:var(--azul);
+
+}
+
+
+.fecha{
+
+    margin-top:2px;
+
+    font-size:9px;
+
+    color:#8a94a5;
+
+}
+
+
+.estado{
+
+    flex-shrink:0;
+
+    padding:5px 8px;
+
+    border-radius:20px;
+
+    font-size:7px;
+
+    font-weight:700;
+
+}
+
+
+.estado.proxima{
+
+    background:#eaf9ef;
+
+    color:#15803d;
+
+}
+
+
+.estado.confirmar{
+
+    background:#fff7df;
+
+    color:#a16207;
+
+}
+
+
+.estado.realizada{
+
+    background:#edf0f4;
+
+    color:#64748b;
+
+}
+
+
+/* =========================================================
+   DETALLES
+========================================================= */
+
+.detalles{
+
+    display:none;
+
+    margin-top:11px;
+
+    padding-top:11px;
+
+    border-top:1px solid var(--borde);
+
+}
+
+
+.actividad.abierta .detalles{
+
+    display:block;
+
+}
+
+
+.detalle{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-bottom:6px;
+
+    font-size:9px;
+
+    color:#64748b;
+
+}
+
+
+.detalle strong{
+
+    color:#344054;
+
+}
+
+
+/* =========================================================
+   BOTÓN TODAS
+========================================================= */
+
+.todas{
+
+    width:100%;
+
+    border:none;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    margin-top:1px;
+
+    background:
+        rgba(255,255,255,.13);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.14);
+
+    font-family:inherit;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+.todas:hover{
+
+    background:
+        rgba(255,255,255,.20);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    text-align:center;
+
+    padding:13px 0 4px;
+
+    color:#cbd7e8;
+
+    font-size:8px;
+
+}
+
+
+.footer span{
+
+    color:var(--dorado);
+
+    font-weight:700;
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media(max-width:500px){
+
+    body{
+
+        padding:9px;
+
+    }
+
+
+    .header h1{
+
+        font-size:21px;
+
+    }
+
+
+    .proxima{
+
+        padding:13px;
+
+    }
+
+
+    .proxima-nombre{
+
+        font-size:17px;
+
+    }
+
+
+    .calendario{
+
+        padding:12px;
+
+    }
+
+
+    .dia{
+
+        height:34px;
+
+    }
+
+
+    .actividad{
+
+        padding:12px;
+
+    }
+
 }
 
 </style>
@@ -102,35 +901,696 @@ body{
 
 <body>
 
-<div class="card">
+<div class="contenedor">
 
-    <div class="header">
-        <h1>📅 Actividades</h1>
-        <p>Ministerio de Alabanza</p>
+```
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="header">
+
+    <h1>
+        📅 ACTIVIDADES
+    </h1>
+
+    <p>
+        Ministerio de Alabanza
+    </p>
+
+    <div class="linea"></div>
+
+</header>
+
+
+<!-- =====================================================
+     VOLVER
+====================================================== -->
+
+<button
+    class="volver"
+    id="volver"
+    type="button"
+>
+    ← VOLVER AL MENÚ
+</button>
+
+
+<!-- =====================================================
+     PRÓXIMA ACTIVIDAD
+====================================================== -->
+
+<section class="proxima">
+
+    <div class="proxima-titulo">
+
+        <span class="indicador"></span>
+
+        PRÓXIMA ACTIVIDAD
+
     </div>
 
-    <div class="content">
 
-        <div class="icon">⏳</div>
+    <div class="proxima-nombre">
+        Actividad del Ministerio
+    </div>
 
-        <div class="title">Estamos organizando el calendario</div>
 
-        <div class="message">
-            En este momento estamos por definir las fechas de las próximas actividades, 
-            ensayos y eventos del ministerio.
-            <br><br>
-            Te invitamos a estar atento a las actualizaciones.
+    <div class="proxima-fecha">
+        Fecha por confirmar
+    </div>
+
+
+    <div class="proxima-lugar">
+        📍 Lugar por confirmar
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CALENDARIO
+====================================================== -->
+
+<section class="calendario">
+
+    <div class="calendario-header">
+
+        <button
+            class="nav"
+            id="mesAnterior"
+            type="button"
+        >
+            ‹
+        </button>
+
+
+        <h2 id="nombreMes">
+            SEPTIEMBRE 2026
+        </h2>
+
+
+        <button
+            class="nav"
+            id="mesSiguiente"
+            type="button"
+        >
+            ›
+        </button>
+
+    </div>
+
+
+    <div class="semana">
+
+        <div>DOM</div>
+        <div>LUN</div>
+        <div>MAR</div>
+        <div>MIÉ</div>
+        <div>JUE</div>
+        <div>VIE</div>
+        <div>SÁB</div>
+
+    </div>
+
+
+    <div
+        class="grid"
+        id="calendarioGrid"
+    ></div>
+
+
+    <div
+        class="resultado"
+        id="resultado"
+    >
+        📅 Selecciona una fecha para consultar
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LISTA
+====================================================== -->
+
+<div class="titulo-seccion">
+    ACTIVIDADES PROGRAMADAS
+</div>
+
+
+<!-- =====================================================
+     ACTIVIDAD 1
+====================================================== -->
+
+<article
+    class="actividad"
+    data-fecha="2026-10-04"
+>
+
+    <div class="actividad-top">
+
+        <div class="actividad-info">
+
+            <div class="icono">
+                🎤
+            </div>
+
+            <div>
+
+                <div class="nombre">
+                    Actividad del Ministerio
+                </div>
+
+                <div class="fecha">
+                    Domingo 04 de Octubre de 2026
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="badge">📌 Fechas por confirmar</div>
 
-        <div class="footer">
-            Ministerio de Alabanza
+        <span class="estado confirmar">
+            POR CONFIRMAR
+        </span>
+
+    </div>
+
+
+    <div class="detalles">
+
+        <div class="detalle">
+            📅 <strong>Fecha:</strong>
+            Domingo 04 de Octubre de 2026
+        </div>
+
+        <div class="detalle">
+            🕐 <strong>Hora:</strong>
+            Por confirmar
+        </div>
+
+        <div class="detalle">
+            📍 <strong>Lugar:</strong>
+            Por confirmar
+        </div>
+
+        <div class="detalle">
+            🎤 <strong>Descripción:</strong>
+            Actividad del Ministerio de Alabanza.
         </div>
 
     </div>
+
+</article>
+
+
+<!-- =====================================================
+     BOTÓN MOSTRAR TODAS
+====================================================== -->
+
+<button
+    class="todas"
+    id="mostrarTodas"
+    type="button"
+>
+    🔄 Mostrar todas las actividades
+</button>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+    <span>
+        Ministerio de Alabanza
+    </span>
+
+    <br>
+
+    Calendario de actividades
+
+</footer>
+```
 
 </div>
+
+<script>
+
+/* =========================================================
+   CONFIGURACIÓN DE ACTIVIDADES
+
+   Para agregar una actividad nueva:
+   1. Crear otra tarjeta .actividad.
+   2. Colocar data-fecha="AAAA-MM-DD".
+   3. El calendario la detectará automáticamente.
+========================================================= */
+
+
+/* =========================================================
+   ELEMENTOS
+========================================================= */
+
+const actividades =
+    Array.from(
+        document.querySelectorAll(
+            ".actividad"
+        )
+    );
+
+
+const fechasEventos =
+    actividades.map(
+        function(actividad){
+
+            return actividad.dataset.fecha;
+
+        }
+    );
+
+
+let mesActual = 8;
+
+let añoActual = 2026;
+
+
+const meses = [
+
+    "ENERO",
+    "FEBRERO",
+    "MARZO",
+    "ABRIL",
+    "MAYO",
+    "JUNIO",
+    "JULIO",
+    "AGOSTO",
+    "SEPTIEMBRE",
+    "OCTUBRE",
+    "NOVIEMBRE",
+    "DICIEMBRE"
+
+];
+
+
+const nombreMes =
+    document.getElementById(
+        "nombreMes"
+    );
+
+
+const calendarioGrid =
+    document.getElementById(
+        "calendarioGrid"
+    );
+
+
+const resultado =
+    document.getElementById(
+        "resultado"
+    );
+
+
+/* =========================================================
+   CALENDARIO
+========================================================= */
+
+function renderCalendario(){
+
+    calendarioGrid.innerHTML = "";
+
+
+    nombreMes.textContent =
+        meses[mesActual] +
+        " " +
+        añoActual;
+
+
+    const primerDia =
+        new Date(
+            añoActual,
+            mesActual,
+            1
+        ).getDay();
+
+
+    const cantidadDias =
+        new Date(
+            añoActual,
+            mesActual + 1,
+            0
+        ).getDate();
+
+
+    for(
+        let i = 0;
+        i < primerDia;
+        i++
+    ){
+
+        const vacio =
+            document.createElement(
+                "div"
+            );
+
+        vacio.className =
+            "dia vacio";
+
+        calendarioGrid.appendChild(
+            vacio
+        );
+
+    }
+
+
+    for(
+        let dia = 1;
+        dia <= cantidadDias;
+        dia++
+    ){
+
+        const boton =
+            document.createElement(
+                "button"
+            );
+
+
+        boton.type = "button";
+
+
+        boton.className =
+            "dia";
+
+
+        boton.textContent =
+            dia;
+
+
+        const fecha =
+            añoActual +
+            "-" +
+            String(
+                mesActual + 1
+            ).padStart(2,"0") +
+            "-" +
+            String(
+                dia
+            ).padStart(2,"0");
+
+
+        if(
+            fechasEventos.includes(
+                fecha
+            )
+        ){
+
+            boton.classList.add(
+                "evento"
+            );
+
+        }
+
+
+        boton.addEventListener(
+            "click",
+            function(){
+
+                document
+                    .querySelectorAll(
+                        ".dia"
+                    )
+                    .forEach(
+                        function(dia){
+
+                            dia.classList.remove(
+                                "seleccionado"
+                            );
+
+                        }
+                    );
+
+
+                boton.classList.add(
+                    "seleccionado"
+                );
+
+
+                mostrarFecha(
+                    fecha
+                );
+
+            }
+        );
+
+
+        calendarioGrid.appendChild(
+            boton
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   MOSTRAR FECHA
+========================================================= */
+
+function mostrarFecha(fecha){
+
+    actividades.forEach(
+        function(actividad){
+
+            actividad.classList.toggle(
+                "oculta",
+                actividad.dataset.fecha !== fecha
+            );
+
+        }
+    );
+
+
+    const partes =
+        fecha.split("-");
+
+
+    const fechaObj =
+        new Date(
+            Number(partes[0]),
+            Number(partes[1]) - 1,
+            Number(partes[2])
+        );
+
+
+    const texto =
+        fechaObj.toLocaleDateString(
+            "es-ES",
+            {
+                weekday:"long",
+                day:"numeric",
+                month:"long",
+                year:"numeric"
+            }
+        );
+
+
+    resultado.textContent =
+        "📅 " +
+        texto.charAt(0).toUpperCase() +
+        texto.slice(1);
+
+
+    /*
+       Cerramos cualquier tarjeta
+       que estuviera abierta.
+    */
+
+    actividades.forEach(
+        function(actividad){
+
+            actividad.classList.remove(
+                "abierta"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MOSTRAR TODAS
+========================================================= */
+
+function mostrarTodas(){
+
+    actividades.forEach(
+        function(actividad){
+
+            actividad.classList.remove(
+                "oculta"
+            );
+
+            actividad.classList.remove(
+                "abierta"
+            );
+
+        }
+    );
+
+
+    document
+        .querySelectorAll(
+            ".dia"
+        )
+        .forEach(
+            function(dia){
+
+                dia.classList.remove(
+                    "seleccionado"
+                );
+
+            }
+        );
+
+
+    resultado.textContent =
+        "📅 Selecciona una fecha para consultar";
+
+}
+
+
+/* =========================================================
+   NAVEGACIÓN MES ANTERIOR
+========================================================= */
+
+document
+    .getElementById(
+        "mesAnterior"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            mesActual--;
+
+
+            if(
+                mesActual < 0
+            ){
+
+                mesActual = 11;
+
+                añoActual--;
+
+            }
+
+
+            mostrarTodas();
+
+            renderCalendario();
+
+        }
+    );
+
+
+/* =========================================================
+   NAVEGACIÓN MES SIGUIENTE
+========================================================= */
+
+document
+    .getElementById(
+        "mesSiguiente"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            mesActual++;
+
+
+            if(
+                mesActual > 11
+            ){
+
+                mesActual = 0;
+
+                añoActual++;
+
+            }
+
+
+            mostrarTodas();
+
+            renderCalendario();
+
+        }
+    );
+
+
+/* =========================================================
+   BOTÓN TODAS
+========================================================= */
+
+document
+    .getElementById(
+        "mostrarTodas"
+    )
+    .addEventListener(
+        "click",
+        mostrarTodas
+    );
+
+
+/* =========================================================
+   ABRIR / CERRAR DETALLES
+========================================================= */
+
+actividades.forEach(
+    function(actividad){
+
+        actividad.addEventListener(
+            "click",
+            function(){
+
+                actividad.classList.toggle(
+                    "abierta"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   VOLVER AL MENÚ
+========================================================= */
+
+document
+    .getElementById(
+        "volver"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            window.location.href =
+                "../index.html";
+
+        }
+    );
+
+
+/* =========================================================
+   INICIAR
+========================================================= */
+
+renderCalendario();
+
+</script>
 
 </body>
 </html>

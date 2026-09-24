@@ -1,25 +1,60 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 
 <meta charset="UTF-8">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta
+name="theme-color"
+content="#0B1F3A"
+
+>
 
 <title>Alabanza</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet">
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+>
 
 <style>
 
+/* =========================================================
+   VARIABLES
+========================================================= */
+
 :root{
+
     --azul:#0B1F3A;
-    --azul2:#123d72;
-    --celeste:#1976d2;
+    --azul2:#1e3a8a;
+    --celeste:#3b82f6;
     --dorado:#D4AF37;
+    --fondo:#e9eef5;
+    --texto:#172033;
+    --gris:#64748b;
+
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -27,307 +62,589 @@
     box-sizing:border-box;
 }
 
-html,
-body{
-    width:100%;
-    height:100%;
-}
+
+/* =========================================================
+   PÁGINA
+========================================================= */
 
 body{
-    font-family:Poppins,sans-serif;
-    background:#081522;
-    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(59,130,246,.30),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #071a35,
+            #0B1F3A 48%,
+            #1e3a8a
+        );
+
+    color:var(--texto);
+
+    padding:15px;
+
 }
 
 
 /* =========================================================
-   ENCABEZADO
+   CONTENEDOR
 ========================================================= */
 
-header{
+.contenedor{
 
-    height:62px;
+    width:100%;
 
-    background:
-        linear-gradient(
-            135deg,
-            #081C3A,
-            #123D72
-        );
+    max-width:850px;
 
-    color:white;
+    margin:auto;
+
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR
+========================================================= */
+
+.barra{
 
     display:flex;
 
     align-items:center;
 
+    justify-content:space-between;
+
     gap:10px;
 
-    padding:0 12px;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,.35);
-
-    position:relative;
-
-    z-index:10;
+    margin-bottom:14px;
 
 }
 
 
-.volver{
-
-    width:36px;
-    height:36px;
+.boton{
 
     border:none;
 
     border-radius:10px;
 
-    background:
-        rgba(255,255,255,.12);
+    padding:9px 12px;
 
-    color:white;
+    font-family:inherit;
 
-    font-size:22px;
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-.icono{
-
-    width:37px;
-    height:37px;
-
-    border-radius:10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--dorado),
-            #f3d978
-        );
-
-    color:#0B1F3A;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-}
-
-
-.info{
-
-    flex:1;
-
-    min-width:0;
-
-}
-
-
-.nombre{
-
-    font-size:14px;
+    font-size:10px;
 
     font-weight:700;
 
-    white-space:nowrap;
+    cursor:pointer;
 
-    overflow:hidden;
+    transition:.2s;
 
-    text-overflow:ellipsis;
+}
+
+
+.boton-volver{
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.16);
+
+}
+
+
+.boton-volver:hover{
+
+    background:rgba(255,255,255,.20);
+
+}
+
+
+.boton-pdf{
+
+    background:var(--dorado);
+
+    color:#172033;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.18);
+
+}
+
+
+.boton-pdf:hover{
+
+    transform:translateY(-1px);
+
+    filter:brightness(1.05);
+
+}
+
+
+/* =========================================================
+   HOJA
+========================================================= */
+
+.hoja{
+
+    width:100%;
+
+    background:white;
+
+    border-radius:4px;
+
+    padding:42px 48px 50px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+
+}
+
+
+/* =========================================================
+   ENCABEZADO DE LA HOJA
+========================================================= */
+
+.encabezado-hoja{
+
+    text-align:center;
+
+    border-bottom:2px solid var(--azul);
+
+    padding-bottom:17px;
+
+    margin-bottom:22px;
+
+}
+
+
+.ministerio{
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    color:var(--azul);
 
 }
 
 
 .subtitulo{
 
+    margin-top:3px;
+
+    font-size:9px;
+
+    color:#7b8799;
+
+    letter-spacing:1px;
+
+}
+
+
+.titulo-cancion{
+
+    margin-top:16px;
+
+    font-size:27px;
+
+    line-height:1.2;
+
+    font-weight:700;
+
+    color:#111d35;
+
+    letter-spacing:.5px;
+
+}
+
+
+.informacion{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:10px;
+
+}
+
+
+.etiqueta{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    background:#edf4ff;
+
+    color:#1d4ed8;
+
+    font-size:9px;
+
+    font-weight:700;
+
+}
+
+
+.etiqueta-tono{
+
+    background:#eef8f1;
+
+    color:#15803d;
+
+}
+
+
+/* =========================================================
+   LETRA
+========================================================= */
+
+.letra{
+
+    width:100%;
+
+}
+
+
+.bloque-cancion{
+
+    margin-bottom:19px;
+
+    break-inside:avoid;
+
+}
+
+
+.linea-acorde{
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    white-space:pre;
+
+    color:#2563eb;
+
+    font-size:14px;
+
+    line-height:1.25;
+
+    font-weight:700;
+
+}
+
+
+.linea-letra{
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    white-space:pre-wrap;
+
+    color:#202b3d;
+
+    font-size:14px;
+
+    line-height:1.65;
+
+}
+
+
+.linea-normal{
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    white-space:pre-wrap;
+
+    color:#202b3d;
+
+    font-size:14px;
+
+    line-height:1.65;
+
+}
+
+
+.separador{
+
+    height:5px;
+
+}
+
+
+/* =========================================================
+   PIE DE HOJA
+========================================================= */
+
+.pie-hoja{
+
+    margin-top:35px;
+
+    padding-top:13px;
+
+    border-top:1px solid #dfe5ed;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:#8993a5;
+
     font-size:8px;
 
-    color:#cbd8e8;
-
 }
 
 
-.abrir{
+.pie-hoja strong{
 
-    width:36px;
-    height:36px;
-
-    border-radius:10px;
-
-    background:
-        rgba(255,255,255,.12);
-
-    color:white;
-
-    text-decoration:none;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:17px;
+    color:var(--azul);
 
 }
 
 
 /* =========================================================
-   VISOR
+   MENSAJE ERROR
 ========================================================= */
 
-.visor{
+.error{
 
-    width:100%;
+    background:white;
 
-    height:
-        calc(100vh - 62px);
+    border-radius:18px;
 
-    background:#252525;
+    padding:30px;
 
-}
+    text-align:center;
 
-
-iframe{
-
-    width:100%;
-
-    height:100%;
-
-    border:none;
-
-    display:block;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.2);
 
 }
 
 
-/* =========================================================
-   CARGANDO
-========================================================= */
+.error h2{
 
-.cargando{
+    color:var(--azul);
 
-    position:fixed;
+    font-size:20px;
 
-    inset:62px 0 0 0;
-
-    background:#081522;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:white;
-
-    z-index:5;
+    margin-bottom:8px;
 
 }
 
 
-.spinner{
+.error p{
 
-    width:35px;
+    color:#64748b;
 
-    height:35px;
-
-    border-radius:50%;
-
-    border:3px solid rgba(255,255,255,.2);
-
-    border-top-color:
-        var(--dorado);
-
-    animation:
-        girar .8s linear infinite;
-
-    margin-bottom:10px;
-
-}
-
-
-@keyframes girar{
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-
-.cargando-texto{
-
-    font-size:10px;
-
-    color:#b8c5d6;
+    font-size:12px;
 
 }
 
 
 /* =========================================================
-   CELULAR
+   MÓVIL
 ========================================================= */
 
 @media(max-width:600px){
 
-    header{
-        height:57px;
-        padding:0 8px;
+    body{
+
+        padding:9px;
+
     }
 
-    .volver{
-        width:33px;
-        height:33px;
-        font-size:20px;
+
+    .barra{
+
+        margin-bottom:9px;
+
     }
 
-    .icono{
-        width:33px;
-        height:33px;
-        font-size:16px;
+
+    .boton{
+
+        padding:8px 9px;
+
+        font-size:9px;
+
     }
 
-    .nombre{
-        font-size:12px;
+
+    .hoja{
+
+        padding:28px 18px 35px;
+
+        border-radius:12px;
+
     }
+
+
+    .ministerio{
+
+        font-size:10px;
+
+        letter-spacing:1.4px;
+
+    }
+
 
     .subtitulo{
-        font-size:7px;
+
+        font-size:8px;
+
     }
 
-    .abrir{
-        width:33px;
-        height:33px;
-        font-size:15px;
+
+    .titulo-cancion{
+
+        font-size:21px;
+
+        margin-top:13px;
+
     }
 
-    .visor{
-        height:
-            calc(100vh - 57px);
+
+    .linea-acorde{
+
+        font-size:11px;
+
     }
 
-    .cargando{
-        inset:57px 0 0 0;
+
+    .linea-letra,
+    .linea-normal{
+
+        font-size:11px;
+
+        line-height:1.55;
+
+    }
+
+
+    .bloque-cancion{
+
+        margin-bottom:15px;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   IMPRESIÓN / PDF
+========================================================= */
+
+@page{
+
+    size:A4;
+
+    margin:12mm;
+
+}
+
+
+@media print{
+
+    body{
+
+        background:white;
+
+        padding:0;
+
+    }
+
+
+    .contenedor{
+
+        max-width:none;
+
+    }
+
+
+    .barra{
+
+        display:none;
+
+    }
+
+
+    .hoja{
+
+        width:100%;
+
+        padding:0;
+
+        border-radius:0;
+
+        box-shadow:none;
+
+    }
+
+
+    .encabezado-hoja{
+
+        margin-top:0;
+
+    }
+
+
+    .bloque-cancion{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+
+    }
+
+
+    .linea-acorde{
+
+        color:#000;
+
+    }
+
+
+    .linea-letra,
+    .linea-normal{
+
+        color:#111;
+
+    }
+
+
+    .pie-hoja{
+
+        margin-top:25px;
+
     }
 
 }
@@ -336,103 +653,306 @@ iframe{
 
 </head>
 
-
 <body>
 
+<div class="contenedor">
 
-<header>
+```
+<!-- =====================================================
+     BOTONES
+====================================================== -->
+
+<div class="barra">
 
     <button
-        class="volver"
-        onclick="volver()"
-        title="Volver">
-        ‹
+        class="boton boton-volver"
+        id="volver"
+        type="button"
+    >
+        ← VOLVER
     </button>
 
 
-    <div class="icono">
-        ♪
-    </div>
+    <button
+        class="boton boton-pdf"
+        id="generarPDF"
+        type="button"
+    >
+        📄 GENERAR PDF
+    </button>
+
+</div>
 
 
-    <div class="info">
+<!-- =====================================================
+     HOJA GENERADA
+====================================================== -->
 
-        <div
-            class="nombre"
-            id="nombreCancion">
-            Cargando...
+<main
+    class="hoja"
+    id="hoja"
+>
+
+    <header class="encabezado-hoja">
+
+        <div class="ministerio">
+            MINISTERIO DE ALABANZA
         </div>
 
         <div class="subtitulo">
-            Ministerio de Alabanza · PDF
+            HOJA DE ALABANZA
         </div>
 
-    </div>
+        <h1
+            class="titulo-cancion"
+            id="tituloCancion"
+        >
+            Cargando...
+        </h1>
+
+        <div class="informacion">
+
+            <span class="etiqueta">
+                ALABANZA
+            </span>
+
+            <span
+                class="etiqueta etiqueta-tono"
+                id="tonoCancion"
+            >
+                TONO
+            </span>
+
+        </div>
+
+    </header>
 
 
-    <a
-        id="botonAbrir"
-        class="abrir"
-        target="_blank"
-        title="Abrir PDF">
-        ↗
-    </a>
-
-</header>
+    <section
+        class="letra"
+        id="letra"
+    >
+    </section>
 
 
-<div
-    class="cargando"
-    id="cargando">
+    <footer class="pie-hoja">
 
-    <div class="spinner"></div>
+        <span>
+            <strong>Ministerio de Alabanza</strong>
+        </span>
 
-    <div class="cargando-texto">
-        Cargando alabanza...
-    </div>
+        <span>
+            Hoja de alabanza
+        </span>
+
+    </footer>
+
+</main>
+```
 
 </div>
-
-
-<div class="visor">
-
-    <iframe
-        id="pdfViewer"
-        title="PDF de la alabanza">
-    </iframe>
-
-</div>
-
 
 <script>
 
+/* =========================================================
+   BASE DE DATOS DE ALABANZAS
+=========================================================
+
+   AQUÍ SE AGREGARÁN LAS NUEVAS ALABANZAS.
+
+   No se crean PDFs.
+   No se necesitan archivos externos.
+   El sistema genera la hoja desde estos datos.
+
+========================================================= */
+
 const canciones = {
 
+
+    /* =====================================================
+       PODEROSO DIOS
+    ====================================================== */
+
     "PODEROSO DIOS":{
-        archivo:"poderoso-dios.pdf",
-        tono:"C"
+
+        tono:"C",
+
+        contenido:[
+`
+C                             Am
+Al que está sentado en el trono
+          F               G
+y al cordero, sea el honor
+
+C                     Am
+sea la gloria, sea la honra
+          F                       G
+sea el dominio por los siglos de los siglos...
+`,
+
+`
+C
+Poderoso Dios
+Am
+Poderoso Dios
+F
+Poderoso Dios
+G
+Mi alma clama por ti...
+`
+
+        ]
+
     },
+
+
+    /* =====================================================
+       TU MIRADA
+    ====================================================== */
 
     "TU MIRADA":{
-        archivo:"tu-mirada.pdf",
-        tono:"G"
+
+        tono:"G",
+
+        contenido:[
+`
+G                       Em
+Tus ojos revelan que yo nada puedo esconder
+                  C Am            D
+que no soy nada sin ti   Oh fiel Señor.
+
+G                                  Em
+Todo lo sabes de mí cuando miras el corazón,
+         C        Am              D
+todo lo puedes ver muy dentro de mí.
+`,
+
+`
+G        C    G               C   G
+Lleva mi vida a una sola verdad
+                C    G                D
+Que cuando me miras nada puedo ocultar
+`,
+
+`
+G         D/F#         Em           G        C
+Sé que es tu fidelidad que lleva mi vida más allá
+            Am          D
+de lo que puedo imaginar.
+`,
+
+`
+G      D/F#       Em            G              C
+Sé que no puedo negar que tu mirada puesta en mí
+      D          G
+me llena de tu paz.
+`
+
+        ]
+
     },
+
+
+    /* =====================================================
+       HERMOSO ERES
+    ====================================================== */
 
     "HERMOSO ERES":{
-        archivo:"hermoso-eres.pdf",
-        tono:"A"
+
+        tono:"A",
+
+        contenido:[
+`
+A           D              E
+En mi corazón hay una canción
+A      D             E
+Que demuestra mi pasión
+F#m      E          D   A/C#
+Para mi Rey y mi Señor
+Bm       A           E
+Para Aquel que me amó
+`,
+
+`
+A        C#m  D     E
+Hermoso eres, mi Señor
+A       C#m      D      E
+Hermoso eres Tú, Amado mío
+Bm                        E
+Tú eres la fuente de mi vida
+Bm      A/C# D    E     A
+Y el anhelo de mi corazón
+`
+
+        ]
+
     },
 
+
+    /* =====================================================
+       ME GOZARÉ
+    ====================================================== */
+
     "ME GOZARÉ":{
-        archivo:"me-gozare.pdf",
-        tono:"Em"
+
+        tono:"Em",
+
+        contenido:[
+`
+Em
+//Cuando el Señor hiciere volver
+               D
+De la cautividad
+          Am              B
+seremos como los que sueñan//
+`,
+
+`
+  Em
+//Mi boca llenará de risa,
+  D
+mis labios de alabanza,
+  Am
+Entonces dirán las naciones:
+         B
+Grandes cosas ha hecho
+
+el Señor//
+`,
+
+`
+      Em
+//Me gozaré, me gozaré,
+
+me gozaré,
+               D
+me gozaré en Jehová.
+        Am
+Pues ha llevado todo mi dolor,
+           B
+ me ha hecho libre//
+`,
+
+`
+  Em
+//Así como David cantaba,
+ D
+así como David danzaba,
+ Am
+así como David fluía
+        B
+en su presencia//
+`
+
+        ]
+
     }
 
 };
 
 
 /* =========================================================
-   OBTENER CANCION DE LA URL
+   OBTENER ALABANZA DESDE LA URL
 ========================================================= */
 
 const parametros =
@@ -445,104 +965,149 @@ const nombre =
     parametros.get("cancion");
 
 
-const nombreCancion =
+const titulo =
     document.getElementById(
-        "nombreCancion"
+        "tituloCancion"
     );
 
 
-const visor =
+const tono =
     document.getElementById(
-        "pdfViewer"
+        "tonoCancion"
     );
 
 
-const cargando =
+const letra =
     document.getElementById(
-        "cargando"
-    );
-
-
-const botonAbrir =
-    document.getElementById(
-        "botonAbrir"
+        "letra"
     );
 
 
 /* =========================================================
-   CARGAR PDF
+   GENERAR HOJA
 ========================================================= */
 
-if(
-    nombre &&
-    canciones[nombre]
-){
+function generarHoja(){
+
+    if(!nombre || !canciones[nombre]){
+
+        document.querySelector(".hoja").innerHTML = `
+
+            <div class="error">
+
+                <h2>Alabanza no encontrada</h2>
+
+                <p>
+                    La alabanza solicitada todavía
+                    no está configurada en el sistema.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
 
     const cancion =
         canciones[nombre];
 
 
-    const ruta =
-        "../alabanzas/" +
-        cancion.archivo;
-
-
-    nombreCancion.textContent =
+    document.title =
         nombre +
-        " · " +
+        " | Ministerio de Alabanza";
+
+
+    titulo.textContent =
+        nombre;
+
+
+    tono.textContent =
+        "TONO: " +
         cancion.tono;
 
 
-    visor.src =
-        ruta;
+    letra.innerHTML = "";
 
 
-    botonAbrir.href =
-        ruta;
+    cancion.contenido.forEach(
+        function(bloque){
+
+            const contenedor =
+                document.createElement(
+                    "div"
+                );
 
 
-    visor.addEventListener(
-        "load",
-        function(){
+            contenedor.className =
+                "bloque-cancion";
 
-            cargando.style.display =
-                "none";
+
+            const lineas =
+                bloque
+                    .trim()
+                    .split("\n");
+
+
+            lineas.forEach(
+                function(linea){
+
+                    const elemento =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    /*
+                       Las líneas que comienzan
+                       con acorde se muestran
+                       como parte musical.
+                    */
+
+                    const contieneAcorde =
+                        /^[A-G](#|b)?(m|maj|sus|dim|aug|add)?[0-9/]*\s/.test(
+                            linea.trim()
+                        );
+
+
+                    if(
+                        contieneAcorde ||
+                        /^[A-G](#|b)?(m|maj|sus|dim|aug|add)?[0-9/]*$/.test(
+                            linea.trim()
+                        )
+                    ){
+
+                        elemento.className =
+                            "linea-acorde";
+
+                    }else{
+
+                        elemento.className =
+                            "linea-letra";
+
+                    }
+
+
+                    elemento.textContent =
+                        linea;
+
+
+                    contenedor.appendChild(
+                        elemento
+                    );
+
+                }
+            );
+
+
+            letra.appendChild(
+                contenedor
+            );
 
         }
     );
-
-
-}else{
-
-    nombreCancion.textContent =
-        "Alabanza no encontrada";
-
-
-    cargando.innerHTML = `
-
-        <div style="
-            font-size:40px;
-            margin-bottom:10px;
-        ">
-            ⚠️
-        </div>
-
-        <div style="
-            font-size:13px;
-            font-weight:700;
-        ">
-            Alabanza no encontrada
-        </div>
-
-        <div style="
-            font-size:9px;
-            color:#94a3b8;
-            margin-top:5px;
-        ">
-            Regresa a Reuniones de Ensayo
-        </div>
-
-    `;
 
 }
 
@@ -551,16 +1116,57 @@ if(
    VOLVER
 ========================================================= */
 
-function volver(){
+document
+    .getElementById("volver")
+    .addEventListener(
+        "click",
+        function(){
 
-    window.location.href =
-        "reuniones.html";
+            window.location.href =
+                "reuniones.html";
 
-}
+        }
+    );
+
+
+/* =========================================================
+   GENERAR / GUARDAR PDF
+=========================================================
+
+   No se sube ningún PDF.
+
+   El navegador genera la versión
+   de impresión de esta hoja.
+
+   En computadora:
+   "Guardar como PDF"
+
+   En teléfono:
+   usar la opción de imprimir /
+   guardar como PDF disponible
+   en el navegador.
+
+========================================================= */
+
+document
+    .getElementById("generarPDF")
+    .addEventListener(
+        "click",
+        function(){
+
+            window.print();
+
+        }
+    );
+
+
+/* =========================================================
+   INICIAR
+========================================================= */
+
+generarHoja();
 
 </script>
 
-
 </body>
 </html>
-

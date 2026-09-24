@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Alabanza</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+:root{
+    --azul:#0B1F3A;
+    --azul2:#123d72;
+    --celeste:#1976d2;
+    --dorado:#D4AF37;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:#081522;
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+header{
+
+    height:62px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #081C3A,
+            #123D72
+        );
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:0 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.35);
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+.volver{
+
+    width:36px;
+    height:36px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.icono{
+
+    width:37px;
+    height:37px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--dorado),
+            #f3d978
+        );
+
+    color:#0B1F3A;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+
+.info{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+
+.nombre{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+
+.subtitulo{
+
+    font-size:8px;
+
+    color:#cbd8e8;
+
+}
+
+
+.abrir{
+
+    width:36px;
+    height:36px;
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    color:white;
+
+    text-decoration:none;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:17px;
+
+}
+
+
+/* =========================================================
+   VISOR
+========================================================= */
+
+.visor{
+
+    width:100%;
+
+    height:
+        calc(100vh - 62px);
+
+    background:#252525;
+
+}
+
+
+iframe{
+
+    width:100%;
+
+    height:100%;
+
+    border:none;
+
+    display:block;
+
+}
+
+
+/* =========================================================
+   CARGANDO
+========================================================= */
+
+.cargando{
+
+    position:fixed;
+
+    inset:62px 0 0 0;
+
+    background:#081522;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    z-index:5;
+
+}
+
+
+.spinner{
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    border:3px solid rgba(255,255,255,.2);
+
+    border-top-color:
+        var(--dorado);
+
+    animation:
+        girar .8s linear infinite;
+
+    margin-bottom:10px;
+
+}
+
+
+@keyframes girar{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+.cargando-texto{
+
+    font-size:10px;
+
+    color:#b8c5d6;
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media(max-width:600px){
+
+    header{
+        height:57px;
+        padding:0 8px;
+    }
+
+    .volver{
+        width:33px;
+        height:33px;
+        font-size:20px;
+    }
+
+    .icono{
+        width:33px;
+        height:33px;
+        font-size:16px;
+    }
+
+    .nombre{
+        font-size:12px;
+    }
+
+    .subtitulo{
+        font-size:7px;
+    }
+
+    .abrir{
+        width:33px;
+        height:33px;
+        font-size:15px;
+    }
+
+    .visor{
+        height:
+            calc(100vh - 57px);
+    }
+
+    .cargando{
+        inset:57px 0 0 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <button
+        class="volver"
+        onclick="volver()"
+        title="Volver">
+        ‹
+    </button>
+
+
+    <div class="icono">
+        ♪
+    </div>
+
+
+    <div class="info">
+
+        <div
+            class="nombre"
+            id="nombreCancion">
+            Cargando...
+        </div>
+
+        <div class="subtitulo">
+            Ministerio de Alabanza · PDF
+        </div>
+
+    </div>
+
+
+    <a
+        id="botonAbrir"
+        class="abrir"
+        target="_blank"
+        title="Abrir PDF">
+        ↗
+    </a>
+
+</header>
+
+
+<div
+    class="cargando"
+    id="cargando">
+
+    <div class="spinner"></div>
+
+    <div class="cargando-texto">
+        Cargando alabanza...
+    </div>
+
+</div>
+
+
+<div class="visor">
+
+    <iframe
+        id="pdfViewer"
+        title="PDF de la alabanza">
+    </iframe>
+
+</div>
+
+
+<script>
+
+const canciones = {
+
+    "PODEROSO DIOS":{
+        archivo:"poderoso-dios.pdf",
+        tono:"C"
+    },
+
+    "TU MIRADA":{
+        archivo:"tu-mirada.pdf",
+        tono:"G"
+    },
+
+    "HERMOSO ERES":{
+        archivo:"hermoso-eres.pdf",
+        tono:"A"
+    },
+
+    "ME GOZARÉ":{
+        archivo:"me-gozare.pdf",
+        tono:"Em"
+    }
+
+};
+
+
+/* =========================================================
+   OBTENER CANCION DE LA URL
+========================================================= */
+
+const parametros =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const nombre =
+    parametros.get("cancion");
+
+
+const nombreCancion =
+    document.getElementById(
+        "nombreCancion"
+    );
+
+
+const visor =
+    document.getElementById(
+        "pdfViewer"
+    );
+
+
+const cargando =
+    document.getElementById(
+        "cargando"
+    );
+
+
+const botonAbrir =
+    document.getElementById(
+        "botonAbrir"
+    );
+
+
+/* =========================================================
+   CARGAR PDF
+========================================================= */
+
+if(
+    nombre &&
+    canciones[nombre]
+){
+
+    const cancion =
+        canciones[nombre];
+
+
+    const ruta =
+        "../alabanzas/" +
+        cancion.archivo;
+
+
+    nombreCancion.textContent =
+        nombre +
+        " · " +
+        cancion.tono;
+
+
+    visor.src =
+        ruta;
+
+
+    botonAbrir.href =
+        ruta;
+
+
+    visor.addEventListener(
+        "load",
+        function(){
+
+            cargando.style.display =
+                "none";
+
+        }
+    );
+
+
+}else{
+
+    nombreCancion.textContent =
+        "Alabanza no encontrada";
+
+
+    cargando.innerHTML = `
+
+        <div style="
+            font-size:40px;
+            margin-bottom:10px;
+        ">
+            ⚠️
+        </div>
+
+        <div style="
+            font-size:13px;
+            font-weight:700;
+        ">
+            Alabanza no encontrada
+        </div>
+
+        <div style="
+            font-size:9px;
+            color:#94a3b8;
+            margin-top:5px;
+        ">
+            Regresa a Reuniones de Ensayo
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   VOLVER
+========================================================= */
+
+function volver(){
+
+    window.location.href =
+        "reuniones.html";
+
+}
+
+</script>
+
+
+</body>
+</html>
+

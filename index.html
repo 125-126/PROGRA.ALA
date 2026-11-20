@@ -17,148 +17,162 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+
 <style>
-
-:root{
-    --azul:#081C3A;
-    --azul2:#102D5A;
-    --azul3:#1E3A8A;
-    --celeste:#3B82F6;
-    --dorado:#D4AF37;
-    --dorado2:#F0D477;
-    --blanco:#ffffff;
-    --gris:#F5F7FA;
-    --texto:#172033;
+:root {
+    --azul: #081C3A;
+    --azul2: #102D5A;
+    --azul3: #1E3A8A;
+    --celeste: #3B82F6;
+    --dorado: #D4AF37;
+    --dorado2: #F0D477;
+    --blanco: #ffffff;
+    --gris: #F5F7FA;
+    --texto: #172033;
 }
 
-/* =========================================================
-   RESET
-   ========================================================= */
+/* =====================================
+   RESET GENERAL
+===================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    width: 100%;
+    min-height: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    min-height:100vh;
-    color:white;
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
     background:
-        radial-gradient(circle at 20% 10%,rgba(59,130,246,.20),transparent 30%),
-        radial-gradient(circle at 85% 80%,rgba(212,175,55,.10),transparent 30%),
-        linear-gradient(135deg,#06172F,#0B1F3A 45%,#12386B);
-    overflow-x:hidden;
+        radial-gradient(circle at 20% 10%, rgba(59,130,246,.20), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(212,175,55,.10), transparent 30%),
+        linear-gradient(135deg, #06172F, #0B1F3A 45%, #12386B);
+
+    overflow-x: hidden;
 }
 
-/* =========================================================
-   DECORACIÓN DE FONDO
-   ========================================================= */
+/* =====================================
+   FONDO DECORATIVO
+===================================== */
 
-.fondo{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    pointer-events:none;
-    z-index:-1;
+.fondo {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.fondo span{
-    position:absolute;
-    display:block;
-    border-radius:50%;
-    filter:blur(2px);
-    opacity:.18;
+.fondo span {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: .18;
 }
 
-.fondo span:nth-child(1){
-    width:220px;
-    height:220px;
-    background:#3B82F6;
-    top:-100px;
-    left:-80px;
+.fondo span:nth-child(1) {
+    width: 220px;
+    height: 220px;
+    background: #3B82F6;
+    top: -100px;
+    left: -80px;
 }
 
-.fondo span:nth-child(2){
-    width:280px;
-    height:280px;
-    background:#D4AF37;
-    right:-150px;
-    top:25%;
+.fondo span:nth-child(2) {
+    width: 280px;
+    height: 280px;
+    background: #D4AF37;
+    right: -150px;
+    top: 25%;
 }
 
-.fondo span:nth-child(3){
-    width:180px;
-    height:180px;
-    background:#2563EB;
-    bottom:-80px;
-    left:20%;
+.fondo span:nth-child(3) {
+    width: 180px;
+    height: 180px;
+    background: #2563EB;
+    bottom: -80px;
+    left: 20%;
 }
 
-/* =========================================================
-   CONTENEDOR
-   ========================================================= */
+/* =====================================
+   CONTENEDOR PRINCIPAL
+===================================== */
 
-.principal{
-    width:100%;
-    max-width:900px;
-    margin:auto;
-    padding:12px;
+.principal {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px;
 }
 
-/* =========================================================
+/* =====================================
    ENCABEZADO
-   ========================================================= */
+===================================== */
 
-header{
-    text-align:center;
-    padding:15px 10px 10px;
+header {
+    text-align: center;
+    padding: 18px 10px 12px;
 }
 
-.logo{
-    width:64px;
-    height:64px;
-    margin:0 auto 9px;
-    border-radius:18px;
-    background:linear-gradient(135deg,#ffffff,#dbeafe);
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.logo {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 10px;
+    border-radius: 18px;
+
+    background: linear-gradient(135deg, #ffffff, #dbeafe);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     box-shadow:
         0 10px 25px rgba(0,0,0,.22),
         inset 0 0 0 1px rgba(255,255,255,.8);
 }
 
-.logo i{
-    font-size:29px;
-    color:var(--azul3);
+.logo i {
+    font-size: 30px;
+    color: var(--azul3);
 }
 
-header h1{
-    font-size:25px;
-    font-weight:800;
-    letter-spacing:1.3px;
-    line-height:1.15;
+header h1 {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    line-height: 1.25;
 }
 
-header p{
-    margin-top:5px;
-    color:#dbeafe;
-    font-size:12px;
-    font-weight:400;
+header p {
+    margin-top: 6px;
+    color: #dbeafe;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
-.linea{
-    width:65px;
-    height:3px;
-    margin:9px auto 0;
-    border-radius:20px;
-    background:linear-gradient(
+.linea {
+    width: 70px;
+    height: 3px;
+    margin: 10px auto 0;
+    border-radius: 20px;
+
+    background: linear-gradient(
         90deg,
         transparent,
         var(--dorado),
@@ -166,157 +180,159 @@ header p{
     );
 }
 
-/* =========================================================
-   PANEL BIENVENIDA
-   ========================================================= */
+/* =====================================
+   BIENVENIDA
+===================================== */
 
-.bienvenida{
-    margin:10px 0 13px;
-    padding:13px 15px;
-    border-radius:16px;
+.bienvenida {
+    margin: 13px 0 17px;
+    padding: 14px 16px;
+    border-radius: 16px;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.13),
-            rgba(255,255,255,.05)
-        );
-
-    border:1px solid rgba(255,255,255,.14);
-    box-shadow:0 10px 28px rgba(0,0,0,.18);
-    backdrop-filter:blur(14px);
-
-    display:flex;
-    align-items:center;
-    gap:11px;
-}
-
-.bienvenida-icono{
-    width:40px;
-    height:40px;
-    min-width:40px;
-    border-radius:12px;
-
-    background:linear-gradient(
+    background: linear-gradient(
         135deg,
-        var(--dorado),
-        #b98c16
+        rgba(255,255,255,.13),
+        rgba(255,255,255,.05)
     );
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 10px 28px rgba(0,0,0,.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
-    color:white;
-    font-size:18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-    box-shadow:0 7px 15px rgba(0,0,0,.20);
+    min-width: 0;
 }
 
-.bienvenida-info{
-    flex:1;
-    min-width:0;
+.bienvenida-icono {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, var(--dorado), #b98c16);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 19px;
+
+    box-shadow: 0 7px 15px rgba(0,0,0,.20);
 }
 
-.bienvenida-titulo{
-    font-size:12px;
-    font-weight:700;
-    color:white;
+.bienvenida-info {
+    flex: 1;
+    min-width: 0;
 }
 
-.bienvenida-texto{
-    font-size:9px;
-    color:#cbd5e1;
-    margin-top:2px;
+.bienvenida-titulo {
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
 }
 
-.estado{
-    display:flex;
-    align-items:center;
-    gap:5px;
-
-    background:rgba(34,197,94,.12);
-    border:1px solid rgba(34,197,94,.20);
-
-    color:#86efac;
-
-    padding:5px 7px;
-    border-radius:8px;
-
-    font-size:7px;
-    font-weight:700;
-
-    white-space:nowrap;
+.bienvenida-texto {
+    font-size: 10px;
+    color: #cbd5e1;
+    margin-top: 3px;
+    line-height: 1.4;
 }
 
-.punto{
-    width:5px;
-    height:5px;
-    border-radius:50%;
-    background:#22c55e;
-    box-shadow:0 0 7px #22c55e;
+.estado {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background: rgba(34,197,94,.12);
+    border: 1px solid rgba(34,197,94,.20);
+
+    color: #86efac;
+    padding: 6px 9px;
+    border-radius: 8px;
+
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
-/* =========================================================
-   TÍTULO MENÚ
-   ========================================================= */
-
-.titulo-menu{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 3px;
-    margin:0 0 7px;
+.punto {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 7px #22c55e;
 }
 
-.titulo-menu span:first-child{
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:.8px;
-    color:#dbeafe;
+/* =====================================
+   TÍTULO DEL MENÚ
+===================================== */
+
+.titulo-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    padding: 0 3px;
+    margin: 0 0 10px;
 }
 
-.titulo-menu span:last-child{
-    font-size:8px;
-    color:#94a3b8;
+.titulo-menu span:first-child {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    color: #dbeafe;
 }
 
-/* =========================================================
-   GRID
-   ========================================================= */
-
-.contenedor{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:9px;
+.titulo-menu span:last-child {
+    font-size: 9px;
+    color: #94a3b8;
 }
 
-/* =========================================================
+/* =====================================
+   CUADRÍCULA
+===================================== */
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+}
+
+/* =====================================
    TARJETAS
-   ========================================================= */
+===================================== */
 
-.card{
-    position:relative;
-    min-height:125px;
+.card {
+    position: relative;
+    min-width: 0;
+    min-height: 145px;
 
-    padding:15px 10px 12px;
+    padding: 17px 12px 14px;
+    border-radius: 16px;
 
-    border-radius:15px;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.12),
+        rgba(255,255,255,.045)
+    );
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.12),
-            rgba(255,255,255,.045)
-        );
+    border: 1px solid rgba(255,255,255,.13);
 
-    border:1px solid rgba(255,255,255,.13);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
-    backdrop-filter:blur(12px);
+    text-align: center;
+    cursor: pointer;
 
-    text-align:center;
-
-    cursor:pointer;
+    overflow: hidden;
 
     transition:
         transform .22s ease,
@@ -324,483 +340,193 @@ header p{
         box-shadow .22s ease,
         border-color .22s ease;
 
-    overflow:hidden;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
-.card::before{
-    content:"";
-    position:absolute;
-    width:75px;
-    height:75px;
-    border-radius:50%;
-    background:rgba(59,130,246,.10);
-    top:-30px;
-    right:-25px;
+.card::before {
+    content: "";
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: rgba(59,130,246,.10);
+    top: -35px;
+    right: -30px;
+    pointer-events: none;
 }
 
-.card::after{
-    content:"";
-    position:absolute;
-    height:2px;
-    left:20%;
-    right:20%;
-    bottom:0;
+.card::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 20%;
+    right: 20%;
+    bottom: 0;
 
-    background:linear-gradient(
+    background: linear-gradient(
         90deg,
         transparent,
         rgba(212,175,55,.65),
         transparent
     );
 
-    opacity:.5;
+    opacity: .6;
 }
 
-.card:hover{
-    transform:translateY(-4px);
+.card:hover {
+    transform: translateY(-4px);
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.18),
-            rgba(255,255,255,.07)
-        );
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,.07)
+    );
 
-    border-color:rgba(255,255,255,.25);
+    border-color: rgba(255,255,255,.25);
 
-    box-shadow:
-        0 12px 25px rgba(0,0,0,.25);
+    box-shadow: 0 12px 25px rgba(0,0,0,.25);
 }
 
-.card:active{
-    transform:scale(.97);
+.card:active {
+    transform: scale(.97);
 }
 
-/* =========================================================
-   ICONO
-   ========================================================= */
+/* =====================================
+   ICONOS
+===================================== */
 
-.icono-card{
-    width:44px;
-    height:44px;
+.icono-card {
+    width: 48px;
+    height: 48px;
 
-    margin:0 auto 8px;
+    margin: 0 auto 9px;
+    border-radius: 13px;
 
-    border-radius:13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,.06)
+    );
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.18),
-            rgba(255,255,255,.06)
-        );
+    border: 1px solid rgba(255,255,255,.13);
 
-    border:1px solid rgba(255,255,255,.13);
+    color: var(--dorado2);
 
-    color:var(--dorado2);
+    box-shadow: 0 7px 15px rgba(0,0,0,.15);
 
-    box-shadow:
-        0 7px 15px rgba(0,0,0,.15);
+    position: relative;
+    z-index: 1;
 
-    position:relative;
-    z-index:1;
+    flex-shrink: 0;
 }
 
-.icono-card i{
-    font-size:21px;
+.icono-card i {
+    font-size: 23px;
 }
 
-/* =========================================================
-   TEXTO TARJETAS
-   ========================================================= */
+/* =====================================
+   TEXTO DE TARJETAS
+===================================== */
 
-.card h2{
-    position:relative;
-    z-index:1;
+.card h2 {
+    position: relative;
+    z-index: 1;
 
-    font-size:11px;
-    line-height:1.25;
-    font-weight:700;
+    font-size: 12px;
+    line-height: 1.35;
+    font-weight: 700;
 
-    color:white;
+    color: white;
+    margin-bottom: 5px;
 
-    margin-bottom:4px;
+    overflow-wrap: break-word;
 }
 
-.card p{
-    position:relative;
-    z-index:1;
+.card p {
+    position: relative;
+    z-index: 1;
 
-    color:#aebed4;
+    color: #aebed4;
 
-    font-size:7.5px;
-    line-height:1.35;
+    font-size: 9px;
+    line-height: 1.45;
+
+    overflow-wrap: break-word;
 }
 
-/* =========================================================
-   BADGE
-   ========================================================= */
+/* =====================================
+   ETIQUETAS
+===================================== */
 
-.badge{
-    position:absolute;
-    top:7px;
-    right:7px;
+.badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
 
-    padding:3px 5px;
+    padding: 4px 6px;
+    border-radius: 6px;
 
-    border-radius:5px;
+    background: rgba(34,197,94,.13);
+    color: #86efac;
 
-    background:rgba(34,197,94,.13);
-    color:#86efac;
+    font-size: 7px;
+    font-weight: 700;
 
-    font-size:6px;
-    font-weight:700;
-
-    z-index:2;
+    z-index: 2;
 }
 
-.badge.proximo{
-    background:rgba(212,175,55,.14);
-    color:var(--dorado2);
+.badge.proximo {
+    background: rgba(212,175,55,.14);
+    color: var(--dorado2);
 }
 
-/* =========================================================
-   TARJETA CONFIGURACIÓN
-   ========================================================= */
+/* =====================================
+   CONFIGURACIÓN
+===================================== */
 
-.card.config{
-    opacity:.75;
+.card.config {
+    opacity: .75;
 }
 
-.card.config .icono-card{
-    color:#94a3b8;
+.card.config .icono-card {
+    color: #94a3b8;
 }
 
-.card.config h2{
-    color:#cbd5e1;
+.card.config h2 {
+    color: #cbd5e1;
 }
 
-/* =========================================================
-   PIE
-   ========================================================= */
+/* =====================================
+   PIE DE PÁGINA
+===================================== */
 
-footer{
-    text-align:center;
-    padding:18px 5px 8px;
-    color:#94a3b8;
-    font-size:8px;
+footer {
+    text-align: center;
+    padding: 22px 5px 12px;
+    color: #94a3b8;
+    font-size: 9px;
 }
 
-footer .nombre{
-    color:var(--dorado2);
-    font-weight:700;
-    font-size:10px;
+footer .nombre {
+    color: var(--dorado2);
+    font-weight: 700;
+    font-size: 11px;
 }
 
-footer .version{
-    margin-top:3px;
-    color:#64748b;
-    font-size:7px;
+footer .version {
+    margin-top: 4px;
+    color: #64748b;
+    font-size: 8px;
 }
 
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media(min-width:601px){
-
-    .principal{
-        padding:20px;
-    }
-
-    header{
-        padding:20px 10px 15px;
-    }
-
-    .logo{
-        width:75px;
-        height:75px;
-    }
-
-    .logo i{
-        font-size:34px;
-    }
-
-    header h1{
-        font-size:30px;
-    }
-
-    header p{
-        font-size:13px;
-    }
-
-    .bienvenida{
-        padding:15px 17px;
-    }
-
-    .bienvenida-titulo{
-        font-size:13px;
-    }
-
-    .bienvenida-texto{
-        font-size:10px;
-    }
-
-    .card{
-        min-height:145px;
-        padding:20px 14px;
-    }
-
-    .icono-card{
-        width:52px;
-        height:52px;
-    }
-
-    .icono-card i{
-        font-size:25px;
-    }
-
-    .card h2{
-        font-size:13px;
-    }
-
-    .card p{
-        font-size:9px;
-    }
-
-}
-
-/* =========================================================
-   CELULAR
-   ========================================================= */
-
-@media(max-width:600px){
-
-    body{
-        padding-bottom:5px;
-    }
-
-    .principal{
-        padding:7px;
-    }
-
-    header{
-        padding:8px 5px 7px;
-    }
-
-    .logo{
-        width:55px;
-        height:55px;
-        border-radius:15px;
-        margin-bottom:7px;
-    }
-
-    .logo i{
-        font-size:25px;
-    }
-
-    header h1{
-        font-size:18px;
-        letter-spacing:.8px;
-    }
-
-    header p{
-        font-size:9px;
-        margin-top:3px;
-    }
-
-    .linea{
-        width:50px;
-        height:2px;
-        margin-top:7px;
-    }
-
-    .bienvenida{
-        margin:7px 0 9px;
-        padding:9px 10px;
-        border-radius:12px;
-        gap:8px;
-    }
-
-    .bienvenida-icono{
-        width:32px;
-        height:32px;
-        min-width:32px;
-        border-radius:9px;
-        font-size:14px;
-    }
-
-    .bienvenida-titulo{
-        font-size:9px;
-    }
-
-    .bienvenida-texto{
-        font-size:7px;
-    }
-
-    .estado{
-        font-size:6px;
-        padding:4px 5px;
-    }
-
-    .punto{
-        width:4px;
-        height:4px;
-    }
-
-    .titulo-menu{
-        margin-bottom:5px;
-    }
-
-    .titulo-menu span:first-child{
-        font-size:8px;
-    }
-
-    .titulo-menu span:last-child{
-        font-size:6px;
-    }
-
-    .contenedor{
-        grid-template-columns:repeat(2,1fr);
-        gap:7px;
-        padding:0;
-    }
-
-    .card{
-        min-height:105px;
-        padding:12px 7px 9px;
-        border-radius:12px;
-    }
-
-    .icono-card{
-        width:36px;
-        height:36px;
-        border-radius:10px;
-        margin-bottom:6px;
-    }
-
-    .icono-card i{
-        font-size:17px;
-    }
-
-    .card h2{
-        font-size:9px;
-        margin-bottom:3px;
-    }
-
-    .card p{
-        font-size:6.5px;
-        line-height:1.3;
-    }
-
-    .badge{
-        top:5px;
-        right:5px;
-        font-size:5px;
-        padding:2px 4px;
-    }
-
-    footer{
-        padding-top:12px;
-    }
-
-}
-
-/* =========================================================
-   CELULARES MUY PEQUEÑOS
-   ========================================================= */
-
-@media(max-width:360px){
-
-    header h1{
-        font-size:16px;
-    }
-
-    .bienvenida-texto{
-        display:none;
-    }
-
-    .estado{
-        display:none;
-    }
-
-    .card{
-        min-height:98px;
-        padding:10px 6px 8px;
-    }
-
-    .icono-card{
-        width:32px;
-        height:32px;
-        margin-bottom:5px;
-    }
-
-    .icono-card i{
-        font-size:15px;
-    }
-
-    .card h2{
-        font-size:8px;
-    }
-
-    .card p{
-        font-size:6px;
-    }
-
-}
-
-/* =========================================================
-   REDUCIR MOVIMIENTO
-   ========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    *{
-        scroll-behavior:auto!important;
-        transition:none!important;
-    }
-
-}
-
-
-    
-/* =========================================================
-   OPTIMIZACIÓN PROFESIONAL PARA CELULARES
-   MINISTERIO DE ALABANZA
-   ========================================================= */
-
-/* BASE RESPONSIVE */
-
-html {
-    width: 100%;
-    overflow-x: hidden;
-    -webkit-text-size-adjust: 100%;
-}
-
-body {
-    width: 100%;
-    min-width: 320px;
-    overflow-x: hidden;
-}
-
-.principal {
-    width: 100%;
-    max-width: 900px;
-    padding: 14px;
-    margin: 0 auto;
-}
-
-.card {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    min-width: 0;
-}
-
-/* TABLETS */
+/* =====================================
+   TABLETS
+===================================== */
 
 @media (min-width: 601px) and (max-width: 900px) {
 
@@ -810,12 +536,12 @@ body {
 
     .contenedor {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
+        gap: 15px;
     }
 
     .card {
-        min-height: 150px;
-        padding: 20px 14px;
+        min-height: 155px;
+        padding: 20px 15px;
     }
 
     .card h2 {
@@ -825,23 +551,18 @@ body {
     .card p {
         font-size: 11px;
     }
-
 }
 
-/* CELULARES */
+/* =====================================
+   CELULARES
+===================================== */
 
 @media (max-width: 600px) {
 
-    body {
-        padding: 0;
-    }
-
     .principal {
-        padding: 12px;
         width: 100%;
+        padding: 12px;
     }
-
-    /* ENCABEZADO */
 
     header {
         padding: 12px 5px 10px;
@@ -850,7 +571,8 @@ body {
     .logo {
         width: 58px;
         height: 58px;
-        margin-bottom: 10px;
+        border-radius: 15px;
+        margin-bottom: 9px;
     }
 
     .logo i {
@@ -858,9 +580,9 @@ body {
     }
 
     header h1 {
-        font-size: clamp(17px, 5vw, 22px);
-        line-height: 1.3;
+        font-size: clamp(18px, 5vw, 23px);
         letter-spacing: .5px;
+        line-height: 1.3;
     }
 
     header p {
@@ -868,69 +590,60 @@ body {
         line-height: 1.5;
     }
 
-    /* BIENVENIDA */
+    .linea {
+        width: 55px;
+        margin-top: 8px;
+    }
 
     .bienvenida {
-        padding: 12px;
-        gap: 10px;
         margin: 12px 0 16px;
+        padding: 12px;
+        gap: 9px;
         border-radius: 14px;
     }
 
     .bienvenida-icono {
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
-        font-size: 17px;
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        font-size: 16px;
     }
 
     .bienvenida-titulo {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .bienvenida-texto {
-        font-size: 10px;
-        line-height: 1.4;
+        font-size: 9px;
     }
 
     .estado {
         font-size: 8px;
-        padding: 6px 8px;
+        padding: 5px 7px;
     }
-
-    .punto {
-        width: 6px;
-        height: 6px;
-    }
-
-    /* TITULO MENU */
 
     .titulo-menu {
         margin-bottom: 10px;
-        padding: 0 3px;
     }
 
     .titulo-menu span:first-child {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .titulo-menu span:last-child {
-        font-size: 9px;
+        font-size: 8px;
     }
 
-    /* TARJETAS */
-
     .contenedor {
-        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 11px;
-        width: 100%;
     }
 
     .card {
         min-height: 145px;
-        padding: 17px 10px 14px;
+        padding: 17px 9px 14px;
         border-radius: 15px;
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -938,11 +651,10 @@ body {
     }
 
     .icono-card {
-        width: 46px;
-        height: 46px;
-        margin-bottom: 10px;
+        width: 44px;
+        height: 44px;
+        margin-bottom: 9px;
         border-radius: 12px;
-        flex-shrink: 0;
     }
 
     .icono-card i {
@@ -953,40 +665,36 @@ body {
         font-size: 12px;
         line-height: 1.4;
         margin-bottom: 5px;
-        overflow-wrap: break-word;
     }
 
     .card p {
-        font-size: 10px;
+        font-size: 9px;
         line-height: 1.45;
-        overflow-wrap: break-word;
     }
 
     .badge {
         top: 7px;
         right: 7px;
         font-size: 7px;
-        padding: 4px 6px;
     }
-
-    /* PIE */
 
     footer {
-        padding: 22px 5px 15px;
-        font-size: 10px;
-    }
-
-    footer .nombre {
-        font-size: 12px;
-    }
-
-    footer .version {
+        padding: 20px 5px 14px;
         font-size: 9px;
     }
 
+    footer .nombre {
+        font-size: 11px;
+    }
+
+    footer .version {
+        font-size: 8px;
+    }
 }
 
-/* CELULARES PEQUEÑOS */
+/* =====================================
+   CELULARES PEQUEÑOS
+===================================== */
 
 @media (max-width: 360px) {
 
@@ -1008,20 +716,25 @@ body {
     }
 
     .card p {
-        font-size: 9px;
+        font-size: 8px;
     }
 
-    .bienvenida-texto {
-        font-size: 9px;
+    .bienvenida {
+        flex-wrap: wrap;
+    }
+
+    .bienvenida-info {
+        flex: 1;
     }
 
     .estado {
         font-size: 7px;
     }
-
 }
 
-/* CELULARES GRANDES */
+/* =====================================
+   CELULARES GRANDES
+===================================== */
 
 @media (min-width: 390px) and (max-width: 600px) {
 
@@ -1034,12 +747,32 @@ body {
     }
 
     .card p {
-        font-size: 11px;
+        font-size: 10px;
     }
-
 }
 
-/* ACCESIBILIDAD Y MOVIMIENTO */
+/* =====================================
+   PANTALLAS GRANDES
+===================================== */
+
+@media (min-width: 901px) {
+
+    .principal {
+        padding: 22px;
+    }
+
+    .contenedor {
+        gap: 14px;
+    }
+
+    .card {
+        min-height: 155px;
+    }
+}
+
+/* =====================================
+   DISPOSITIVOS TÁCTILES
+===================================== */
 
 @media (hover: none) {
 
@@ -1050,20 +783,24 @@ body {
     .card:active {
         transform: scale(.97);
     }
-
 }
+
+/* =====================================
+   ACCESIBILIDAD
+===================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
-    * {
+    *,
+    *::before,
+    *::after {
         scroll-behavior: auto !important;
         transition: none !important;
+        animation: none !important;
     }
-
 }
-
-    
 </style>
+
 
 </head>
 
